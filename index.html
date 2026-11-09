@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYRGYZ WORK | Connecting Global Talent with Kyrgyzstan</title>
+<meta name="description" content="Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal. Workers for Kyrgyz employers.">
+<meta name="theme-color" content="#0B2A5B">
+<link rel="icon" href="logo.png">
+<style>
+:root{--navy:#0B2A5B;--navy-d:#071C3D;--teal:#0FA3A3;--gold:#E8A317;--light:#F3F6FB;--text:#1F2937;--muted:#5B6575}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}a{color:var(--teal);text-decoration:none}
+section{scroll-margin-top:76px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.pad{padding:80px 0}.alt{background:var(--light)}.center{text-align:center}
+h1,h2,h3{color:var(--navy);line-height:1.2}
+h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:18px}
+h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px}h3{font-size:1.12rem;margin-bottom:8px}
+.eyebrow{display:block;color:#C98A0C;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:8px}
+.lead{color:var(--muted);font-size:1.08rem;max-width:720px}.center .lead{margin:0 auto}.head{margin-bottom:40px}
+header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 14px rgba(11,42,91,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:14px;position:relative}
+.brand{display:flex;align-items:center;gap:10px}
+.wm{font-weight:900;font-size:1.3rem;color:var(--navy);display:flex;align-items:center}
+.wm b{background:var(--gold);color:#fff;padding:2px 9px;border-radius:6px;margin-left:5px}
+.links{display:flex;gap:2px}.links a{color:var(--navy);font-weight:600;font-size:.94rem;padding:8px 11px;border-radius:9px}
+.links a:hover{background:rgba(232,163,23,.16)}
+.tools{display:flex;gap:10px;align-items:center}
+.lang{display:flex;border:1px solid var(--navy);border-radius:9px;overflow:hidden}
+.lang button{background:#fff;border:0;padding:7px 12px;font-weight:700;color:var(--navy);cursor:pointer}
+.lang button.on{background:var(--navy);color:#fff}
+.burger{display:none;background:var(--navy);color:#fff;border:0;border-radius:9px;width:42px;height:40px;font-size:1.2rem;cursor:pointer}
+.btn{display:inline-block;padding:14px 26px;border-radius:12px;font-weight:700;border:2px solid transparent;cursor:pointer;margin:6px 10px 6px 0;font:inherit;font-weight:700;transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.gold-b{background:var(--gold);color:var(--navy-d)}.teal-b{background:var(--teal);color:#fff}
+.navy-b{background:var(--navy);color:#fff}.ghost{border-color:#fff;color:#fff}
+.hero{position:relative;overflow:hidden;color:#fff;padding:90px 0 150px;background:radial-gradient(circle at 80% 25%,rgba(232,163,23,.32),transparent 34%),linear-gradient(135deg,var(--navy-d),var(--navy) 60%,#13386F)}
+.hero h1,.band h1{color:#fff}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-block;background:rgba(232,163,23,.18);border:1px solid rgba(232,163,23,.6);color:#FFD27A;padding:6px 14px;border-radius:30px;font-weight:700;font-size:.85rem;margin-bottom:20px}
+.wave{position:absolute;left:0;bottom:-1px;width:100%;height:90px;z-index:3}
+.jobcard{background:#fff;color:var(--text);border-radius:22px;padding:28px;box-shadow:0 30px 60px rgba(0,0,0,.3);border-top:5px solid var(--gold)}
+.jobcard ul{list-style:none;margin:12px 0 16px}.jobcard li{padding:8px 0;border-bottom:1px dashed #DCE3EE}
+.jobcard li:before{content:"✓ ";color:var(--teal);font-weight:800}
+.pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-70px;position:relative;z-index:4}
+.pillar{background:#fff;border-radius:16px;padding:22px 14px;text-align:center;box-shadow:0 12px 30px rgba(11,42,91,.12);font-weight:700;color:var(--navy)}
+.pillar i{font-style:normal;font-size:1.8rem;display:block}
+.grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:#fff;border-radius:18px;padding:28px;box-shadow:0 6px 22px rgba(11,42,91,.07);border-top:4px solid var(--teal);transition:.25s}
+.card:hover{transform:translateY(-5px)}.card.g{border-top-color:var(--gold)}.card p{color:var(--muted)}
+.ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:rgba(15,163,163,.12);margin-bottom:12px}
+.card.g .ico{background:rgba(232,163,23,.16)}
+.dark{background:linear-gradient(135deg,var(--navy),#13386F);border:0}.dark h3{color:var(--gold);font-size:1.4rem}.dark p{color:#D6DEEA}
+.checks{list-style:none;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.checks li{background:#fff;border-radius:12px;padding:16px 18px 16px 54px;position:relative;box-shadow:0 2px 10px rgba(11,42,91,.06)}
+.checks li:before{content:"✓";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;background:var(--teal);color:#fff;text-align:center;line-height:24px;font-weight:800;font-size:.85rem}
+.note{color:var(--muted);font-style:italic;margin-top:16px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}.step{text-align:center}
+.step .n{width:58px;height:58px;margin:0 auto 12px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.3rem;box-shadow:0 0 0 8px rgba(232,163,23,.16)}
+.step p{color:var(--muted);font-size:.93rem}
+.fees{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-radius:18px;padding:36px}
+.fees h2{color:var(--gold)}.fees ul{margin:14px 0 20px 20px}.fees li{margin-bottom:10px;color:#E4EAF5}
+.docs{background:#fff;border-radius:18px;padding:36px;box-shadow:0 6px 22px rgba(11,42,91,.07)}
+.docs ul{list-style:none;margin-top:12px}.docs li{padding:10px 0;border-bottom:1px solid #EEF2F7}.docs li:before{content:"📄 "}
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.chips span{background:#fff;border:1px solid #DCE3EE;padding:10px 18px;border-radius:30px;font-weight:700;color:var(--navy)}
+.legal{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin-top:18px}
+.band{position:relative;overflow:hidden;color:#fff;padding:90px 0 130px;background:radial-gradient(circle at 15% 20%,rgba(232,163,23,.28),transparent 30%),linear-gradient(135deg,var(--navy-d),var(--navy))}
+.band .lead{color:#D6DEEA}
+.vis{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px}
+.vis li{list-style:none;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.12);color:#E4EAF5}
+details{background:#fff;border-radius:12px;padding:18px 22px;margin-bottom:12px;box-shadow:0 2px 12px rgba(11,42,91,.06);border-left:4px solid transparent}
+details[open]{border-left-color:var(--gold)}
+summary{font-weight:700;color:var(--navy);cursor:pointer}details p{margin-top:10px;color:var(--muted)}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+form{display:grid;gap:14px;background:#fff;padding:30px;border-radius:18px;box-shadow:0 10px 30px rgba(11,42,91,.1)}
+label{display:block;font-weight:600;font-size:.93rem;color:var(--navy);margin-bottom:5px}
+input,select,textarea{width:100%;padding:12px 14px;border:1px solid #C9D3E0;border-radius:10px;font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--teal)}
+textarea{min-height:100px;resize:vertical}form .btn{justify-self:start}
+.ci{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:12px;box-shadow:0 4px 16px rgba(11,42,91,.07)}
+.ci b{color:var(--navy);display:block}.ci span,.ci a{color:var(--muted)}
+.logo-box{background:#fff;border-radius:18px;padding:20px;display:inline-block;box-shadow:0 8px 24px rgba(11,42,91,.1)}.logo-box img{max-width:340px}
+.cta{background:linear-gradient(135deg,var(--navy),var(--navy-d));color:#fff;text-align:center;padding:70px 20px}
+.cta h2{color:var(--gold)}.cta p{color:#D6DEEA;margin-bottom:20px}
+footer{background:var(--navy-d);color:#C9D3E0;padding:56px 0 20px;font-size:.94rem}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
+footer h4{color:var(--gold);margin-bottom:10px}footer a{color:#C9D3E0;display:block;margin-bottom:7px}
+footer .wm{color:#fff;margin-bottom:10px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:16px;text-align:center}
+.wa{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:13px 20px;border-radius:40px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:90}
+@media(max-width:980px){
+.burger{display:grid;place-items:center}
+.links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;padding:12px 20px 20px;box-shadow:0 12px 24px rgba(0,0,0,.1)}
+.links.open{display:flex}
+.grid2,.fg{grid-template-columns:1fr}.pillars{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr}}
+@media(max-width:600px){.pad{padding:56px 0}.steps{grid-template-columns:1fr}.wm{font-size:1.05rem}}
+</style>
+</head>
+<body>
+
+<header><div class="wrap nav">
+  <a href="#top" class="brand">
+    <svg width="50" height="40" viewBox="0 0 60 46" aria-hidden="true">
+      <circle cx="40" cy="15" r="11" fill="none" stroke="#E8A317" stroke-width="5" stroke-dasharray="2.2 2.2"/>
+      <circle cx="40" cy="15" r="7" fill="#E8A317"/>
+      <polygon points="2,44 20,16 30,30 40,19 58,44" fill="#0B2A5B"/>
+      <polygon points="20,16 25,24 21,22 16,25" fill="#fff"/>
+      <polygon points="40,19 44,26 40,24 37,26" fill="#fff"/>
+      <path d="M2 44 Q 26 26 58 32" stroke="#E8A317" stroke-width="3.5" fill="none"/>
+    </svg>
+    <span class="wm">KYRGYZ<b>WORK</b></span>
+  </a>
+  <nav class="links" id="links">
+    <a href="#about" data-en="About" data-ru="О нас">About</a>
+    <a href="#services" data-en="Services" data-ru="Услуги">Services</a>
+    <a href="#process" data-en="How it works" data-ru="Как это работает">How it works</a>
+    <a href="#industries" data-en="Industries" data-ru="Отрасли">Industries</a>
+    <a href="#employers" data-en="For Employers" data-ru="Работодателям">For Employers</a>
+    <a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a>
+  </nav>
+  <div class="tools">
+    <div class="lang"><button data-l="en" class="on">EN</button><button data-l="ru">RU</button></div>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </div>
+</div></header>
+
+<main id="top">
+<section class="hero">
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,45 C960,0 1200,70 1440,30 L1440,90 L0,90 Z" fill="#fff"/></svg>
+  <div class="wrap grid2">
+    <div>
+      <span class="badge" data-en="Jobs · Work visa support · Flights · Accommodation" data-ru="Работа · Поддержка рабочих виз · Перелёт · Жильё">Jobs · Work visa support · Flights · Accommodation</span>
+      <h1 data-en="Connecting Global Talent with Kyrgyzstan" data-ru="Соединяем мировые таланты с Кыргызстаном">Connecting Global Talent with Kyrgyzstan</h1>
+      <p style="font-size:1.12rem;opacity:.93;margin-bottom:24px" data-en="Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and reliable workers for Kyrgyz companies. We handle everything from A to Z." data-ru="Реальная работа в Кыргызстане для работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и надёжные работники для кыргызских компаний. Мы берём на себя всё — от А до Я.">Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and reliable workers for Kyrgyz companies. We handle everything from A to Z.</p>
+      <a class="btn gold-b" href="#services" data-en="I want a job" data-ru="Ищу работу">I want a job</a>
+      <a class="btn ghost" href="#employers" data-en="I need workers" data-ru="Нужны работники">I need workers</a>
+    </div>
+    <div class="jobcard">
+      <h3 data-en="Example: Construction helper" data-ru="Пример: помощник строителя">Example: Construction helper</h3>
+      <ul>
+        <li data-en="Location: Kyrgyzstan" data-ru="Место: Кыргызстан">Location: Kyrgyzstan</li>
+        <li data-en="Accommodation and meals: free in most jobs" data-ru="Жильё и питание: бесплатно на большинстве вакансий">Accommodation and meals: free in most jobs</li>
+        <li data-en="Flight and airport pickup: arranged" data-ru="Перелёт и встреча в аэропорту: организуем">Flight and airport pickup: arranged</li>
+        <li data-en="Invitation and work visa: we prepare and submit" data-ru="Приглашение и рабочая виза: готовим и подаём">Invitation and work visa: we prepare and submit</li>
+      </ul>
+      <a class="btn teal-b" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Ask about jobs" data-ru="Узнать о вакансиях">Ask about jobs</a>
+    </div>
+  </div>
+</section>
+
+<div class="wrap pillars">
+  <div class="pillar"><i>🤝</i><span data-en="Recruitment Solutions" data-ru="Решения по подбору">Recruitment Solutions</span></div>
+  <div class="pillar"><i>👥</i><span data-en="Employment Opportunities" data-ru="Возможности трудоустройства">Employment Opportunities</span></div>
+  <div class="pillar"><i>💼</i><span data-en="Skilled Workforce" data-ru="Квалифицированные кадры">Skilled Workforce</span></div>
+  <div class="pillar"><i>📈</i><span data-en="Stronger Businesses" data-ru="Сильнее бизнес">Stronger Businesses</span></div>
+</div>
+
+<section class="pad"><div class="wrap">
+  <div class="center head"><span class="eyebrow" data-en="Who we help" data-ru="Кому мы помогаем">Who we help</span>
+  <h2 data-en="Two sides, one trusted partner" data-ru="Две стороны, один надёжный партнёр">Two sides, one trusted partner</h2></div>
+  <div class="grid two">
+    <div class="card dark"><div class="ico">🧳</div><h3 data-en="For job seekers" data-ru="Соискателям">For job seekers</h3>
+      <p data-en="Find a real job in Kyrgyzstan. We arrange your invitation letter, work visa support, flight, airport pickup and accommodation." data-ru="Найдите реальную работу в Кыргызстане. Мы оформим приглашение, поможем с рабочей визой, организуем перелёт, встречу и жильё.">Find a real job in Kyrgyzstan. We arrange your invitation letter, work visa support, flight, airport pickup and accommodation.</p>
+      <a class="btn gold-b" href="#services" data-en="See our services" data-ru="Наши услуги">See our services</a></div>
+    <div class="card g"><div class="ico">🏢</div><h3 data-en="For employers" data-ru="Работодателям">For employers</h3>
+      <p data-en="Need reliable workers? We recruit, screen and bring workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and handle all the paperwork." data-ru="Нужны надёжные работники? Мы подбираем, проверяем и привозим работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и берём на себя документы.">Need reliable workers? We recruit, screen and bring workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and handle all the paperwork.</p>
+      <a class="btn navy-b" href="#employers" data-en="Hire workers" data-ru="Нанять работников">Hire workers</a></div>
+  </div>
+</div></section>
+
+<section class="pad alt" id="about"><div class="wrap">
+  <div class="fg" style="align-items:center">
+    <div><span class="eyebrow" data-en="About us" data-ru="О нас">About us</span>
+      <h2 data-en="About KYRGYZ WORK" data-ru="О компании KYRGYZ WORK">About KYRGYZ WORK</h2>
+      <p class="lead" data-en="KYRGYZ WORK is a recruitment company in Kyrgyzstan. We work with employers who need reliable workers, and with job seekers from South Asia who want a safe, legal job abroad. We handle the full journey, from the first message to the first day at work." data-ru="KYRGYZ WORK — рекрутинговая компания в Кыргызстане. Мы работаем с работодателями, которым нужны надёжные работники, и с соискателями из Южной Азии, которые хотят безопасную и легальную работу за рубежом. Мы сопровождаем весь путь — от первого сообщения до первого рабочего дня.">KYRGYZ WORK is a recruitment company in Kyrgyzstan. We work with employers who need reliable workers, and with job seekers from South Asia who want a safe, legal job abroad. We handle the full journey, from the first message to the first day at work.</p></div>
+    <div class="center"><div class="logo-box"><img src="logo.png" alt="KYRGYZ WORK logo" onerror="this.parentElement.style.display='none'"></div></div>
+  </div>
+  <div class="grid two" style="margin-top:44px">
+    <div class="card g"><div class="ico">🎯</div><h3 data-en="Our mission" data-ru="Наша миссия">Our mission</h3><p data-en="To give workers fair, legal job opportunities, and to give Kyrgyz businesses a skilled, dependable workforce." data-ru="Давать работникам честные и легальные возможности, а бизнесу Кыргызстана — квалифицированный и надёжный персонал.">To give workers fair, legal job opportunities, and to give Kyrgyz businesses a skilled, dependable workforce.</p></div>
+    <div class="card"><div class="ico">🌉</div><h3 data-en="Our vision" data-ru="Наше видение">Our vision</h3><p data-en="To be the most trusted bridge between South Asia and the Kyrgyz labour market." data-ru="Стать самым надёжным мостом между Южной Азией и рынком труда Кыргызстана.">To be the most trusted bridge between South Asia and the Kyrgyz labour market.</p></div>
+  </div>
+  <div class="grid" style="margin-top:28px">
+    <div class="card"><div class="ico">🤝</div><h3 data-en="Honesty" data-ru="Честность">Honesty</h3><p data-en="Clear information about jobs, fees and conditions." data-ru="Понятная информация о вакансиях, сборах и условиях.">Clear information about jobs, fees and conditions.</p></div>
+    <div class="card"><div class="ico">📄</div><h3 data-en="Legal process" data-ru="Законность">Legal process</h3><p data-en="Every worker travels with proper documents." data-ru="Каждый работник приезжает с правильными документами.">Every worker travels with proper documents.</p></div>
+    <div class="card"><div class="ico">🧭</div><h3 data-en="Support" data-ru="Поддержка">Support</h3><p data-en="We stay in contact before, during and after arrival." data-ru="Мы на связи до, во время и после прибытия.">We stay in contact before, during and after arrival.</p></div>
+    <div class="card"><div class="ico">⭐</div><h3 data-en="Respect" data-ru="Уважение">Respect</h3><p data-en="Fair treatment of workers and employers." data-ru="Справедливое отношение к работникам и работодателям.">Fair treatment of workers and employers.</p></div>
+  </div>
+  <h3 style="margin-top:44px" data-en="Countries we recruit from" data-ru="Страны набора">Countries we recruit from</h3>
+  <div class="chips">
+    <span data-en="🇵🇰 Pakistan" data-ru="🇵🇰 Пакистан">🇵🇰 Pakistan</span><span data-en="🇮🇳 India" data-ru="🇮🇳 Индия">🇮🇳 India</span>
+    <span data-en="🇧🇩 Bangladesh" data-ru="🇧🇩 Бангладеш">🇧🇩 Bangladesh</span><span data-en="🇱🇰 Sri Lanka" data-ru="🇱🇰 Шри-Ланка">🇱🇰 Sri Lanka</span>
+    <span data-en="🇳🇵 Nepal" data-ru="🇳🇵 Непал">🇳🇵 Nepal</span>
+  </div>
+  <div class="legal" data-en="We prepare and submit applications. Final visa and work permit decisions are made by the authorities of the Kyrgyz Republic." data-ru="Мы готовим и подаём заявления. Окончательные решения по визам и разрешениям на работу принимают органы власти Кыргызской Республики.">We prepare and submit applications. Final visa and work permit decisions are made by the authorities of the Kyrgyz Republic.</div>
+</div></section>
+
+<section class="pad" id="services"><div class="wrap">
+  <div class="center head"><span class="eyebrow" data-en="For job seekers" data-ru="Соискателям">For job seekers</span>
+  <h2 data-en="Full service from your country to Kyrgyzstan" data-ru="Полное сопровождение до Кыргызстана">Full service from your country to Kyrgyzstan</h2></div>
+  <div class="grid">
+    <div class="card"><div class="ico">💼</div><h3 data-en="Job matching" data-ru="Подбор работы">Job matching</h3><p data-en="Real vacancies with Kyrgyz employers in six industries." data-ru="Реальные вакансии у кыргызских работодателей в шести отраслях.">Real vacancies with Kyrgyz employers in six industries.</p></div>
+    <div class="card g"><div class="ico">✉️</div><h3 data-en="Invitation letter" data-ru="Приглашение">Invitation letter</h3><p data-en="We apply for your official invitation, required for your work visa." data-ru="Мы оформляем официальное приглашение, необходимое для рабочей визы.">We apply for your official invitation, required for your work visa.</p></div>
+    <div class="card"><div class="ico">🛂</div><h3 data-en="Work visa support" data-ru="Помощь с рабочей визой">Work visa support</h3><p data-en="We check your documents and guide your visa application." data-ru="Мы проверяем документы и сопровождаем подачу на визу.">We check your documents and guide your visa application.</p></div>
+    <div class="card g"><div class="ico">📑</div><h3 data-en="Document preparation" data-ru="Подготовка документов">Document preparation</h3><p data-en="Help with CV, passport copies, photos, certificates and translations." data-ru="Помощь с резюме, копиями паспорта, фото, сертификатами и переводами.">Help with CV, passport copies, photos, certificates and translations.</p></div>
+    <div class="card"><div class="ico">✈️</div><h3 data-en="Flights" data-ru="Перелёт">Flights</h3><p data-en="We arrange your flight to Kyrgyzstan." data-ru="Мы организуем ваш перелёт в Кыргызстан.">We arrange your flight to Kyrgyzstan.</p></div>
+    <div class="card g"><div class="ico">🚐</div><h3 data-en="Airport pickup" data-ru="Встреча в аэропорту">Airport pickup</h3><p data-en="Our team meets you and takes you to your accommodation." data-ru="Наша команда встретит вас и отвезёт к месту проживания.">Our team meets you and takes you to your accommodation.</p></div>
+    <div class="card"><div class="ico">🏠</div><h3 data-en="Accommodation and meals" data-ru="Жильё и питание">Accommodation and meals</h3><p data-en="Free in most jobs, provided by the employer." data-ru="Бесплатно на большинстве вакансий, предоставляет работодатель.">Free in most jobs, provided by the employer.</p></div>
+    <div class="card g"><div class="ico">🧾</div><h3 data-en="Arrival support" data-ru="Помощь по прибытии">Arrival support</h3><p data-en="Help with registration, a local SIM card and orientation." data-ru="Помощь с регистрацией, местной SIM-картой и адаптацией.">Help with registration, a local SIM card and orientation.</p></div>
+  </div>
+</div></section>
+
+<section class="pad alt"><div class="wrap fg">
+  <div class="fees"><span class="eyebrow" style="color:#FFD27A" data-en="Transparent pricing" data-ru="Прозрачные условия">Transparent pricing</span>
+    <h2 data-en="Fees and payments" data-ru="Сборы и оплата">Fees and payments</h2>
+    <ul>
+      <li data-en="Candidates pay a fee for the invitation letter and work visa process." data-ru="Кандидат оплачивает сбор за приглашение и оформление рабочей визы.">Candidates pay a fee for the invitation letter and work visa process.</li>
+      <li data-en="The amount depends on your country and job. Contact us for details." data-ru="Сумма зависит от страны и вакансии. Свяжитесь с нами для деталей.">The amount depends on your country and job. Contact us for details.</li>
+      <li data-en="In most jobs, the employer provides accommodation and meals for free. Your job offer will confirm this." data-ru="На большинстве вакансий работодатель бесплатно предоставляет жильё и питание. Это подтверждается в предложении о работе.">In most jobs, the employer provides accommodation and meals for free. Your job offer will confirm this.</li>
+      <li data-en="Pay only through official KYRGYZ WORK channels and always ask for a receipt." data-ru="Платите только через официальные каналы KYRGYZ WORK и всегда требуйте квитанцию.">Pay only through official KYRGYZ WORK channels and always ask for a receipt.</li>
+    </ul>
+    <a class="btn gold-b" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Contact us for details" data-ru="Свяжитесь с нами для деталей">Contact us for details</a></div>
+  <div class="docs"><h2 data-en="Documents you usually need" data-ru="Обычно нужные документы">Documents you usually need</h2>
+    <ul>
+      <li data-en="Valid passport" data-ru="Действующий паспорт">Valid passport</li>
+      <li data-en="Passport-size photos" data-ru="Фото паспортного формата">Passport-size photos</li>
+      <li data-en="CV with work experience" data-ru="Резюме с опытом работы">CV with work experience</li>
+      <li data-en="Education or skill certificates (if any)" data-ru="Дипломы или сертификаты (при наличии)">Education or skill certificates (if any)</li>
+      <li data-en="Medical certificate (if required)" data-ru="Медицинская справка (при необходимости)">Medical certificate (if required)</li>
+    </ul>
+    <p class="note" data-en="The exact list depends on the job and current Kyrgyz requirements." data-ru="Точный список зависит от вакансии и действующих требований Кыргызстана.">The exact list depends on the job and current Kyrgyz requirements.</p></div>
+</div></section>
+
+<section class="pad" id="process"><div class="wrap">
+  <div class="center head"><span class="eyebrow" data-en="How it works" data-ru="Как это работает">How it works</span>
+  <h2 data-en="Five steps to your job in Kyrgyzstan" data-ru="Пять шагов до работы в Кыргызстане">Five steps to your job in Kyrgyzstan</h2></div>
+  <div class="steps">
+    <div class="step"><div class="n">1</div><h3 data-en="Contact us" data-ru="Свяжитесь с нами">Contact us</h3><p data-en="Send your CV, passport copy and desired job on WhatsApp." data-ru="Отправьте в WhatsApp резюме, копию паспорта и желаемую работу.">Send your CV, passport copy and desired job on WhatsApp.</p></div>
+    <div class="step"><div class="n">2</div><h3 data-en="Job matching" data-ru="Подбор работы">Job matching</h3><p data-en="We match you with an employer and arrange an interview if needed." data-ru="Подбираем работодателя и при необходимости организуем собеседование.">We match you with an employer and arrange an interview if needed.</p></div>
+    <div class="step"><div class="n">3</div><h3 data-en="Invitation letter" data-ru="Приглашение">Invitation letter</h3><p data-en="After you accept the offer, we apply for your invitation. The candidate fee is paid at this step." data-ru="После принятия предложения оформляем приглашение. На этом этапе оплачивается сбор.">After you accept the offer, we apply for your invitation. The candidate fee is paid at this step.</p></div>
+    <div class="step"><div class="n">4</div><h3 data-en="Work visa" data-ru="Рабочая виза">Work visa</h3><p data-en="We help prepare documents and apply for your Kyrgyz work visa." data-ru="Помогаем подготовить документы и подать на рабочую визу.">We help prepare documents and apply for your Kyrgyz work visa.</p></div>
+    <div class="step"><div class="n">5</div><h3 data-en="Fly and start work" data-ru="Перелёт и работа">Fly and start work</h3><p data-en="Flight, pickup and accommodation are arranged. You start your job." data-ru="Перелёт, встреча и жильё организованы. Вы начинаете работу.">Flight, pickup and accommodation are arranged. You start your job.</p></div>
+  </div>
+</div></section>
+
+<section class="pad alt"><div class="wrap">
+  <div class="center head"><h2 data-en="What's included" data-ru="Что включено">What's included</h2></div>
+  <ul class="checks">
+    <li data-en="Job offer from a Kyrgyz employer" data-ru="Предложение о работе от кыргызского работодателя">Job offer from a Kyrgyz employer</li>
+    <li data-en="Invitation letter and work visa support" data-ru="Приглашение и помощь с рабочей визой">Invitation letter and work visa support</li>
+    <li data-en="Flight arrangement" data-ru="Организация перелёта">Flight arrangement</li>
+    <li data-en="Airport pickup in Kyrgyzstan" data-ru="Встреча в аэропорту Кыргызстана">Airport pickup in Kyrgyzstan</li>
+    <li data-en="Free accommodation and meals in most jobs (by the employer)" data-ru="Бесплатное жильё и питание на большинстве вакансий (от работодателя)">Free accommodation and meals in most jobs (by the employer)</li>
+    <li data-en="Arrival support and orientation" data-ru="Помощь по прибытии и адаптация">Arrival support and orientation</li>
+  </ul>
+  <p class="note center" data-en="Exact conditions depend on the job and are written in your job offer." data-ru="Точные условия зависят от вакансии и указаны в предложении о работе.">Exact conditions depend on the job and are written in your job offer.</p>
+</div></section>
+
+<section class="pad" id="industries"><div class="wrap">
+  <div class="center head"><span class="eyebrow" data-en="Industries" data-ru="Отрасли">Industries</span>
+  <h2 data-en="Industries we hire for" data-ru="Отрасли, в которых мы нанимаем">Industries we hire for</h2></div>
+  <div class="grid">
+    <div class="card g"><div class="ico">🏗️</div><h3 data-en="Construction" data-ru="Строительство">Construction</h3><p data-en="Builders, masons, welders, electricians, plumbers, helpers." data-ru="Строители, каменщики, сварщики, электрики, сантехники, подсобные рабочие.">Builders, masons, welders, electricians, plumbers, helpers.</p></div>
+    <div class="card g"><div class="ico">🧵</div><h3 data-en="Textile and garment factories" data-ru="Текстиль и швейное производство">Textile and garment factories</h3><p data-en="Sewing operators, cutters, packers, quality checkers." data-ru="Швеи, раскройщики, упаковщики, контролёры качества.">Sewing operators, cutters, packers, quality checkers.</p></div>
+    <div class="card g"><div class="ico">🏭</div><h3 data-en="Manufacturing" data-ru="Производство">Manufacturing</h3><p data-en="Machine operators, assemblers, factory workers." data-ru="Операторы станков, сборщики, рабочие заводов.">Machine operators, assemblers, factory workers.</p></div>
+    <div class="card g"><div class="ico">🌾</div><h3 data-en="Agriculture" data-ru="Сельское хозяйство">Agriculture</h3><p data-en="Farm and greenhouse workers, livestock care." data-ru="Работники ферм и теплиц, уход за скотом.">Farm and greenhouse workers, livestock care.</p></div>
+    <div class="card g"><div class="ico">🍞</div><h3 data-en="Food processing" data-ru="Пищевая промышленность">Food processing</h3><p data-en="Packing, processing, bakery and meat workers." data-ru="Упаковка, переработка, хлебопекарни, мясопереработка.">Packing, processing, bakery and meat workers.</p></div>
+    <div class="card g"><div class="ico">🚚</div><h3 data-en="Transport and logistics" data-ru="Транспорт и логистика">Transport and logistics</h3><p data-en="Drivers, warehouse staff, loaders, forklift operators." data-ru="Водители, складские работники, грузчики, водители погрузчиков.">Drivers, warehouse staff, loaders, forklift operators.</p></div>
+  </div>
+</div></section>
+
+<section class="band" id="employers">
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,45 C960,0 1200,70 1440,30 L1440,90 L0,90 Z" fill="#fff"/></svg>
+  <div class="wrap grid2">
+    <div><span class="badge" data-en="For employers" data-ru="Работодателям">For employers</span>
+      <h1 data-en="Where Employers Meet Talent." data-ru="Где работодатели находят таланты.">Where Employers Meet Talent.</h1>
+      <p class="lead" data-en="We supply skilled, reliable workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and help your company with everything, from recruitment to the worker's first day." data-ru="Мы предоставляем квалифицированных и надёжных работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и помогаем компании во всём — от подбора до первого рабочего дня.">We supply skilled, reliable workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and help your company with everything, from recruitment to the worker's first day.</p>
+      <a class="btn gold-b" href="#request" data-en="Request workers" data-ru="Запросить работников">Request workers</a>
+      <a class="btn ghost" href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp</a></div>
+    <div class="vis"><ul>
+      <li data-en="✔ Understand your positions, skills and salary" data-ru="✔ Изучаем вакансии, навыки и зарплату">✔ Understand your positions, skills and salary</li>
+      <li data-en="✔ Source and screen candidates at home" data-ru="✔ Ищем и проверяем кандидатов на родине">✔ Source and screen candidates at home</li>
+      <li data-en="✔ Documents, invitations and visas handled" data-ru="✔ Документы, приглашения и визы — на нас">✔ Documents, invitations and visas handled</li>
+      <li data-en="✔ Flights, airport pickup and onboarding" data-ru="✔ Перелёт, встреча и адаптация">✔ Flights, airport pickup and onboarding</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="pad"><div class="wrap">
+  <div class="center head"><h2 data-en="Why work with us" data-ru="Почему с нами удобно">Why work with us</h2></div>
+  <div class="grid">
+    <div class="card g"><div class="ico">🌏</div><h3 data-en="Large talent pool" data-ru="Большой выбор кандидатов">Large talent pool</h3><p data-en="Workers from five South Asian countries." data-ru="Работники из пяти стран Южной Азии.">Workers from five South Asian countries.</p></div>
+    <div class="card g"><div class="ico">🔍</div><h3 data-en="Screened candidates" data-ru="Проверенные кандидаты">Screened candidates</h3><p data-en="We check experience, skills and documents." data-ru="Проверяем опыт, навыки и документы.">We check experience, skills and documents.</p></div>
+    <div class="card g"><div class="ico">📋</div><h3 data-en="All paperwork handled" data-ru="Все документы — на нас">All paperwork handled</h3><p data-en="Invitations, permits, visas and registration." data-ru="Приглашения, разрешения, визы и регистрация.">Invitations, permits, visas and registration.</p></div>
+    <div class="card g"><div class="ico">👤</div><h3 data-en="One point of contact" data-ru="Один контакт">One point of contact</h3><p data-en="A dedicated manager, in English or Russian." data-ru="Персональный менеджер на английском или русском.">A dedicated manager, in English or Russian.</p></div>
+  </div>
+</div></section>
+
+<section class="pad alt"><div class="wrap">
+  <div class="center head"><h2 data-en="What we do for your company" data-ru="Что мы делаем для вашей компании">What we do for your company</h2></div>
+  <ul class="checks">
+    <li data-en="Understand your needs: positions, skills, numbers, salary, start date" data-ru="Определяем потребности: должности, навыки, количество, зарплата, дата начала">Understand your needs: positions, skills, numbers, salary, start date</li>
+    <li data-en="Source and screen candidates in their home countries" data-ru="Ищем и проверяем кандидатов в их странах">Source and screen candidates in their home countries</li>
+    <li data-en="Video interviews and skill tests on request" data-ru="Видеособеседования и проверка навыков по запросу">Video interviews and skill tests on request</li>
+    <li data-en="Work permit paperwork, invitations and visa support" data-ru="Документы на разрешение, приглашения и помощь с визами">Work permit paperwork, invitations and visa support</li>
+    <li data-en="Flights and airport pickup for workers" data-ru="Перелёт и встреча работников">Flights and airport pickup for workers</li>
+    <li data-en="Help arranging accommodation and meals" data-ru="Помощь с жильём и питанием">Help arranging accommodation and meals</li>
+    <li data-en="Arrival, registration and onboarding support" data-ru="Помощь по прибытии, регистрации и адаптации">Arrival, registration and onboarding support</li>
+    <li data-en="Ongoing support and replacement help (as agreed in the contract)" data-ru="Постоянная поддержка и помощь с заменой (по договору)">Ongoing support and replacement help (as agreed in the contract)</li>
+  </ul>
+</div></section>
+
+<section class="pad" id="request"><div class="wrap fg">
+  <div><span class="eyebrow" data-en="Employer request" data-ru="Запрос работников">Employer request</span>
+    <h2 data-en="Request workers" data-ru="Запросить работников">Request workers</h2>
+    <p class="lead" data-en="Tell us what you need. We will reply on WhatsApp with candidate options and terms." data-ru="Расскажите, кто вам нужен. Мы ответим в WhatsApp с вариантами и условиями.">Tell us what you need. We will reply on WhatsApp with candidate options and terms.</p></div>
+  <form id="empForm">
+    <div><label data-en="Company name" data-ru="Название компании">Company name</label><input id="e_company" required></div>
+    <div><label data-en="Contact person" data-ru="Контактное лицо">Contact person</label><input id="e_person" required></div>
+    <div><label data-en="Phone / WhatsApp" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="e_phone" type="tel" required></div>
+    <div><label data-en="Industry" data-ru="Отрасль">Industry</label>
+      <select id="e_ind"><option>Construction</option><option>Textile and garment</option><option>Manufacturing</option><option>Agriculture</option><option>Food processing</option><option>Transport and logistics</option><option>Other</option></select></div>
+    <div><label data-en="Number of workers" data-ru="Количество работников">Number of workers</label><input id="e_count" type="number" min="1" required></div>
+    <div><label data-en="Preferred country" data-ru="Предпочитаемая страна">Preferred country</label>
+      <select id="e_nat"><option>Any</option><option>Pakistan</option><option>India</option><option>Bangladesh</option><option>Sri Lanka</option><option>Nepal</option></select></div>
+    <div><label data-en="Job details (positions, salary, accommodation)" data-ru="Детали (должности, зарплата, жильё)">Job details (positions, salary, accommodation)</label><textarea id="e_msg"></textarea></div>
+    <button class="btn teal-b" type="submit" data-en="Send request via WhatsApp" data-ru="Отправить в WhatsApp">Send request via WhatsApp</button>
+  </form>
+</div></section>
+
+<section class="pad alt"><div class="wrap"><div class="center head"><h2 data-en="Frequently asked questions" data-ru="Частые вопросы">Frequently asked questions</h2></div>
+  <div style="max-width:860px;margin:auto">
+    <details><summary data-en="What do candidates pay for?" data-ru="За что платит кандидат?">What do candidates pay for?</summary><p data-en="A fee for the invitation letter and work visa process. Contact us for the exact amount." data-ru="Сбор за приглашение и оформление рабочей визы. Точную сумму уточняйте у нас.">A fee for the invitation letter and work visa process. Contact us for the exact amount.</p></details>
+    <details><summary data-en="Are accommodation and meals free?" data-ru="Жильё и питание бесплатные?">Are accommodation and meals free?</summary><p data-en="In most jobs, yes. The employer provides them, and your job offer confirms it." data-ru="На большинстве вакансий — да. Их предоставляет работодатель, это указано в предложении о работе.">In most jobs, yes. The employer provides them, and your job offer confirms it.</p></details>
+    <details><summary data-en="Which countries do you accept candidates from?" data-ru="Из каких стран вы принимаете кандидатов?">Which countries do you accept candidates from?</summary><p data-en="Pakistan, India, Bangladesh, Sri Lanka and Nepal." data-ru="Пакистан, Индия, Бангладеш, Шри-Ланка и Непал.">Pakistan, India, Bangladesh, Sri Lanka and Nepal.</p></details>
+    <details><summary data-en="Do you guarantee a visa?" data-ru="Вы гарантируете визу?">Do you guarantee a visa?</summary><p data-en="No one can. We prepare and submit documents correctly; the Kyrgyz authorities decide." data-ru="Никто не может. Мы правильно готовим и подаём документы, решение принимают власти Кыргызстана.">No one can. We prepare and submit documents correctly; the Kyrgyz authorities decide.</p></details>
+    <details><summary data-en="How can I avoid fraud?" data-ru="Как избежать мошенников?">How can I avoid fraud?</summary><p data-en="Contact us only via WhatsApp +996 555 746 401 and always ask for a receipt." data-ru="Связывайтесь только через WhatsApp +996 555 746 401 и всегда требуйте квитанцию.">Contact us only via WhatsApp +996 555 746 401 and always ask for a receipt.</p></details>
+  </div></div></section>
+
+<section class="pad" id="contact"><div class="wrap fg">
+  <div><span class="eyebrow" data-en="Contact" data-ru="Контакты">Contact</span>
+    <h2 data-en="Contact us for details" data-ru="Свяжитесь с нами для деталей">Contact us for details</h2>
+    <p class="lead" style="margin-bottom:20px" data-en="The fastest way to reach us is WhatsApp." data-ru="Быстрее всего — через WhatsApp.">The fastest way to reach us is WhatsApp.</p>
+    <div class="ci"><b>WhatsApp</b><a href="https://wa.me/996555746401" target="_blank" rel="noopener">+996 555 746 401</a></div>
+    <div class="ci"><b data-en="Website" data-ru="Сайт">Website</b><span>kyrgyzwork.kg</span></div>
+    <div class="ci"><b>Email</b><span data-en="Coming soon" data-ru="Скоро">Coming soon</span></div>
+    <div class="ci"><b data-en="Office" data-ru="Офис">Office</b><span data-en="Coming soon" data-ru="Скоро">Coming soon</span></div>
+  </div>
+  <form id="jobForm">
+    <h3 data-en="Job application" data-ru="Заявка на работу">Job application</h3>
+    <div><label data-en="Your name" data-ru="Ваше имя">Your name</label><input id="name" required></div>
+    <div><label data-en="Phone / WhatsApp" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="phone" type="tel" required></div>
+    <div><label data-en="Your country" data-ru="Ваша страна">Your country</label>
+      <select id="country"><option>Pakistan</option><option>India</option><option>Bangladesh</option><option>Sri Lanka</option><option>Nepal</option></select></div>
+    <div><label data-en="Job type" data-ru="Тип работы">Job type</label>
+      <select id="job"><option>Construction</option><option>Textile and garment</option><option>Manufacturing</option><option>Agriculture</option><option>Food processing</option><option>Transport and logistics</option></select></div>
+    <div><label data-en="Message (age, experience, skills)" data-ru="Сообщение (возраст, опыт, навыки)">Message (age, experience, skills)</label><textarea id="msg"></textarea></div>
+    <button class="btn teal-b" type="submit" data-en="Send via WhatsApp" data-ru="Отправить через WhatsApp">Send via WhatsApp</button>
+  </form>
+</div></section>
+
+<div class="cta">
+  <h2 data-en="Ready to start?" data-ru="Готовы начать?">Ready to start?</h2>
+  <p data-en="Message us on WhatsApp for details about your country and job." data-ru="Напишите нам в WhatsApp, чтобы узнать подробности для вашей страны и вакансии.">Message us on WhatsApp for details about your country and job.</p>
+  <a class="btn gold-b" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Contact us on WhatsApp" data-ru="Написать в WhatsApp">Contact us on WhatsApp</a>
+</div>
+</main>
+
+<footer><div class="wrap foot">
+  <div><div class="wm">KYRGYZ<b>WORK</b></div>
+    <p data-en="Connecting Global Talent with Kyrgyzstan." data-ru="Соединяем мировые таланты с Кыргызстаном.">Connecting Global Talent with Kyrgyzstan.</p></div>
+  <div><h4 data-en="Quick links" data-ru="Ссылки">Quick links</h4>
+    <a href="#about" data-en="About" data-ru="О нас">About</a><a href="#services" data-en="Services" data-ru="Услуги">Services</a>
+    <a href="#employers" data-en="For Employers" data-ru="Работодателям">For Employers</a><a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a></div>
+  <div><h4 data-en="Contact" data-ru="Контакты">Contact</h4>
+    <a href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp: +996 555 746 401</a><a href="#top">kyrgyzwork.kg</a></div>
+</div>
+<div class="wrap copy">© <span id="yr"></span> KYRGYZ WORK. <span data-en="All rights reserved." data-ru="Все права защищены.">All rights reserved.</span></div></footer>
+
+<a class="wa" href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp</a>
+
+<script>
+const WA="996555746401";
+function setLang(l){
+  localStorage.setItem("kw_lang",l);document.documentElement.lang=l;
+  document.querySelectorAll("[data-en]").forEach(e=>{const t=e.getAttribute("data-"+l);if(t)e.textContent=t});
+  document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.l===l));
+}
+document.querySelectorAll(".lang button").forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+document.getElementById("burger").onclick=()=>document.getElementById("links").classList.toggle("open");
+document.querySelectorAll(".links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+const v=id=>document.getElementById(id).value.trim();
+const send=t=>window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank");
+document.getElementById("jobForm").onsubmit=e=>{e.preventDefault();
+  send("Hello KYRGYZ WORK, I want a job in Kyrgyzstan.\nName: "+v("name")+"\nPhone: "+v("phone")+"\nCountry: "+v("country")+"\nJob type: "+v("job")+"\nMessage: "+v("msg"))};
+document.getElementById("empForm").onsubmit=e=>{e.preventDefault();
+  send("Hello KYRGYZ WORK, we need workers.\nCompany: "+v("e_company")+"\nContact: "+v("e_person")+"\nPhone: "+v("e_phone")+"\nIndustry: "+v("e_ind")+"\nWorkers: "+v("e_count")+"\nPreferred country: "+v("e_nat")+"\nDetails: "+v("e_msg"))};
+document.getElementById("yr").textContent=new Date().getFullYear();
+setLang(localStorage.getItem("kw_lang")||"en");
+</script>
+</body>
+</html>
