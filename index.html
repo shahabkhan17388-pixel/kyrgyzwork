@@ -100,7 +100,194 @@ footer .wm{color:#fff;margin-bottom:10px}
 .links.open{display:flex}
 .grid2,.fg{grid-template-columns:1fr}.pillars{grid-template-columns:repeat(2,1fr)}
 .steps{grid-template-columns:repeat(2,1fr)}.foot{grid-template-columns:1fr}}
-@media(max-width:600px){.pad{padding:56px 0}.steps{grid-template-columns:1fr}.wm{font-size:1.05rem}}
+@media(max-width:600px){.pad{padding:56px 0}.steps{grid-template-columns:1fr}.wm{font-size:1.05rem}}/* KYRGYZ WORK - Immigration calculator */
+.kw-calc-section {
+  background: #f3f6fb;
+  padding: 70px 20px;
+}
+.kw-calc-wrap {
+  max-width: 1050px;
+  margin: auto;
+}
+.kw-calc-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.kw-calc-heading h2 {
+  color: #0b2a5b;
+  font-size: clamp(27px, 4vw, 38px);
+  margin: 0 0 12px;
+}
+.kw-calc-heading p {
+  color: #64748b;
+  max-width: 680px;
+  margin: auto;
+  line-height: 1.7;
+}
+.kw-calc-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: clamp(18px, 4vw, 32px);
+  box-shadow: 0 12px 35px rgba(11,42,91,.08);
+}
+.kw-calc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+.kw-calc-top h3 {
+  color: #0b2a5b;
+  margin: 0;
+}
+.kw-calc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 16px;
+}
+.kw-field label {
+  display: block;
+  font-weight: 700;
+  color: #24364b;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+.kw-field input {
+  width: 100%;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: #fff;
+  color: #0f172a;
+  font: inherit;
+  box-sizing: border-box;
+}
+.kw-field input:focus {
+  outline: 2px solid #0fa3a3;
+  border-color: #0fa3a3;
+}
+.kw-person {
+  border: 1px solid #e2e8f0;
+  border-radius: 13px;
+  padding: 18px;
+  margin: 15px 0;
+  background: #fbfdff;
+}
+.kw-person-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.kw-person-head strong {
+  color: #0b2a5b;
+}
+.kw-remove {
+  background: transparent;
+  border: 0;
+  color: #b42318;
+  cursor: pointer;
+  font-weight: 700;
+}
+.kw-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  color: #334155;
+  font-size: 14px;
+}
+.kw-check input {
+  width: 17px;
+  height: 17px;
+  accent-color: #0fa3a3;
+}
+.kw-calc-btn {
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  font: inherit;
+}
+.kw-add {
+  color: #0b2a5b;
+  background: #e8eef8;
+}
+.kw-calculate {
+  color: white;
+  background: #0b2a5b;
+  width: 100%;
+  margin-top: 20px;
+  min-height: 50px;
+}
+.kw-calculate:hover {
+  background: #0fa3a3;
+}
+.kw-result {
+  display: none;
+  margin-top: 25px;
+  border-radius: 14px;
+  border: 1px solid #b7d9d9;
+  background: #f0fbfa;
+  padding: 20px;
+}
+.kw-result h3 {
+  color: #0b2a5b;
+  margin: 0 0 14px;
+}
+.kw-result-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #d8e9e8;
+  color: #334155;
+}
+.kw-result-row strong {
+  color: #0b2a5b;
+  text-align: right;
+}
+.kw-total {
+  font-size: 21px;
+  font-weight: 800;
+  color: #0b2a5b;
+  border-bottom: 0;
+  padding-top: 17px;
+}
+.kw-disclaimer {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.65;
+  margin-top: 17px;
+}
+.kw-whatsapp {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  background: #168c53;
+  padding: 14px;
+  border-radius: 9px;
+  font-weight: 700;
+  margin-top: 17px;
+}
+.kw-rate-note {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 15px;
+  line-height: 1.6;
+}
+@media(max-width:650px) {
+  .kw-calc-grid { grid-template-columns: 1fr; }
+  .kw-result-row { font-size: 14px; }
+  .kw-calc-section { padding: 48px 14px; }
+}
 </style>
 </head>
 <body>
@@ -208,7 +395,112 @@ footer .wm{color:#fff;margin-bottom:10px}
   </div>
 </div></section>
 
-<section class="pad alt"><div class="wrap fg">
+<section class="kw-calc-section" id="immigration-calculator">
+  <div class="kw-calc-wrap">
+
+    <div class="kw-calc-heading">
+      <h2 data-en="Overstay Fine & Exit Visa Calculator"
+          data-ru="Калькулятор штрафа и выездной визы">
+        Overstay Fine & Exit Visa Calculator
+      </h2>
+      <p data-en="Estimate possible government charges for an overstay case in Kyrgyzstan. Add one or several applicants and receive a clear cost breakdown."
+         data-ru="Рассчитайте возможные государственные сборы за нарушение срока пребывания в Кыргызстане. Добавьте одного или нескольких заявителей и получите подробный расчёт.">
+        Estimate possible government charges for an overstay case in Kyrgyzstan. Add one or several applicants and receive a clear cost breakdown.
+      </p>
+    </div>
+
+    <div class="kw-calc-card">
+      <div class="kw-calc-top">
+        <h3 data-en="Applicant details" data-ru="Данные заявителей">Applicant details</h3>
+        <button type="button" class="kw-calc-btn kw-add" id="kwAddPerson">
+          + <span data-en="Add applicant" data-ru="Добавить заявителя">Add applicant</span>
+        </button>
+      </div>
+
+      <div class="kw-field" style="max-width:320px;margin-bottom:20px">
+        <label for="kwCalcDate"
+          data-en="Calculate up to date"
+          data-ru="Рассчитать по дату">
+          Calculate up to date
+        </label>
+        <input type="date" id="kwCalcDate">
+      </div>
+
+      <div id="kwApplicants">
+        <div class="kw-person" data-person>
+          <div class="kw-person-head">
+            <strong data-person-title>Applicant 1</strong>
+            <button type="button" class="kw-remove" data-remove style="display:none"
+              data-en="Remove" data-ru="Удалить">Remove</button>
+          </div>
+
+          <div class="kw-calc-grid">
+            <div class="kw-field">
+              <label data-en="Applicant name" data-ru="Имя заявителя">Applicant name</label>
+              <input type="text" data-name placeholder="Full name">
+            </div>
+            <div class="kw-field">
+              <label data-en="Last lawful stay date"
+                data-ru="Последний день законного пребывания">
+                Last lawful stay date
+              </label>
+              <input type="date" data-expiry required>
+            </div>
+          </div>
+
+          <label class="kw-check">
+            <input type="checkbox" data-exit checked>
+            <span data-en="Include estimated exit visa fee"
+              data-ru="Включить ориентировочную стоимость выездной визы">
+              Include estimated exit visa fee
+            </span>
+          </label>
+        </div>
+      </div>
+
+      <div class="kw-calc-grid" style="margin-top:20px">
+        <div class="kw-field">
+          <label for="kwServiceFee"
+            data-en="Your service fee per applicant (KGS)"
+            data-ru="Стоимость вашей услуги за заявителя (сом)">
+            Your service fee per applicant (KGS)
+          </label>
+          <input type="number" id="kwServiceFee" min="0" step="1" value="0">
+        </div>
+      </div>
+
+      <button type="button" class="kw-calc-btn kw-calculate" id="kwCalculate"
+        data-en="Calculate estimated costs"
+        data-ru="Рассчитать примерную стоимость">
+        Calculate estimated costs
+      </button>
+
+      <div class="kw-result" id="kwResult" aria-live="polite">
+        <h3 data-en="Estimated quotation"
+          data-ru="Предварительный расчёт">
+          Estimated quotation
+        </h3>
+        <div id="kwBreakdown"></div>
+        <div class="kw-disclaimer"
+          data-en="Important: This is an informational estimate, not an official assessment or guarantee. The competent Kyrgyz authorities determine the actual violation period, applicable fine, and whether an exit visa is required. The calculation assumes that the date entered is the final day of lawful stay. Other valid documents or extensions may change the result. Government tariffs may change; confirm the current amount before payment."
+          data-ru="Важно: Это информационный предварительный расчёт, а не официальное решение или гарантия. Компетентные органы Кыргызстана определяют фактический период нарушения, размер штрафа и необходимость выездной визы. Расчёт предполагает, что указанная дата является последним днём законного пребывания. Другие действующие документы или продления могут изменить результат. Государственные тарифы могут изменяться; уточните актуальную сумму перед оплатой.">
+          Important: This is an informational estimate, not an official assessment or guarantee. The competent Kyrgyz authorities determine the actual violation period, applicable fine, and whether an exit visa is required. The calculation assumes that the date entered is the final day of lawful stay. Other valid documents or extensions may change the result. Government tariffs may change; confirm the current amount before payment.
+        </div>
+        <a class="kw-whatsapp" id="kwWhatsApp" href="#" target="_blank" rel="noopener"
+          data-en="Send quotation on WhatsApp"
+          data-ru="Отправить расчёт в WhatsApp">
+          Send quotation on WhatsApp
+        </a>
+      </div>
+
+      <div class="kw-rate-note"
+        data-en="Indicative rates: Article 431 of the Kyrgyz Code of Offences and Cabinet Resolution No. 312 of 30 April 2026. Exit-visa rates shown are subject to the provisional rules currently scheduled to run until 31 December 2026."
+        data-ru="Ориентировочные тарифы: статья 431 Кодекса Кыргызской Республики о правонарушениях и постановление Кабинета Министров № 312 от 30 апреля 2026 года. Указанные тарифы выездной визы основаны на временных правилах, срок действия которых установлен до 31 декабря 2026 года.">
+        Indicative rates: Article 431 of the Kyrgyz Code of Offences and Cabinet Resolution No. 312 of 30 April 2026. Exit-visa rates shown are subject to the provisional rules currently scheduled to run until 31 December 2026.
+      </div>
+    </div>
+  </div>
+</section><section class="pad alt"><div class="wrap fg">
   <div class="fees"><span class="eyebrow" style="color:#FFD27A" data-en="Transparent pricing" data-ru="Прозрачные условия">Transparent pricing</span>
     <h2 data-en="Fees and payments" data-ru="Сборы и оплата">Fees and payments</h2>
     <ul>
@@ -395,6 +687,266 @@ document.getElementById("empForm").onsubmit=e=>{e.preventDefault();
   send("Hello KYRGYZ WORK, we need workers.\nCompany: "+v("e_company")+"\nContact: "+v("e_person")+"\nPhone: "+v("e_phone")+"\nIndustry: "+v("e_ind")+"\nWorkers: "+v("e_count")+"\nPreferred country: "+v("e_nat")+"\nDetails: "+v("e_msg"))};
 document.getElementById("yr").textContent=new Date().getFullYear();
 setLang(localStorage.getItem("kw_lang")||"en");
-</script>
+/* KYRGYZ WORK - Overstay calculator */
+(() => {
+  const WA_NUMBER = "996555746401";
+  const applicantsBox = document.getElementById("kwApplicants");
+  const resultBox = document.getElementById("kwResult");
+  const breakdownBox = document.getElementById("kwBreakdown");
+  const calcDateInput = document.getElementById("kwCalcDate");
+
+  if (!applicantsBox || !resultBox) return;
+
+  const today = new Date();
+  const localToday = [
+    today.getFullYear(),
+    String(today.getMonth() + 1).padStart(2, "0"),
+    String(today.getDate()).padStart(2, "0")
+  ].join("-");
+  calcDateInput.value = localToday;
+
+  const lang = () => document.documentElement.lang === "ru" ? "ru" : "en";
+  const t = (en, ru) => lang() === "ru" ? ru : en;
+
+  const money = value =>
+    new Intl.NumberFormat(lang() === "ru" ? "ru-RU" : "en-US")
+      .format(value) + " KGS";
+
+  // Parse dates as UTC to avoid timezone-related date shifts.
+  const parseDate = value => {
+    if (!value) return null;
+    const parts = value.split("-").map(Number);
+    if (parts.length !== 3 || parts.some(n => !n)) return null;
+    return new Date(Date.UTC(parts[0], parts[1] - 1, parts[2]));
+  };
+
+  const addDays = (date, days) => {
+    const d = new Date(date);
+    d.setUTCDate(d.getUTCDate() + days);
+    return d;
+  };
+
+  // Count completed calendar months, not approximate 30-day periods.
+  const completedMonths = (start, end) => {
+    let months =
+      (end.getUTCFullYear() - start.getUTCFullYear()) * 12 +
+      end.getUTCMonth() - start.getUTCMonth();
+
+    const anniversary = new Date(start);
+    anniversary.setUTCMonth(anniversary.getUTCMonth() + months);
+
+    if (anniversary > end) months--;
+    return Math.max(0, months);
+  };
+
+  const protocolFine = months => {
+    if (months < 1) return 5500;
+    if (months < 3) return 10000;
+    if (months < 6) return 15000;
+    if (months < 12) return 17500;
+    return 20000;
+  };
+
+  const exitVisaFee = months => {
+    if (months < 3) return 17500;
+    if (months < 12) return 96250;
+    if (months < 24) return 192500;
+
+    // Estimate one additional tariff for each commenced year after 2 years.
+    const extraYears = Math.ceil((months - 24) / 12);
+    return 192500 + (extraYears * 96250);
+  };
+
+  const escapeHTML = value =>
+    String(value).replace(/[&<>"']/g, char => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[char]);
+
+  function updateApplicantTitles() {
+    const people = [...applicantsBox.querySelectorAll("[data-person]")];
+
+    people.forEach((person, index) => {
+      person.querySelector("[data-person-title]").textContent =
+        t("Applicant", "Заявитель") + " " + (index + 1);
+
+      const remove = person.querySelector("[data-remove]");
+      remove.style.display = people.length > 1 ? "inline" : "none";
+    });
+  }
+
+  document.getElementById("kwAddPerson").addEventListener("click", () => {
+    const first = applicantsBox.querySelector("[data-person]");
+    const copy = first.cloneNode(true);
+
+    copy.querySelector("[data-name]").value = "";
+    copy.querySelector("[data-expiry]").value = "";
+    copy.querySelector("[data-exit]").checked = true;
+
+    applicantsBox.appendChild(copy);
+    updateApplicantTitles();
+    resultBox.style.display = "none";
+  });
+
+  applicantsBox.addEventListener("click", event => {
+    const removeButton = event.target.closest("[data-remove]");
+    if (!removeButton) return;
+
+    const person = removeButton.closest("[data-person]");
+    if (applicantsBox.querySelectorAll("[data-person]").length > 1) {
+      person.remove();
+      updateApplicantTitles();
+      resultBox.style.display = "none";
+    }
+  });
+
+  document.getElementById("kwCalculate").addEventListener("click", () => {
+    const calculationDate = parseDate(calcDateInput.value);
+    const people = [...applicantsBox.querySelectorAll("[data-person]")];
+
+    if (!calculationDate) {
+      alert(t("Please select a calculation date.",
+               "Пожалуйста, выберите дату расчёта."));
+      return;
+    }
+
+    const serviceFee = Math.max(
+      0,
+      Number(document.getElementById("kwServiceFee").value) || 0
+    );
+
+    let governmentTotal = 0;
+    let serviceTotal = 0;
+    let grandTotal = 0;
+    const messages = [];
+    const html = [];
+
+    for (let index = 0; index < people.length; index++) {
+      const person = people[index];
+      const name = person.querySelector("[data-name]").value.trim() ||
+        (t("Applicant", "Заявитель") + " " + (index + 1));
+
+      const expiry = parseDate(person.querySelector("[data-expiry]").value);
+      const includeExit = person.querySelector("[data-exit]").checked;
+
+      if (!expiry) {
+        alert(
+          t("Please enter the last lawful stay date for every applicant.",
+            "Укажите последний день законного пребывания для каждого заявителя.")
+        );
+        person.querySelector("[data-expiry]").focus();
+        return;
+      }
+
+      if (expiry > calculationDate) {
+        alert(
+          t("The last lawful stay date cannot be after the calculation date.",
+            "Последний день законного пребывания не может быть позже даты расчёта.")
+        );
+        person.querySelector("[data-expiry]").focus();
+        return;
+      }
+
+      const overstayStart = addDays(expiry, 1);
+      const isOverstay = calculationDate >= overstayStart;
+
+      let months = 0;
+      let fine = 0;
+      let exitFee = 0;
+
+      if (isOverstay) {
+        months = completedMonths(overstayStart, calculationDate);
+        fine = protocolFine(months);
+        if (includeExit) exitFee = exitVisaFee(months);
+      }
+
+      const personService = serviceFee;
+      const personGovernment = fine + exitFee;
+      const personTotal = personGovernment + personService;
+
+      governmentTotal += personGovernment;
+      serviceTotal += personService;
+      grandTotal += personTotal;
+
+      const durationText = isOverstay
+        ? (months + " " + t("completed month(s)", "полных месяцев"))
+        : t("No overstay calculated", "Просрочка не рассчитана");
+
+      html.push(`
+        <div style="padding:15px 0;border-bottom:1px solid #d8e9e8">
+          <strong style="color:#0b2a5b">${escapeHTML(name)}</strong>
+          <div class="kw-result-row">
+            <span>${t("Overstay period", "Период просрочки")}</span>
+            <strong>${durationText}</strong>
+          </div>
+          <div class="kw-result-row">
+            <span>${t("Estimated administrative fine", "Предполагаемый административный штраф")}</span>
+            <strong>${money(fine)}</strong>
+          </div>
+          <div class="kw-result-row">
+            <span>${t("Estimated exit visa fee", "Предполагаемая стоимость выездной визы")}</span>
+            <strong>${money(exitFee)}</strong>
+          </div>
+          <div class="kw-result-row">
+            <span>${t("Service fee", "Стоимость услуги")}</span>
+            <strong>${money(personService)}</strong>
+          </div>
+          <div class="kw-result-row">
+            <span><b>${t("Applicant subtotal", "Итого по заявителю")}</b></span>
+            <strong>${money(personTotal)}</strong>
+          </div>
+        </div>
+      `);
+
+      messages.push(
+        `${name}: ${durationText}; ` +
+        `${t("Fine", "Штраф")}: ${money(fine)}; ` +
+        `${t("Exit visa", "Выездная виза")}: ${money(exitFee)}; ` +
+        `${t("Service", "Услуга")}: ${money(personService)}; ` +
+        `${t("Subtotal", "Итого")}: ${money(personTotal)}`
+      );
+    }
+
+    html.push(`
+      <div style="margin-top:15px">
+        <div class="kw-result-row">
+          <span>${t("Government charges (estimate)", "Государственные сборы (оценка)")}</span>
+          <strong>${money(governmentTotal)}</strong>
+        </div>
+        <div class="kw-result-row">
+          <span>${t("Total service fees", "Общая стоимость услуг")}</span>
+          <strong>${money(serviceTotal)}</strong>
+        </div>
+        <div class="kw-result-row kw-total">
+          <span>${t("Estimated total", "Предварительный итог")}</span>
+          <strong>${money(grandTotal)}</strong>
+        </div>
+      </div>
+    `);
+
+    breakdownBox.innerHTML = html.join("");
+    resultBox.style.display = "block";
+
+    const message =
+      `KYRGYZ WORK - ${t("Overstay cost estimate", "Расчёт расходов при просрочке")}\n\n` +
+      `Date: ${calcDateInput.value}\n` +
+      messages.join("\n\n") +
+      `\n\n${t("Government charges", "Государственные сборы")}: ${money(governmentTotal)}` +
+      `\n${t("Service fees", "Стоимость услуг")}: ${money(serviceTotal)}` +
+      `\n${t("Estimated total", "Предварительный итог")}: ${money(grandTotal)}` +
+      `\n\n${t("This is an estimate only, subject to official confirmation.",
+             "Это предварительный расчёт, подлежащий официальному подтверждению.")}`;
+
+    document.getElementById("kwWhatsApp").href =
+      "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(message);
+
+    resultBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  updateApplicantTitles();
+})();</script>
 </body>
 </html>
