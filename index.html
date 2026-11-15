@@ -396,5 +396,123 @@ document.getElementById("empForm").onsubmit=e=>{e.preventDefault();
 document.getElementById("yr").textContent=new Date().getFullYear();
 setLang(localStorage.getItem("kw_lang")||"en");
 </script>
+
+<script>
+(function () {
+  "use strict";
+
+  // Reverse Windows-1252 characters back to their original bytes.
+  const cp1252 = {
+    "\u20AC": 0x80, "\u201A": 0x82, "\u0192": 0x83,
+    "\u201E": 0x84, "\u2026": 0x85, "\u2020": 0x86,
+    "\u2021": 0x87, "\u02C6": 0x88, "\u2030": 0x89,
+    "\u0160": 0x8A, "\u2039": 0x8B, "\u0152": 0x8C,
+    "\u017D": 0x8E, "\u2018": 0x91, "\u2019": 0x92,
+    "\u201C": 0x93, "\u201D": 0x94, "\u2022": 0x95,
+    "\u2013": 0x96, "\u2014": 0x97, "\u02DC": 0x98,
+    "\u2122": 0x99, "\u0161": 0x9A, "\u203A": 0x9B,
+    "\u0153": 0x9C, "\u017E": 0x9E, "\u0178": 0x9F
+  };
+
+  function repair(value) {
+    if (!/[ÐÑÃÂâð]/.test(value)) return value;
+
+    let current = value;
+
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const bytes = [];
+
+        for (const char of current) {
+          const code = char.codePointAt(0);
+
+          if (code <= 255) {
+            bytes.push(code);
+          } else if (Object.prototype.hasOwnProperty.call(cp1252, char)) {
+            bytes.push(cp1252[char]);
+          } else {
+            return current;
+          }
+        }
+
+        const decoded = new TextDecoder("utf-8", {
+          fatal: true
+        }).decode(new Uint8Array(bytes));
+
+        if (decoded === current) break;
+        current = decoded;
+      } catch (error) {
+        break;
+      }
+    }
+
+    return current;
+  }
+
+  function repairNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const fixed = repair(node.nodeValue);
+      if (fixed !== node.nodeValue) node.nodeValue = fixed;
+      return;
+    }
+
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+    if (["SCRIPT", "STYLE"].includes(node.tagName)) return;
+
+    for (const attr of Array.from(node.attributes)) {
+      if (
+        ["id", "class", "style", "href", "src", "srcset",
+         "action", "method", "nonce", "integrity"].includes(attr.name) ||
+        attr.name.startsWith("on")
+      ) continue;
+
+      const fixed = repair(attr.value);
+
+      if (fixed !== attr.value) {
+        node.setAttribute(attr.name, fixed);
+      }
+    }
+
+    for (const child of Array.from(node.childNodes)) {
+      repairNode(child);
+    }
+  }
+
+  function repairWebsite() {
+    repairNode(document.body);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", repairWebsite);
+  } else {
+    repairWebsite();
+  }
+
+  // Also repair content added or changed later.
+  const observer = new MutationObserver(function (mutations) {
+    for (const mutation of mutations) {
+      if (mutation.type === "characterData") {
+        repairNode(mutation.target);
+      }
+
+      for (const node of mutation.addedNodes) {
+        repairNode(node);
+      }
+
+      if (mutation.type === "attributes") {
+        repairNode(mutation.target);
+      }
+    }
+  });
+
+  observer.observe(document.documentElement, {
+    subtree: true,
+    childList: true,
+    characterData: true,
+    attributes: true
+  });
+})();
+</script>
 </body>
 </html>
