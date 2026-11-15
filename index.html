@@ -514,5 +514,284 @@ setLang(localStorage.getItem("kw_lang")||"en");
   });
 })();
 </script>
+  
+<!-- KYRGYZ WORK: OVERSTAY CALCULATORS -->
+<section id="kw-overstay-calculators">
+<style>
+#kw-overstay-calculators {
+  background:#071b2d;color:#fff;padding:55px 20px;
+  font-family:Arial,sans-serif;
+}
+#kw-overstay-calculators .kw-inner {
+  max-width:900px;margin:auto;
+}
+#kw-overstay-calculators h2 {
+  text-align:center;font-size:30px;margin:0 0 12px;
+}
+#kw-overstay-calculators .kw-intro {
+  text-align:center;color:#c4d2dc;margin-bottom:28px;
+}
+#kw-overstay-calculators .kw-panel {
+  background:#102b41;border:1px solid #29475d;
+  border-radius:15px;padding:24px;margin-bottom:20px;
+}
+#kw-overstay-calculators label {
+  display:block;font-weight:bold;margin-bottom:10px;
+}
+#kw-overstay-calculators input {
+  width:100%;box-sizing:border-box;padding:14px;
+  border-radius:8px;border:1px solid #8ba2b4;
+  background:#fff;color:#142333;font-size:16px;
+}
+#kw-overstay-calculators button {
+  width:100%;padding:15px;margin-top:15px;
+  background:#d8ad57;color:#102236;border:0;
+  border-radius:8px;font-size:16px;font-weight:bold;
+  cursor:pointer;
+}
+#kw-overstay-calculators .kw-results {
+  display:none;margin-top:20px;padding:18px;
+  background:#071b2d;border-radius:10px;
+}
+#kw-overstay-calculators .kw-result-row {
+  display:flex;justify-content:space-between;gap:12px;
+  padding:12px 0;border-bottom:1px solid #29475d;
+}
+#kw-overstay-calculators .kw-result-row:last-child {
+  border-bottom:0;
+}
+#kw-overstay-calculators .kw-amount {
+  color:#ffd27a;font-weight:bold;text-align:right;
+}
+#kw-overstay-calculators .kw-note {
+  color:#c4d2dc;font-size:13px;line-height:1.6;
+  margin-top:15px;
+}
+#kw-overstay-calculators .kw-warning {
+  color:#ffd27a;font-size:13px;line-height:1.6;
+  margin-top:20px;text-align:center;
+}
+@media(max-width:600px) {
+  #kw-overstay-calculators {padding:38px 15px;}
+  #kw-overstay-calculators h2 {font-size:24px;}
+  #kw-overstay-calculators .kw-panel {padding:17px;}
+}
+</style>
+
+<div class="kw-inner">
+  <h2 data-en="Overstay Cost Calculator"
+      data-ru="Калькулятор расходов при просрочке пребывания">
+    Overstay Cost Calculator
+  </h2>
+  <p class="kw-intro"
+     data-en="Calculate your estimated protocol fine and exit visa fee."
+     data-ru="Рассчитайте предполагаемый штраф и стоимость выездной визы.">
+    Calculate your estimated protocol fine and exit visa fee.
+  </p>
+
+  <div class="kw-panel">
+    <label for="kw-expiry"
+      data-en="Date your legal stay expired"
+      data-ru="Дата окончания законного срока пребывания">
+      Date your legal stay expired
+    </label>
+
+    <input type="date" id="kw-expiry" required>
+
+    <button type="button" id="kw-calculate"
+      data-en="Calculate both fees"
+      data-ru="Рассчитать обе суммы">
+      Calculate both fees
+    </button>
+
+    <div id="kw-error" class="kw-note" role="alert"></div>
+
+    <div class="kw-results" id="kw-results" aria-live="polite">
+      <h3 data-en="Your estimated results"
+          data-ru="Предварительный расчёт">
+        Your estimated results
+      </h3>
+
+      <div class="kw-result-row">
+        <span data-en="Overstay duration"
+              data-ru="Продолжительность просрочки">
+          Overstay duration
+        </span>
+        <strong id="kw-duration" class="kw-amount"></strong>
+      </div>
+
+      <div class="kw-result-row">
+        <span data-en="Protocol fine"
+              data-ru="Штраф по протоколу">
+          Protocol fine
+        </span>
+        <strong id="kw-protocol" class="kw-amount"></strong>
+      </div>
+
+      <div class="kw-result-row">
+        <span data-en="Exit visa government fee"
+              data-ru="Государственный сбор за выездную визу">
+          Exit visa government fee
+        </span>
+        <strong id="kw-exit" class="kw-amount"></strong>
+      </div>
+
+      <div class="kw-result-row">
+        <strong data-en="Estimated combined government charges"
+                data-ru="Предполагаемая общая сумма государственных сборов">
+          Estimated combined government charges
+        </strong>
+        <strong id="kw-total" class="kw-amount"></strong>
+      </div>
+
+      <p class="kw-note"
+         data-en="These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is separate."
+         data-ru="Это отдельные платежи. Штраф назначается уполномоченным органом. Сбор за выездную визу оплачивается отдельно.">
+        These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is separate.
+      </p>
+    </div>
+  </div>
+
+  <p class="kw-warning"
+     data-en="Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment."
+     data-ru="Важно: это предварительный расчёт, а не официальное решение. Тарифы на выездную визу по постановлению № 312 действуют временно до 31 декабря 2026 года. Перед оплатой уточните сумму в уполномоченных органах.">
+    Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment.
+  </p>
+</div>
+
+<script>
+(function () {
+  const expiryInput = document.getElementById("kw-expiry");
+  const calculateButton = document.getElementById("kw-calculate");
+  const results = document.getElementById("kw-results");
+  const error = document.getElementById("kw-error");
+
+  if (!expiryInput || !calculateButton) return;
+
+  function localToday() {
+    const d = new Date();
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+
+  function addDays(date, days) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return d;
+  }
+
+  function addMonths(date, months) {
+    const year = date.getFullYear();
+    const month = date.getMonth() + months;
+    const day = date.getDate();
+    const first = new Date(year, month, 1);
+    const lastDay = new Date(
+      first.getFullYear(), first.getMonth() + 1, 0
+    ).getDate();
+
+    return new Date(
+      first.getFullYear(),
+      first.getMonth(),
+      Math.min(day, lastDay)
+    );
+  }
+
+  function money(value) {
+    return value.toLocaleString("en-US");
+  }
+
+  function calculate() {
+    error.textContent = "";
+    results.style.display = "none";
+
+    if (!expiryInput.value) {
+      error.textContent = "Please select the expiry date / Пожалуйста, выберите дату.";
+      return;
+    }
+
+    const parts = expiryInput.value.split("-").map(Number);
+    const expiry = new Date(parts[0], parts[1] - 1, parts[2]);
+    const today = localToday();
+
+    if (expiry > today) {
+      error.textContent = "The expiry date cannot be in the future. / Дата не может быть в будущем.";
+      return;
+    }
+
+    // Overstay begins on the day after the last legal day.
+    const start = addDays(expiry, 1);
+
+    if (start > today) {
+      error.textContent = "No overstay has started yet. / Просрочка ещё не началась.";
+      return;
+    }
+
+    const oneMonth = addMonths(start, 1);
+    const threeMonths = addMonths(start, 3);
+    const sixMonths = addMonths(start, 6);
+    const oneYear = addMonths(start, 12);
+    const twoYears = addMonths(start, 24);
+
+    let protocol = 5500;
+
+    if (today <= oneMonth) {
+      protocol = 5500;
+    } else if (today <= threeMonths) {
+      protocol = 10000;
+    } else if (today <= sixMonths) {
+      protocol = 15000;
+    } else if (today <= oneYear) {
+      protocol = 17500;
+    } else {
+      protocol = 20000;
+    }
+
+    let exitUSD = 200;
+    let exitKGS = 17500;
+
+    if (today <= threeMonths) {
+      exitUSD = 200;
+      exitKGS = 17500;
+    } else if (today <= oneYear) {
+      exitUSD = 1100;
+      exitKGS = 96250;
+    } else if (today <= twoYears) {
+      exitUSD = 2200;
+      exitKGS = 192500;
+    } else {
+      let extraYears = 0;
+      let boundary = twoYears;
+
+      while (today > boundary && extraYears < 100) {
+        extraYears++;
+        boundary = addMonths(start, 24 + extraYears * 12);
+      }
+
+      exitUSD = 2200 + extraYears * 1100;
+      exitKGS = 192500 + extraYears * 96250;
+    }
+
+    const days = Math.floor((today - start) / 86400000) + 1;
+
+    document.getElementById("kw-duration").textContent =
+      days + " days / дней";
+
+    document.getElementById("kw-protocol").textContent =
+      money(protocol) + " KGS";
+
+    document.getElementById("kw-exit").textContent =
+      "$" + money(exitUSD) + " / " + money(exitKGS) + " KGS";
+
+    document.getElementById("kw-total").textContent =
+      money(protocol + exitKGS) + " KGS + $" + money(exitUSD);
+
+    results.style.display = "block";
+  }
+
+  calculateButton.addEventListener("click", calculate);
+})();
+</script>
+</section>
+<!-- END KYRGYZ WORK CALCULATORS -->
+
 </body>
 </html>
