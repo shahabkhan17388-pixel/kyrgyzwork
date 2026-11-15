@@ -3,875 +3,744 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KYRGYZ WORK | Connecting Global Talent with Kyrgyzstan</title>
-<meta name="description" content="Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal. Reliable workers for Kyrgyz employers.">
+<title>KYRGYZ WORK | Jobs in Kyrgyzstan & Workers for Kyrgyz Employers</title>
+<meta name="description" content="Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal. Reliable workers for Kyrgyz employers. Free overstay fine calculator.">
 <meta name="theme-color" content="#0B2A5B">
+<meta property="og:title" content="KYRGYZ WORK | Connecting Global Talent with Kyrgyzstan">
+<meta property="og:description" content="Jobs, work visa support, flights and accommodation. Free overstay fine calculator.">
+<meta property="og:type" content="website">
 <link rel="icon" href="Logo.PNG">
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add("js");</script>
 <style>
-/* ============ 1. Tokens & reset ============ */
 :root{
-  --navy:#0B2A5B; --navy-d:#071C3D; --navy-l:#13386F;
-  --teal:#0FA3A3; --teal-d:#0B8484;
-  --gold:#E8A317; --gold-d:#C98A0C;
-  --light:#F3F6FB; --line:#DCE3EE;
-  --text:#1F2937; --muted:#5B6575;
-  --radius:18px; --shadow:0 6px 22px rgba(11,42,91,.08); --shadow-lg:0 24px 50px rgba(11,42,91,.18);
-  --header-h:72px;
+  --navy:#0B2A5B;--navy-d:#071C3D;--navy-l:#13386F;--teal:#0FA3A3;--gold:#E8A317;--gold-l:#FFD27A;
+  --light:#F3F6FB;--line:#DCE3EE;--text:#1F2937;--muted:#5B6575;--white:#fff;
+  --r:18px;--sh:0 10px 30px rgba(11,42,91,.10);--sh-lg:0 30px 60px rgba(7,28,61,.28)
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;background:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);line-height:1.65;overflow-x:hidden;background:#fff}
 img{max-width:100%;display:block}
-a{color:var(--teal-d);text-decoration:none}
-ul{list-style:none}
-section[id]{scroll-margin-top:calc(var(--header-h) + 8px)}
-:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
-
-/* ============ 2. Layout & typography ============ */
+a{color:var(--teal);text-decoration:none}
+button{font:inherit}
+section{scroll-margin-top:90px}
+:focus-visible{outline:3px solid rgba(15,163,163,.45);outline-offset:2px}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
-.pad{padding:84px 0}
-.alt{background:var(--light)}
-.center{text-align:center}
-h1,h2,h3{color:var(--navy);line-height:1.2}
-h1{font-size:clamp(2.1rem,4.6vw,3.4rem);margin-bottom:18px}
-h2{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:12px}
-h3{font-size:1.12rem;margin-bottom:8px}
-.eyebrow{display:block;color:var(--gold-d);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:.8rem;margin-bottom:8px}
+.pad{padding:90px 0}.alt{background:var(--light)}.center{text-align:center}
+h1,h2,h3,h4{color:var(--navy);line-height:1.2;letter-spacing:-.01em}
+h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;margin-bottom:18px}
+h2{font-size:clamp(1.75rem,3.2vw,2.5rem);font-weight:800;margin-bottom:12px}
+h3{font-size:1.14rem;font-weight:700;margin-bottom:8px}
+.eyebrow{display:inline-block;color:#B97D06;background:rgba(232,163,23,.14);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.74rem;padding:6px 14px;border-radius:30px;margin-bottom:14px}
+.eyebrow.t{color:var(--teal);background:rgba(15,163,163,.12)}
 .lead{color:var(--muted);font-size:1.08rem;max-width:720px}
 .center .lead{margin:0 auto}
-.head{margin-bottom:44px}
-.note{color:var(--muted);font-style:italic;margin-top:16px}
+.head{margin-bottom:46px}
 
-/* ============ 3. Buttons ============ */
-.btn{display:inline-block;padding:14px 26px;border-radius:12px;border:2px solid transparent;cursor:pointer;
-  font:inherit;font-weight:700;line-height:1.2;text-align:center;transition:transform .2s,box-shadow .2s,background .2s}
-.btn:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,0,0,.15)}
-.btn-gold{background:var(--gold);color:var(--navy-d)}
-.btn-gold:hover{background:#F2B230}
-.btn-teal{background:var(--teal);color:#fff}
-.btn-teal:hover{background:var(--teal-d)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 26px;border-radius:12px;font-weight:700;border:2px solid transparent;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
+.btn:hover{transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--navy-d);box-shadow:0 8px 20px rgba(232,163,23,.35)}
+.btn-teal{background:var(--teal);color:#fff;box-shadow:0 8px 20px rgba(15,163,163,.3)}
 .btn-navy{background:var(--navy);color:#fff}
-.btn-navy:hover{background:var(--navy-l)}
-.btn-ghost{border-color:#fff;color:#fff}
-.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-ghost{border-color:rgba(255,255,255,.8);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.btn-wa{background:#25D366;color:#fff}
 .btn-row{display:flex;flex-wrap:wrap;gap:12px}
 
-/* ============ 4. Header ============ */
-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(11,42,91,.08)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:var(--header-h);gap:14px;position:relative}
-.brand{display:flex;align-items:center}
-.brand img{height:56px;width:auto}
-.wm{display:none;align-items:center;font-weight:900;font-size:1.3rem;color:var(--navy);letter-spacing:.02em}
-.wm b{background:var(--gold);color:#fff;padding:2px 9px;border-radius:6px;margin-left:5px}
-.brand.no-logo img{display:none}
-.brand.no-logo .wm{display:flex}
-.links{display:flex;gap:2px}
-.links a{color:var(--navy);font-weight:600;font-size:.94rem;padding:8px 11px;border-radius:9px;transition:background .2s}
-.links a:hover{background:rgba(232,163,23,.16)}
+/* top bar */
+.topbar{background:var(--navy-d);color:#C9D3E0;font-size:.84rem}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;min-height:38px;flex-wrap:wrap}
+.topbar a{color:var(--gold-l);font-weight:600}
+.topbar .tb-safe{display:flex;align-items:center;gap:6px}
+
+/* header */
+header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);transition:box-shadow .25s}
+header.scrolled{box-shadow:0 4px 20px rgba(11,42,91,.10)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:14px;position:relative}
+.brand img{height:54px;width:auto}
+.links{display:flex;gap:2px;align-items:center}
+.links a{color:var(--navy);font-weight:600;font-size:.93rem;padding:8px 12px;border-radius:9px;transition:background .2s,color .2s}
+.links a:hover,.links a.active{background:rgba(232,163,23,.16)}
+.links a.nav-calc{background:rgba(232,163,23,.2);color:var(--navy-d)}
+.links a.nav-calc:hover{background:rgba(232,163,23,.36)}
 .tools{display:flex;gap:10px;align-items:center}
-.lang{display:flex;border:1px solid var(--navy);border-radius:9px;overflow:hidden}
-.lang button{background:#fff;border:0;padding:7px 12px;font:inherit;font-weight:700;font-size:.9rem;color:var(--navy);cursor:pointer}
+.lang{display:flex;border:1.5px solid var(--navy);border-radius:10px;overflow:hidden}
+.lang button{background:#fff;border:0;padding:7px 12px;font-weight:800;color:var(--navy);cursor:pointer;font-size:.85rem}
 .lang button.on{background:var(--navy);color:#fff}
-.burger{display:none;background:var(--navy);color:#fff;border:0;border-radius:9px;width:42px;height:40px;font-size:1.25rem;cursor:pointer;place-items:center}
+.nav-cta{padding:10px 18px;font-size:.92rem}
+.burger{display:none;background:var(--navy);color:#fff;border:0;border-radius:10px;width:44px;height:42px;font-size:1.3rem;cursor:pointer}
 
-/* ============ 5. Hero ============ */
-.hero{position:relative;overflow:hidden;color:#fff;padding:90px 0 160px;
-  background:radial-gradient(circle at 80% 25%,rgba(232,163,23,.32),transparent 34%),linear-gradient(135deg,var(--navy-d),var(--navy) 60%,var(--navy-l))}
-.hero h1,.band h2{color:#fff}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;z-index:2}
-.hero p.sub{font-size:1.12rem;opacity:.93;margin-bottom:28px}
-.badge{display:inline-block;background:rgba(232,163,23,.18);border:1px solid rgba(232,163,23,.6);color:#FFD27A;padding:6px 14px;border-radius:30px;font-weight:700;font-size:.85rem;margin-bottom:20px}
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;padding:80px 0 160px;background:radial-gradient(circle at 82% 22%,rgba(232,163,23,.32),transparent 34%),radial-gradient(circle at 8% 90%,rgba(15,163,163,.25),transparent 30%),linear-gradient(135deg,var(--navy-d),var(--navy) 60%,var(--navy-l))}
+.hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1px,transparent 1px);background-size:26px 26px;pointer-events:none}
+.hero h1{color:#fff}
+.hero h1 span{color:var(--gold-l)}
+.hero .lead{color:#D6DEEA;font-size:1.14rem;margin-bottom:26px}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-block;background:rgba(232,163,23,.18);border:1px solid rgba(232,163,23,.6);color:var(--gold-l);padding:6px 14px;border-radius:30px;font-weight:700;font-size:.84rem;margin-bottom:20px}
+.promo{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:10px 12px 10px 10px;border-radius:50px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.26);color:#fff;font-weight:600;font-size:.93rem;transition:.2s}
+.promo:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
+.promo .p-new{background:var(--gold);color:var(--navy-d);font-weight:800;font-size:.72rem;padding:4px 10px;border-radius:30px;text-transform:uppercase;letter-spacing:.06em}
+.promo b{color:var(--gold-l)}
+.ticks{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:26px;color:#D6DEEA;font-size:.92rem}
+.ticks span::before{content:"✓";color:var(--gold-l);font-weight:900;margin-right:7px}
 .wave{position:absolute;left:0;bottom:-1px;width:100%;height:90px;z-index:3}
-.jobcard{background:#fff;color:var(--text);border-radius:22px;padding:28px;box-shadow:0 30px 60px rgba(0,0,0,.3);border-top:5px solid var(--gold)}
-.jobcard ul{margin:12px 0 20px}
-.jobcard li{padding:9px 0 9px 26px;border-bottom:1px dashed var(--line);position:relative}
-.jobcard li::before{content:"✓";position:absolute;left:0;color:var(--teal);font-weight:800}
 
+.paths{background:#fff;color:var(--text);border-radius:24px;padding:26px;box-shadow:var(--sh-lg);border-top:5px solid var(--gold)}
+.paths h3{font-size:1.2rem;margin-bottom:4px}
+.paths .sub{color:var(--muted);font-size:.93rem;margin-bottom:16px}
+.path{display:flex;align-items:center;gap:14px;padding:16px;border:1.5px solid var(--line);border-radius:16px;margin-bottom:12px;color:var(--text);transition:.2s}
+.path:hover{border-color:var(--teal);transform:translateX(4px);box-shadow:0 8px 20px rgba(11,42,91,.08)}
+.path .pi{flex:none;width:50px;height:50px;border-radius:14px;display:grid;place-items:center;font-size:1.5rem;background:rgba(15,163,163,.12)}
+.path.g .pi{background:rgba(232,163,23,.18)}
+.path b{display:block;color:var(--navy)}
+.path small{color:var(--muted);font-size:.86rem;line-height:1.4;display:block}
+.path .arr{margin-left:auto;color:var(--teal);font-weight:900;font-size:1.2rem}
+.mini{list-style:none;margin-top:6px;border-top:1px dashed var(--line);padding-top:12px}
+.mini li{padding:5px 0;font-size:.9rem;color:var(--muted)}
+.mini li::before{content:"✓ ";color:var(--teal);font-weight:800}
+
+/* pillars */
 .pillars{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:-80px;position:relative;z-index:4}
-.pillar{background:#fff;border-radius:16px;padding:22px 14px;text-align:center;box-shadow:0 12px 30px rgba(11,42,91,.12);font-weight:700;color:var(--navy)}
-.pillar i{font-style:normal;font-size:1.8rem;display:block;margin-bottom:4px}
+.pillar{background:#fff;border-radius:18px;padding:22px 16px;text-align:center;box-shadow:0 14px 34px rgba(11,42,91,.13);font-weight:700;color:var(--navy);transition:.25s}
+.pillar:hover{transform:translateY(-4px)}
+.pillar i{font-style:normal;font-size:1.9rem;display:block;margin-bottom:6px}
+.pillar small{display:block;font-weight:500;color:var(--muted);font-size:.84rem;margin-top:2px}
 
-/* ============ 6. Cards & grids ============ */
+/* cards */
 .grid{display:grid;gap:22px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
-.grid.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
-.card{background:#fff;border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);border-top:4px solid var(--teal);transition:transform .25s,box-shadow .25s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
+.two{grid-template-columns:repeat(auto-fit,minmax(320px,1fr))}
+.card{background:#fff;border-radius:var(--r);padding:28px;box-shadow:0 6px 22px rgba(11,42,91,.07);border-top:4px solid var(--teal);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(11,42,91,.12)}
 .card.g{border-top-color:var(--gold)}
 .card p{color:var(--muted)}
-.card .btn{margin-top:16px}
 .ico{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;font-size:1.6rem;background:rgba(15,163,163,.12);margin-bottom:14px}
 .card.g .ico{background:rgba(232,163,23,.16)}
 .card.dark{background:linear-gradient(135deg,var(--navy),var(--navy-l));border:0}
 .card.dark h3{color:var(--gold);font-size:1.4rem}
 .card.dark p{color:#D6DEEA}
-.card.dark .ico{background:rgba(255,255,255,.12)}
-.mt-lg{margin-top:44px}.mt-md{margin-top:28px}
+.card .btn{margin-top:18px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:.78rem;background:var(--light);border:1px solid var(--line);color:var(--navy);padding:4px 10px;border-radius:20px;font-weight:600}
 
-.split{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
-.split.mid{align-items:center}
-.logo-box{background:#fff;border-radius:var(--radius);padding:20px;display:inline-block;box-shadow:0 8px 24px rgba(11,42,91,.1)}
-.logo-box img{max-width:340px}
-
-.chips{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
-.chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);padding:8px 18px 8px 8px;border-radius:30px;font-weight:700;color:var(--navy)}
-.chip b{background:var(--navy);color:var(--gold);border-radius:20px;padding:2px 9px;font-size:.78rem;letter-spacing:.06em}
-.legal{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin-top:18px}
-
-/* ============ 7. Process, checklist, fees, docs ============ */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:s}
-.step{text-align:center;position:relative}
-.step .n{width:58px;height:58px;margin:0 auto 12px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.3rem;box-shadow:0 0 0 8px rgba(232,163,23,.16)}
-.step p{color:var(--muted);font-size:.93rem}
-.checks{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.checks{list-style:none;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .checks li{background:#fff;border-radius:12px;padding:16px 18px 16px 56px;position:relative;box-shadow:0 2px 10px rgba(11,42,91,.06)}
 .checks li::before{content:"✓";position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--teal);color:#fff;text-align:center;line-height:26px;font-weight:800;font-size:.85rem}
-.fees{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-radius:var(--radius);padding:36px}
-.fees h2{color:var(--gold)}
-.fees ul{margin:14px 0 22px 20px;list-style:disc}
-.fees li{margin-bottom:10px;color:#E4EAF5}
-.docs{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
-.docs ul{margin-top:12px}
-.docs li{padding:10px 0 10px 32px;border-bottom:1px solid #EEF2F7;position:relative}
-.docs li::before{content:"📄";position:absolute;left:0}
+.note{color:var(--muted);font-style:italic;margin-top:18px}
 
-/* ============ 8. Employer band ============ */
-.band{position:relative;overflow:hidden;color:#fff;padding:90px 0 140px;
-  background:radial-gradient(circle at 15% 20%,rgba(232,163,23,.28),transparent 30%),linear-gradient(135deg,var(--navy-d),var(--navy))}
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;position:relative}
+.steps::before{content:"";position:absolute;top:29px;left:10%;right:10%;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 16px);z-index:0}
+.step{text-align:center;position:relative;z-index:1}
+.step .n{width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:900;font-size:1.3rem;box-shadow:0 0 0 8px #fff,0 0 0 10px rgba(232,163,23,.3)}
+.step p{color:var(--muted);font-size:.93rem}
+
+/* band */
+.band{position:relative;overflow:hidden;color:#fff;padding:96px 0 140px;background:radial-gradient(circle at 15% 20%,rgba(232,163,23,.28),transparent 30%),linear-gradient(135deg,var(--navy-d),var(--navy))}
+.band h2{color:#fff;font-size:clamp(2.1rem,4.6vw,3.2rem)}
 .band .lead{color:#D6DEEA;margin-bottom:24px}
-.band .hero-grid{grid-template-columns:1.1fr .9fr}
-.vis{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:24px}
-.vis li{padding:12px 0 12px 30px;border-bottom:1px solid rgba(255,255,255,.12);color:#E4EAF5;position:relative}
+.vis{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px}
+.vis li{list-style:none;padding:13px 0 13px 34px;border-bottom:1px solid rgba(255,255,255,.12);color:#E4EAF5;position:relative}
 .vis li:last-child{border-bottom:0}
-.vis li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+.vis li::before{content:"✓";position:absolute;left:0;color:var(--gold-l);font-weight:900}
 
-/* ============ 9. FAQ ============ */
+/* fees + docs */
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.fees{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-radius:var(--r);padding:36px;box-shadow:var(--sh)}
+.fees h2{color:var(--gold)}
+.fees ul{margin:14px 0 22px 20px}
+.fees li{margin-bottom:10px;color:#E4EAF5}
+.docs{background:#fff;border-radius:var(--r);padding:36px;box-shadow:var(--sh)}
+.docs ul{list-style:none;margin-top:12px}
+.docs li{padding:11px 0;border-bottom:1px solid #EEF2F7}
+.docs li::before{content:"📄 "}
+
+/* safety */
+.safe-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.safe{background:#fff;border-radius:16px;padding:22px;border:1.5px solid var(--line);transition:.25s}
+.safe:hover{border-color:var(--gold)}
+.safe .si{font-size:1.6rem;margin-bottom:8px}
+.safe p{color:var(--muted);font-size:.93rem}
+.alert{display:flex;gap:16px;align-items:center;background:#FFF8E8;border:1px solid rgba(232,163,23,.5);border-left:6px solid var(--gold);border-radius:14px;padding:18px 22px;margin-top:26px;color:#5A4A1E;flex-wrap:wrap}
+.alert b{color:var(--navy)}
+.alert .btn{margin-left:auto}
+
+/* about */
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin:16px 0}
+.chips span{background:#fff;border:1px solid var(--line);padding:10px 18px;border-radius:30px;font-weight:700;color:var(--navy)}
+.legal{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin-top:18px;color:#5A4A1E}
+.logo-box{background:#fff;border-radius:22px;padding:26px;box-shadow:var(--sh);text-align:center}
+.logo-box img{max-width:320px;margin:0 auto}
+
+/* faq */
 .faq{max-width:860px;margin:auto}
-details{background:#fff;border-radius:12px;padding:18px 22px;margin-bottom:12px;box-shadow:0 2px 12px rgba(11,42,91,.06);border-left:4px solid transparent}
+details{background:#fff;border-radius:14px;padding:18px 22px;margin-bottom:12px;box-shadow:0 2px 12px rgba(11,42,91,.06);border-left:4px solid transparent;transition:border-color .2s}
 details[open]{border-left-color:var(--gold)}
-summary{font-weight:700;color:var(--navy);cursor:pointer}
+summary{font-weight:700;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--teal);font-size:1.3rem;font-weight:800;line-height:1}
+details[open] summary::after{content:"−"}
 details p{margin-top:10px;color:var(--muted)}
 
-/* ============ 10. Forms ============ */
-form.card-form{display:grid;gap:14px;background:#fff;padding:30px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(11,42,91,.1)}
-label{display:block;font-weight:600;font-size:.93rem;color:var(--navy);margin-bottom:5px}
-input,select,textarea{width:100%;padding:12px 14px;border:1px solid #C9D3E0;border-radius:10px;font:inherit;background:#fff;color:var(--text)}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--teal);border-color:var(--teal)}
-textarea{min-height:100px;resize:vertical}
-form.card-form .btn{justify-self:start}
-.ci{background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:12px;box-shadow:0 4px 16px rgba(11,42,91,.07)}
+/* forms */
+form.box{display:grid;gap:14px;background:#fff;padding:30px;border-radius:var(--r);box-shadow:var(--sh)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-weight:600;font-size:.92rem;color:var(--navy);margin-bottom:6px}
+input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid #C9D3E0;border-radius:11px;font:inherit;color:var(--text);background:#fff}
+input:focus,select:focus,textarea:focus{outline:3px solid rgba(15,163,163,.25);border-color:var(--teal)}
+textarea{min-height:110px;resize:vertical}
+.form-note{font-size:.84rem;color:var(--muted)}
+.ci{display:flex;gap:14px;align-items:center;background:#fff;border-radius:14px;padding:16px 20px;margin-bottom:12px;box-shadow:0 4px 16px rgba(11,42,91,.07)}
+.ci .cii{flex:none;width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:rgba(15,163,163,.12);font-size:1.2rem}
 .ci b{color:var(--navy);display:block}
 .ci span,.ci a{color:var(--muted)}
-.ci a{color:var(--teal-d);font-weight:600}
 
-/* ============ 11. Overstay calculator ============ */
-.calc{background:linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff}
-.calc h2{color:#fff}
-.calc .lead{color:#C9D3E0}
-.calc-panel{max-width:760px;margin:0 auto;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);padding:28px}
-.calc-panel label{color:#fff}
-.calc-panel .btn{width:100%;margin-top:16px}
-.calc-error{color:#FFB4B4;font-weight:600;margin-top:12px;min-height:1.4em}
-.calc-results{display:none;margin-top:20px;padding:18px 20px;background:var(--navy-d);border-radius:12px}
-.calc-results.show{display:block}
-.calc-results h3{color:var(--gold);margin-bottom:6px}
-.row{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.14)}
-.row:last-of-type{border-bottom:0}
-.row .amt{color:#FFD27A;font-weight:800;text-align:right}
-.row.total{border-top:2px solid var(--gold);margin-top:6px}
-.calc .small{color:#C9D3E0;font-size:.85rem;margin-top:14px}
-.calc .warn{color:#FFD27A;font-size:.88rem;margin:22px auto 0;max-width:760px;text-align:center}
-
-/* ============ 12. CTA, footer, floating button ============ */
-.cta{background:linear-gradient(135deg,var(--navy),var(--navy-d));color:#fff;text-align:center;padding:72px 20px}
+/* cta + footer */
+.cta{background:radial-gradient(circle at 85% 20%,rgba(232,163,23,.25),transparent 35%),linear-gradient(135deg,var(--navy),var(--navy-d));color:#fff;text-align:center;padding:80px 20px}
 .cta h2{color:var(--gold)}
 .cta p{color:#D6DEEA;margin-bottom:24px}
-footer{background:var(--navy-d);color:#C9D3E0;padding:56px 0 20px;font-size:.94rem}
-.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:30px}
-footer h4{color:var(--gold);margin-bottom:10px}
-footer a{color:#C9D3E0;display:block;margin-bottom:7px}
-footer a:hover{color:#fff}
-footer .wm{display:flex;color:#fff;margin-bottom:10px}
-.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:30px;padding-top:16px;text-align:center}
-.wa{position:fixed;right:18px;bottom:18px;background:#25D366;color:#fff;padding:13px 20px;border-radius:40px;font-weight:700;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:90;transition:transform .2s}
-.wa:hover{transform:scale(1.05)}
+.cta .btn-row{justify-content:center}
+footer{background:var(--navy-d);color:#C9D3E0;padding:60px 0 22px;font-size:.94rem}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:30px}
+footer h4{color:var(--gold);margin-bottom:12px}
+footer a{color:#C9D3E0;display:block;margin-bottom:8px;transition:color .2s}
+footer a:hover{color:var(--gold-l)}
+.wm{font-weight:900;font-size:1.35rem;color:#fff;display:flex;align-items:center;margin-bottom:10px}
+.wm b{background:var(--gold);color:#fff;padding:2px 9px;border-radius:6px;margin-left:5px}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:34px;padding-top:18px;text-align:center;font-size:.86rem}
 
-/* ============ 13. Responsive ============ */
-@media(max-width:1060px){
-  .burger{display:grid}
-  .links{display:none;position:absolute;top:var(--header-h);left:0;right:0;background:#fff;flex-direction:column;padding:12px 20px 20px;box-shadow:0 12px 24px rgba(0,0,0,.1)}
+/* floating */
+.wa-float{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:13px 20px;border-radius:40px;font-weight:800;box-shadow:0 8px 22px rgba(0,0,0,.25);z-index:90;display:flex;align-items:center;gap:8px;transition:transform .2s}
+.wa-float:hover{transform:translateY(-3px)}
+.to-top{position:fixed;right:24px;bottom:84px;width:44px;height:44px;border-radius:50%;border:0;background:var(--navy);color:#fff;font-size:1.1rem;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.2);z-index:90;opacity:0;pointer-events:none;transition:.25s}
+.to-top.show{opacity:1;pointer-events:auto}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.js .rv.in{opacity:1;transform:none}
+
+/* ===== CALCULATOR ===== */
+#calculator{padding:70px 0 90px}
+#calculator [hidden]{display:none!important}
+.kw-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:26px;align-items:stretch}
+.kw-card{background:#fff;border-radius:22px;padding:30px;box-shadow:0 12px 36px rgba(11,42,91,.10);border-top:5px solid var(--gold)}
+.kw-card h3{font-size:1.2rem;margin-bottom:4px}
+.kw-sub{color:var(--muted);font-size:.95rem;margin-bottom:20px}
+#kw-expiry{min-height:54px;font-size:1rem}
+.kw-quick{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.kw-quick-t{width:100%;font-size:.8rem;color:var(--muted);font-weight:600}
+.kw-chip{background:var(--light);border:1px solid var(--line);color:var(--navy);font-weight:600;font-size:.84rem;padding:7px 13px;border-radius:30px;cursor:pointer;transition:.2s}
+.kw-chip:hover{background:rgba(232,163,23,.18);border-color:var(--gold)}
+.kw-toggle{display:flex;align-items:center;gap:14px;margin:20px 0 0;padding:14px 16px;border:1.5px solid var(--line);border-radius:14px;cursor:pointer;background:#FAFBFD;transition:.2s}
+.kw-toggle:hover{border-color:var(--teal)}
+.kw-sr{position:absolute;opacity:0;width:1px;height:1px;overflow:hidden}
+.kw-switch{flex:none;width:48px;height:28px;border-radius:30px;background:#C9D3E0;position:relative;transition:.25s}
+.kw-switch::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:.25s}
+.kw-sr:checked + .kw-switch{background:var(--teal)}
+.kw-sr:checked + .kw-switch::after{transform:translateX(20px)}
+.kw-sr:focus-visible + .kw-switch{outline:3px solid rgba(15,163,163,.4);outline-offset:2px}
+.kw-toggle-text b{display:block;color:var(--navy);font-size:.97rem}
+.kw-toggle-text small{display:block;color:var(--muted);font-size:.82rem;line-height:1.4;margin-top:2px}
+.kw-go{width:100%;margin-top:20px}
+.kw-error{color:#C0392B;font-size:.9rem;margin-top:10px;min-height:1.2em;font-weight:600}
+.kw-dark{background:radial-gradient(circle at 90% 0%,rgba(232,163,23,.22),transparent 40%),linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-top-color:var(--teal);display:flex;flex-direction:column}
+.kw-label{color:var(--gold-l);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.76rem;margin-bottom:14px}
+.kw-empty,.kw-valid{text-align:center;padding:16px 6px 6px;color:#D6DEEA}
+.kw-bigico{width:64px;height:64px;margin:0 auto 12px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;background:rgba(255,255,255,.09)}
+.kw-valid .kw-bigico{border-radius:50%;background:rgba(15,163,163,.25)}
+.kw-empty h3,.kw-valid h3{color:#fff}
+.kw-empty p{font-size:.95rem;max-width:340px;margin:0 auto}
+.kw-top{padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14)}
+.kw-days{font-size:clamp(2rem,5vw,2.7rem);font-weight:900;line-height:1.05;color:#fff}
+.kw-since{color:#C9D3E0;font-size:.88rem;margin-top:4px}
+.kw-line{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);color:#D6DEEA}
+.kw-line strong{color:var(--gold-l);text-align:right;font-size:1.05rem}
+.kw-hl strong{font-size:1.75rem;color:#fff}
+.kw-total{background:rgba(232,163,23,.16);border:1px solid rgba(232,163,23,.5);border-radius:12px;padding:14px 16px;margin-top:12px;color:#fff}
+.kw-total strong{color:var(--gold-l);font-size:1.3rem}
+.kw-steps-wrap{margin-top:auto;padding-top:22px}
+.kw-steps-t{font-size:.8rem;color:#C9D3E0;font-weight:700;margin-bottom:10px}
+.kw-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
+.kw-step{text-align:center;padding:10px 3px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:.68rem;color:#C9D3E0;line-height:1.25;transition:.3s}
+.kw-step b{display:block;font-size:.84rem;color:#fff;margin-top:4px}
+.kw-step.done{opacity:.5}
+.kw-step.on{background:var(--gold);border-color:var(--gold);color:var(--navy-d);transform:translateY(-3px);box-shadow:0 10px 22px rgba(0,0,0,.28);font-weight:700}
+.kw-step.on b{color:var(--navy-d)}
+.kw-next{margin-top:16px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.08);border-left:4px solid var(--gold);color:#FFE7B0;font-size:.9rem;line-height:1.5}
+.kw-small{color:#C9D3E0;font-size:.82rem;line-height:1.55;margin-top:12px}
+.kw-wa{width:100%;margin-top:18px}
+.kw-disclaimer{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin-top:24px;color:#5A4A1E;font-size:.9rem;line-height:1.6}
+.kw-pop{animation:kwIn .45s ease both}
+@keyframes kwIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* responsive */
+@media(max-width:1080px){.nav-cta{display:none}}
+@media(max-width:980px){
+  .burger{display:grid;place-items:center}
+  .links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 20px;box-shadow:0 16px 28px rgba(0,0,0,.12)}
   .links.open{display:flex}
-  .links a{padding:12px}
-}
-@media(max-width:900px){
-  .hero-grid,.band .hero-grid,.split{grid-template-columns:1fr}
+  .links a{padding:12px 14px}
+  .grid2,.fg,.kw-grid{grid-template-columns:1fr}
   .pillars{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .foot{grid-template-columns:1fr}
+  .steps{grid-template-columns:repeat(2,1fr)}.steps::before{display:none}
+  .safe-grid{grid-template-columns:repeat(2,1fr)}
+  .foot{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-  .pad{padding:58px 0}
-  .hero{padding:60px 0 140px}
-  .steps{grid-template-columns:1fr}
-  .wm{font-size:1.05rem}
-  .grid.two{grid-template-columns:1fr}
-  .btn{width:100%}
-  .btn-row{flex-direction:column}
-  .row{flex-direction:column;gap:2px}
-  .row .amt{text-align:left}
-  .wa{padding:11px 16px}
+  .pad{padding:64px 0}
+  .hero{padding:56px 0 140px}
+  .topbar .tb-hide{display:none}
+  .steps,.safe-grid,.row2{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
+  .kw-card{padding:20px}
+  .kw-step{font-size:.6rem;padding:8px 2px}.kw-step b{font-size:.72rem}
+  .kw-hl strong{font-size:1.45rem}
+  .wa-float span{display:none}.wa-float{padding:14px}
+  .alert .btn{margin-left:0;width:100%}
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *{transition:none!important}
-}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.js .rv{opacity:1;transform:none}}
 </style>
 </head>
-
 <body>
 
-<!-- ================= HEADER ================= -->
-<header>
-  <div class="wrap nav">
-    <a href="#top" class="brand" aria-label="KYRGYZ WORK">
-      <img src="header-logo.jpg" alt="KYRGYZ WORK logo" onerror="this.parentElement.classList.add('no-logo')">
-      <span class="wm">KYRGYZ<b>WORK</b></span>
-    </a>
+<!-- TOP BAR -->
+<div class="topbar"><div class="wrap">
+  <div class="tb-safe">🛡️ <span data-en="Official WhatsApp only:" data-ru="Только официальный WhatsApp:">Official WhatsApp only:</span> <a href="https://wa.me/996555746401" target="_blank" rel="noopener">+996 555 746 401</a></div>
+  <div class="tb-hide" data-en="Jobs · Work visa support · Flights · Accommodation" data-ru="Работа · Рабочие визы · Перелёт · Жильё">Jobs · Work visa support · Flights · Accommodation</div>
+</div></div>
 
-    <nav class="links" id="links" aria-label="Main">
-      <a href="#about" data-ru="О нас">About</a>
-      <a href="#services" data-ru="Услуги">Services</a>
-      <a href="#process" data-ru="Как это работает">How it works</a>
-      <a href="#industries" data-ru="Отрасли">Industries</a>
-      <a href="#employers" data-ru="Работодателям">For Employers</a>
-      <a href="#contact" data-ru="Контакты">Contact</a>
-    </nav>
-
-    <div class="tools">
-      <div class="lang" role="group" aria-label="Language">
-        <button type="button" data-l="en" class="on" aria-pressed="true">EN</button>
-        <button type="button" data-l="ru" aria-pressed="false">RU</button>
-      </div>
-      <button type="button" class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">☰</button>
-    </div>
+<!-- HEADER -->
+<header id="hdr"><div class="wrap nav">
+  <a href="#top" class="brand" aria-label="KYRGYZ WORK home"><img src="header-logo.jpg" alt="KYRGYZ WORK logo"></a>
+  <nav class="links" id="links" aria-label="Main menu">
+    <a class="nav-calc" href="#calculator" data-en="🧮 Calculator" data-ru="🧮 Калькулятор">🧮 Calculator</a>
+    <a href="#services" data-en="Job seekers" data-ru="Соискателям">Job seekers</a>
+    <a href="#process" data-en="How it works" data-ru="Как это работает">How it works</a>
+    <a href="#industries" data-en="Industries" data-ru="Отрасли">Industries</a>
+    <a href="#employers" data-en="Employers" data-ru="Работодателям">Employers</a>
+    <a href="#safety" data-en="Safety" data-ru="Безопасность">Safety</a>
+    <a href="#faq" data-en="FAQ" data-ru="Вопросы">FAQ</a>
+    <a href="#contact" data-en="Contact" data-ru="Контакты">Contact</a>
+  </nav>
+  <div class="tools">
+    <div class="lang"><button data-l="en" class="on" aria-label="English">EN</button><button data-l="ru" aria-label="Русский">RU</button></div>
+    <a class="btn btn-gold nav-cta" href="#contact" data-en="Apply now" data-ru="Подать заявку">Apply now</a>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links">☰</button>
   </div>
-</header>
+</div></header>
 
 <main id="top">
 
-<!-- ================= HERO ================= -->
+<!-- HERO -->
 <section class="hero">
   <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,45 C960,0 1200,70 1440,30 L1440,90 L0,90 Z" fill="#fff"/></svg>
-  <div class="wrap hero-grid">
+  <div class="wrap grid2">
     <div>
-      <span class="badge" data-ru="Работа · Поддержка рабочих виз · Перелёт · Жильё">Jobs · Work visa support · Flights · Accommodation</span>
-      <h1 data-ru="Соединяем мировые таланты с Кыргызстаном">Connecting Global Talent with Kyrgyzstan</h1>
-      <p class="sub" data-ru="Реальная работа в Кыргызстане для работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и надёжные работники для кыргызских компаний. Мы берём на себя всё — от А до Я.">Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and reliable workers for Kyrgyz companies. We handle everything from A to Z.</p>
+      <span class="badge" data-en="Recruitment agency in Kyrgyzstan" data-ru="Рекрутинговое агентство в Кыргызстане">Recruitment agency in Kyrgyzstan</span>
+      <h1 data-en="Connecting Global Talent with Kyrgyzstan" data-ru="Соединяем мировые таланты с Кыргызстаном">Connecting Global Talent with Kyrgyzstan</h1>
+      <p class="lead" data-en="Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and reliable workers for Kyrgyz companies. We handle everything from A to Z." data-ru="Реальная работа в Кыргызстане для работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и надёжные работники для кыргызских компаний. Мы берём на себя всё — от А до Я.">Real jobs in Kyrgyzstan for workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and reliable workers for Kyrgyz companies. We handle everything from A to Z.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="#services" data-ru="Ищу работу">I want a job</a>
-        <a class="btn btn-ghost" href="#employers" data-ru="Нужны работники">I need workers</a>
+        <a class="btn btn-gold" href="#services" data-en="I want a job" data-ru="Ищу работу">I want a job</a>
+        <a class="btn btn-ghost" href="#employers" data-en="I need workers" data-ru="Нужны работники">I need workers</a>
+      </div>
+      <a class="promo" href="#calculator">
+        <span class="p-new" data-en="Free tool" data-ru="Бесплатно">Free tool</span>
+        <span data-en="Overstayed? Calculate your fine in 10 seconds" data-ru="Просрочка? Рассчитайте штраф за 10 секунд">Overstayed? Calculate your fine in 10 seconds</span>
+        <b aria-hidden="true">→**
+      </a>
+      <div class="ticks">
+        <span data-en="Legal process" data-ru="Законный процесс">Legal process</span>
+        <span data-en="Clear fees" data-ru="Понятные условия">Clear fees</span>
+        <span data-en="English & Russian support" data-ru="Поддержка на английском и русском">English & Russian support</span>
       </div>
     </div>
 
-    <aside class="jobcard">
-      <h3 data-ru="Пример: помощник строителя">Example: Construction helper</h3>
-      <ul>
-        <li data-ru="Место: Кыргызстан">Location: Kyrgyzstan</li>
-        <li data-ru="Жильё и питание: бесплатно на большинстве вакансий">Accommodation and meals: free in most jobs</li>
-        <li data-ru="Перелёт и встреча в аэропорту: организуем">Flight and airport pickup: arranged</li>
-        <li data-ru="Приглашение и рабочая виза: готовим и подаём">Invitation and work visa: we prepare and submit</li>
+    <div class="paths rv">
+      <h3 data-en="How can we help you?" data-ru="Чем мы можем помочь?">How can we help you?</h3>
+      <p class="sub" data-en="Choose your path. It takes one minute." data-ru="Выберите вариант. Это займёт минуту.">Choose your path. It takes one minute.</p>
+      <a class="path" href="#contact">
+        <span class="pi" aria-hidden="true">🧳</span>
+        <span><b data-en="I am looking for a job" data-ru="Я ищу работу">I am looking for a job**<small data-en="Apply and get a real job offer in Kyrgyzstan" data-ru="Подайте заявку и получите реальное предложение">Apply and get a real job offer in Kyrgyzstan</small></span>
+        <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="path g" href="#request">
+        <span class="pi" aria-hidden="true">🏢</span>
+        <span><b data-en="I am an employer" data-ru="Я работодатель">I am an employer**<small data-en="Request screened workers for your company" data-ru="Запросите проверенных работников">Request screened workers for your company</small></span>
+        <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <a class="path" href="#calculator">
+        <span class="pi" aria-hidden="true">🧮</span>
+        <span><b data-en="My visa has expired" data-ru="Моя виза истекла">My visa has expired**<small data-en="Estimate your protocol fine instantly" data-ru="Мгновенно рассчитайте штраф">Estimate your protocol fine instantly</small></span>
+        <span class="arr" aria-hidden="true">→</span>
+      </a>
+      <ul class="mini">
+        <li data-en="Accommodation and meals: free in most jobs" data-ru="Жильё и питание: бесплатно на большинстве вакансий">Accommodation and meals: free in most jobs</li>
+        <li data-en="Invitation and work visa: we prepare and submit" data-ru="Приглашение и рабочая виза: готовим и подаём">Invitation and work visa: we prepare and submit</li>
       </ul>
-      <a class="btn btn-teal" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-ru="Узнать о вакансиях">Ask about jobs</a>
-    </aside>
+    </div>
   </div>
 </section>
 
-<!-- ================= PILLARS ================= -->
+<!-- PILLARS -->
 <div class="wrap pillars">
-  <div class="pillar"><i aria-hidden="true">🤝</i><span data-ru="Решения по подбору">Recruitment Solutions</span></div>
-  <div class="pillar"><i aria-hidden="true">👥</i><span data-ru="Возможности трудоустройства">Employment Opportunities</span></div>
-  <div class="pillar"><i aria-hidden="true">💼</i><span data-ru="Квалифицированные кадры">Skilled Workforce</span></div>
-  <div class="pillar"><i aria-hidden="true">📈</i><span data-ru="Сильнее бизнес">Stronger Businesses</span></div>
+  <div class="pillar rv">*🤝*<span data-en="Recruitment Solutions" data-ru="Решения по подбору">Recruitment Solutions</span></div>
+  <div class="pillar rv">*👥*<span data-en="Employment Opportunities" data-ru="Возможности трудоустройства">Employment Opportunities</span></div>
+  <div class="pillar rv">*💼*<span data-en="Skilled Workforce" data-ru="Квалифицированные кадры">Skilled Workforce</span></div>
+  <div class="pillar rv">*📈*<span data-en="Stronger Businesses" data-ru="Сильнее бизнес">Stronger Businesses</span></div>
 </div>
 
-<!-- ================= WHO WE HELP ================= -->
-<section class="pad">
-  <div class="wrap">
-    <div class="center head">
-      <span class="eyebrow" data-ru="Кому мы помогаем">Who we help</span>
-      <h2 data-ru="Две стороны, один надёжный партнёр">Two sides, one trusted partner</h2>
-    </div>
-    <div class="grid two">
-      <div class="card dark">
-        <div class="ico" aria-hidden="true">🧳</div>
-        <h3 data-ru="Соискателям">For job seekers</h3>
-        <p data-ru="Ищете безопасную и легальную работу за рубежом? Мы подберём реальных работодателей в Кыргызстане и сопроводим вас от первого сообщения до первого рабочего дня.">Looking for a safe, legal job abroad? We match you with real Kyrgyz employers and guide you from the first message to your first day at work.</p>
-        <a class="btn btn-gold" href="#services" data-ru="Смотреть услуги">See our services</a>
+<!-- CALCULATOR -->
+<section id="calculator"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow t" data-en="Free tool" data-ru="Бесплатный инструмент">Free tool</span>
+    <h2 data-en="Overstay Cost Calculator" data-ru="Калькулятор просрочки пребывания">Overstay Cost Calculator</h2>
+    <p class="lead" data-en="Enter your visa expiry date and get an instant estimate of your protocol fine. Add the exit visa cost only if you need it." data-ru="Введите дату окончания визы и мгновенно получите оценку штрафа по протоколу. Стоимость выездной визы добавляйте только при необходимости.">Enter your visa expiry date and get an instant estimate of your protocol fine. Add the exit visa cost only if you need it.</p>
+  </div>
+
+  <div class="kw-grid">
+    <div class="kw-card rv">
+      <h3 data-en="Your details" data-ru="Ваши данные">Your details</h3>
+      <p class="kw-sub" data-en="It takes about 10 seconds." data-ru="Это займёт около 10 секунд.">It takes about 10 seconds.</p>
+
+      <label for="kw-expiry" data-en="Visa expiry date" data-ru="Дата окончания визы">Visa expiry date</label>
+      <input type="date" id="kw-expiry">
+
+      <div class="kw-quick">
+        <span class="kw-quick-t" data-en="Quick pick (expired about):" data-ru="Быстрый выбор (истекла примерно):">Quick pick (expired about):</span>
+        <button type="button" class="kw-chip" data-k="d" data-v="7" data-en="1 week ago" data-ru="неделю назад">1 week ago</button>
+        <button type="button" class="kw-chip" data-k="m" data-v="1" data-en="1 month ago" data-ru="1 мес. назад">1 month ago</button>
+        <button type="button" class="kw-chip" data-k="m" data-v="3" data-en="3 months ago" data-ru="3 мес. назад">3 months ago</button>
+        <button type="button" class="kw-chip" data-k="m" data-v="6" data-en="6 months ago" data-ru="6 мес. назад">6 months ago</button>
+        <button type="button" class="kw-chip" data-k="m" data-v="12" data-en="1 year ago" data-ru="год назад">1 year ago</button>
       </div>
-      <div class="card dark">
-        <div class="ico" aria-hidden="true">🏢</div>
-        <h3 data-ru="Работодателям">For employers</h3>
-        <p data-ru="Нужны надёжные работники? Мы подбираем, проверяем и привозим работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и берём на себя документы.">Need reliable workers? We recruit, screen and bring workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and handle all the paperwork.</p>
-        <a class="btn btn-gold" href="#employers" data-ru="Нанять работников">Hire workers</a>
+
+      <label class="kw-toggle" for="kw-include-exit">
+        <input type="checkbox" id="kw-include-exit" class="kw-sr">
+        <span class="kw-switch" aria-hidden="true"></span>
+        <span class="kw-toggle-text">
+          <b data-en="Also calculate exit visa cost" data-ru="Также рассчитать стоимость выездной визы">Also calculate exit visa cost**
+          <small data-en="Off by default. Only the protocol fine is calculated." data-ru="По умолчанию выключено. Рассчитывается только штраф по протоколу.">Off by default. Only the protocol fine is calculated.</small>
+        </span>
+      </label>
+
+      <button type="button" class="btn btn-gold kw-go" id="kw-calculate" data-en="Calculate" data-ru="Рассчитать">Calculate</button>
+      <div id="kw-error" class="kw-error" role="alert"></div>
+    </div>
+
+    <div class="kw-card kw-dark rv" aria-live="polite">
+      <div class="kw-label" data-en="Your estimate" data-ru="Ваш расчёт">Your estimate</div>
+
+      <div class="kw-empty" id="kw-empty">
+        <div class="kw-bigico" aria-hidden="true">🧮</div>
+        <h3 data-en="Your result will appear here" data-ru="Здесь появится результат">Your result will appear here</h3>
+        <p data-en="Choose your visa expiry date. The fine depends on how long you have overstayed." data-ru="Выберите дату окончания визы. Размер штрафа зависит от срока просрочки.">Choose your visa expiry date. The fine depends on how long you have overstayed.</p>
+      </div>
+
+      <div id="kw-out" hidden>
+        <div id="kw-valid" class="kw-valid" hidden>
+          <div class="kw-bigico" aria-hidden="true">✅</div>
+          <h3 data-en="Your visa is still valid" data-ru="Ваша виза ещё действует">Your visa is still valid</h3>
+          <p id="kw-valid-sub"></p>
+        </div>
+
+        <div id="kw-main" hidden>
+          <div class="kw-top">
+            <div class="kw-days" id="kw-days"></div>
+            <div class="kw-since" id="kw-since"></div>
+          </div>
+          <div class="kw-line kw-hl">
+            <span data-en="Protocol fine" data-ru="Штраф по протоколу">Protocol fine</span>
+            <strong id="kw-protocol">**
+          </div>
+          <div class="kw-line" id="kw-exit-row" hidden>
+            <span data-en="Exit visa government fee" data-ru="Государственный сбор за выездную визу">Exit visa government fee</span>
+            <strong id="kw-exit">**
+          </div>
+          <div class="kw-line kw-total" id="kw-total-row" hidden>
+            <span data-en="Estimated combined charges" data-ru="Предполагаемая общая сумма">Estimated combined charges</span>
+            <strong id="kw-total">**
+          </div>
+          <p class="kw-small" id="kw-sep" hidden data-en="These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately." data-ru="Это отдельные платежи. Штраф назначается уполномоченным органом. Сбор за выездную визу оплачивается отдельно.">These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately.</p>
+          <div class="kw-next" id="kw-next" hidden></div>
+          <a class="btn btn-wa kw-wa" id="kw-wa" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Ask us about this on WhatsApp" data-ru="Спросить нас в WhatsApp">Ask us about this on WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="kw-steps-wrap">
+        <div class="kw-steps-t" data-en="Protocol fine by length of overstay (KGS)" data-ru="Штраф по протоколу в зависимости от срока просрочки (KGS)">Protocol fine by length of overstay (KGS)</div>
+        <div class="kw-steps" id="kw-steps"></div>
       </div>
     </div>
   </div>
-</section>
 
-<!-- ================= ABOUT ================= -->
-<section class="pad alt" id="about">
-  <div class="wrap">
-    <div class="split mid">
-      <div>
-        <span class="eyebrow" data-ru="О нас">About us</span>
-        <h2 data-ru="О компании KYRGYZ WORK">About KYRGYZ WORK</h2>
-        <p class="lead" data-ru="KYRGYZ WORK — рекрутинговая компания в Кыргызстане. Мы работаем с работодателями, которым нужны надёжные работники, и с соискателями из Южной Азии, которые хотят безопасную и легальную работу за рубежом. Мы сопровождаем весь путь — от первого сообщения до первого рабочего дня.">KYRGYZ WORK is a recruitment company in Kyrgyzstan. We work with employers who need reliable workers, and with job seekers from South Asia who want a safe, legal job abroad. We handle the full journey, from the first message to the first day at work.</p>
-      </div>
-      <div class="center">
-        <div class="logo-box"><img src="Logo.PNG" alt="KYRGYZ WORK logo" onerror="this.parentElement.style.display='none'"></div>
-      </div>
-    </div>
+  <div class="kw-disclaimer" data-en="Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment." data-ru="Важно: это предварительный расчёт, а не официальное решение. Тарифы на выездную визу по постановлению № 312 действуют временно до 31 декабря 2026 года. Перед оплатой уточните сумму в уполномоченных органах.">Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment.</div>
+</div></section>
 
-    <div class="grid two mt-lg">
-      <div class="card g"><div class="ico" aria-hidden="true">🎯</div><h3 data-ru="Наша миссия">Our mission</h3>
-        <p data-ru="Давать работникам честные и легальные возможности, а бизнесу Кыргызстана — квалифицированный и надёжный персонал.">To give workers fair, legal job opportunities, and to give Kyrgyz businesses a skilled, dependable workforce.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🌍</div><h3 data-ru="Наше видение">Our vision</h3>
-        <p data-ru="Стать самым надёжным мостом между Южной Азией и рынком труда Кыргызстана.">To be the most trusted bridge between South Asia and the Kyrgyz labour market.</p></div>
-    </div>
-
-    <div class="grid mt-md">
-      <div class="card"><div class="ico" aria-hidden="true">🤝</div><h3 data-ru="Честность">Honesty</h3>
-        <p data-ru="Понятная информация о вакансиях, сборах и условиях.">Clear information about jobs, fees and conditions.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">📋</div><h3 data-ru="Законность">Legal process</h3>
-        <p data-ru="Каждый работник приезжает с правильными документами.">Every worker travels with proper documents.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🧭</div><h3 data-ru="Поддержка">Support</h3>
-        <p data-ru="Мы на связи до, во время и после прибытия.">We stay in contact before, during and after arrival.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">⭐</div><h3 data-ru="Уважение">Respect</h3>
-        <p data-ru="Справедливое отношение к работникам и работодателям.">Fair treatment of workers and employers.</p></div>
-    </div>
-
-    <h3 class="mt-lg" data-ru="Страны набора">Countries we recruit from</h3>
-    <div class="chips">
-      <span class="chip"><b>PK</b><span data-ru="Пакистан">Pakistan</span></span>
-      <span class="chip"><b>IN</b><span data-ru="Индия">India</span></span>
-      <span class="chip"><b>BD</b><span data-ru="Бангладеш">Bangladesh</span></span>
-      <span class="chip"><b>LK</b><span data-ru="Шри-Ланка">Sri Lanka</span></span>
-      <span class="chip"><b>NP</b><span data-ru="Непал">Nepal</span></span>
-    </div>
-    <div class="legal" data-ru="Мы готовим и подаём заявления. Окончательные решения по визам и разрешениям на работу принимают органы власти Кыргызской Республики.">We prepare and submit applications. Final visa and work permit decisions are made by the authorities of the Kyrgyz Republic.</div>
+<!-- WHO WE HELP -->
+<section class="pad alt"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow" data-en="Who we help" data-ru="Кому мы помогаем">Who we help</span>
+    <h2 data-en="Two sides, one trusted partner" data-ru="Две стороны, один надёжный партнёр">Two sides, one trusted partner</h2>
   </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section class="pad" id="services">
-  <div class="wrap">
-    <div class="center head">
-      <span class="eyebrow" data-ru="Соискателям">For job seekers</span>
-      <h2 data-ru="Полное сопровождение до Кыргызстана">Full service from your country to Kyrgyzstan</h2>
-    </div>
-    <div class="grid">
-      <div class="card"><div class="ico" aria-hidden="true">💼</div><h3 data-ru="Подбор работы">Job matching</h3>
-        <p data-ru="Реальные вакансии у кыргызских работодателей в шести отраслях.">Real vacancies with Kyrgyz employers in six industries.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">✉️</div><h3 data-ru="Приглашение">Invitation letter</h3>
-        <p data-ru="Мы оформляем официальное приглашение, необходимое для рабочей визы.">We apply for your official invitation, required for your work visa.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🛂</div><h3 data-ru="Помощь с рабочей визой">Work visa support</h3>
-        <p data-ru="Мы проверяем документы и сопровождаем подачу на визу.">We check your documents and guide your visa application.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">📄</div><h3 data-ru="Подготовка документов">Document preparation</h3>
-        <p data-ru="Помощь с резюме, копиями паспорта, фото, сертификатами и переводами.">Help with CV, passport copies, photos, certificates and translations.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">✈️</div><h3 data-ru="Перелёт">Flights</h3>
-        <p data-ru="Мы организуем ваш перелёт в Кыргызстан.">We arrange your flight to Kyrgyzstan.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">🚐</div><h3 data-ru="Встреча в аэропорту">Airport pickup</h3>
-        <p data-ru="Наша команда встретит вас и отвезёт к месту проживания.">Our team meets you and takes you to your accommodation.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🏠</div><h3 data-ru="Жильё и питание">Accommodation and meals</h3>
-        <p data-ru="Большинство работодателей бесплатно предоставляют жильё и питание.">Most employers provide free housing and meals.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">🧭</div><h3 data-ru="Помощь по прибытии">Arrival support</h3>
-        <p data-ru="Поможем освоиться, пройти регистрацию и приступить к работе.">We help you settle in, register and start work.</p></div>
-    </div>
+  <div class="grid two">
+    <div class="card dark rv"><div class="ico">🧳</div><h3 data-en="For job seekers" data-ru="Соискателям">For job seekers</h3>
+      <p data-en="Find a real job in Kyrgyzstan. We arrange your invitation letter, work visa support, flight, airport pickup and accommodation." data-ru="Найдите реальную работу в Кыргызстане. Мы оформим приглашение, поможем с рабочей визой, организуем перелёт, встречу и жильё.">Find a real job in Kyrgyzstan. We arrange your invitation letter, work visa support, flight, airport pickup and accommodation.</p>
+      <a class="btn btn-gold" href="#services" data-en="See our services" data-ru="Наши услуги">See our services</a></div>
+    <div class="card g rv"><div class="ico">🏢</div><h3 data-en="For employers" data-ru="Работодателям">For employers</h3>
+      <p data-en="Need reliable workers? We recruit, screen and bring workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and handle all the paperwork." data-ru="Нужны надёжные работники? Мы подбираем, проверяем и привозим работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и берём на себя документы.">Need reliable workers? We recruit, screen and bring workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and handle all the paperwork.</p>
+      <a class="btn btn-navy" href="#employers" data-en="Hire workers" data-ru="Нанять работников">Hire workers</a></div>
   </div>
-</section>
+</div></section>
 
-<!-- ================= PROCESS ================= -->
-<section class="pad alt" id="process">
-  <div class="wrap">
-    <div class="center head">
-      <span class="eyebrow" data-ru="Как это работает">How it works</span>
-      <h2 data-ru="Пять шагов до работы в Кыргызстане">Five steps to your job in Kyrgyzstan</h2>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3 data-ru="Свяжитесь с нами">Contact us</h3>
-        <p data-ru="Отправьте в WhatsApp резюме, копию паспорта и желаемую работу.">Send your CV, passport copy and desired job on WhatsApp.</p></div>
-      <div class="step"><div class="n">2</div><h3 data-ru="Подбор работы">Job matching</h3>
-        <p data-ru="Подбираем работодателя и при необходимости организуем собеседование.">We match you with an employer and arrange an interview if needed.</p></div>
-      <div class="step"><div class="n">3</div><h3 data-ru="Приглашение">Invitation letter</h3>
-        <p data-ru="После принятия предложения оформляем приглашение. На этом этапе оплачивается сбор.">After you accept the offer, we apply for your invitation. The candidate fee is paid at this step.</p></div>
-      <div class="step"><div class="n">4</div><h3 data-ru="Рабочая виза">Work visa</h3>
-        <p data-ru="Помогаем подготовить документы и подать на рабочую визу.">We help prepare documents and apply for your Kyrgyz work visa.</p></div>
-      <div class="step"><div class="n">5</div><h3 data-ru="Перелёт и работа">Fly and start work</h3>
-        <p data-ru="Перелёт, встреча и жильё организованы. Вы начинаете работу.">Flight, pickup and accommodation are arranged. You start your job.</p></div>
-    </div>
+<!-- SERVICES -->
+<section class="pad" id="services"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow t" data-en="For job seekers" data-ru="Соискателям">For job seekers</span>
+    <h2 data-en="Full service from your country to Kyrgyzstan" data-ru="Полное сопровождение до Кыргызстана">Full service from your country to Kyrgyzstan</h2>
+    <p class="lead" data-en="One team takes care of every step, so you can focus on your new job." data-ru="Одна команда отвечает за каждый шаг, а вы думаете только о новой работе.">One team takes care of every step, so you can focus on your new job.</p>
   </div>
-</section>
-
-<!-- ================= WHAT'S INCLUDED ================= -->
-<section class="pad">
-  <div class="wrap">
-    <div class="center head"><h2 data-ru="Что включено">What's included</h2></div>
-    <ul class="checks">
-      <li data-ru="Предложение о работе от кыргызского работодателя">Job offer from a Kyrgyz employer</li>
-      <li data-ru="Приглашение и помощь с рабочей визой">Invitation letter and work visa support</li>
-      <li data-ru="Организация перелёта">Flight arrangement</li>
-      <li data-ru="Встреча в аэропорту Кыргызстана">Airport pickup in Kyrgyzstan</li>
-      <li data-ru="Бесплатное жильё и питание на большинстве вакансий (от работодателя)">Free accommodation and meals in most jobs (by the employer)</li>
-      <li data-ru="Помощь по прибытии и адаптация">Arrival support and orientation</li>
-    </ul>
-    <p class="note center" data-ru="Точные условия зависят от вакансии и указаны в предложении о работе.">Exact conditions depend on the job and are written in your job offer.</p>
+  <div class="grid">
+    <div class="card rv"><div class="ico">💼</div><h3 data-en="Job matching" data-ru="Подбор работы">Job matching</h3><p data-en="Real vacancies with Kyrgyz employers in six industries." data-ru="Реальные вакансии у кыргызских работодателей в шести отраслях.">Real vacancies with Kyrgyz employers in six industries.</p></div>
+    <div class="card g rv"><div class="ico">✉️</div><h3 data-en="Invitation letter" data-ru="Приглашение">Invitation letter</h3><p data-en="We apply for your official invitation, required for your work visa." data-ru="Мы оформляем официальное приглашение, необходимое для рабочей визы.">We apply for your official invitation, required for your work visa.</p></div>
+    <div class="card rv"><div class="ico">🛂</div><h3 data-en="Work visa support" data-ru="Помощь с рабочей визой">Work visa support</h3><p data-en="We prepare your documents and guide you through the visa process." data-ru="Готовим документы и сопровождаем вас на всех этапах получения визы.">We prepare your documents and guide you through the visa process.</p></div>
+    <div class="card g rv"><div class="ico">✈️</div><h3 data-en="Flight arrangement" data-ru="Организация перелёта">Flight arrangement</h3><p data-en="We book a suitable flight to Kyrgyzstan for you." data-ru="Подбираем и бронируем удобный рейс в Кыргызстан.">We book a suitable flight to Kyrgyzstan for you.</p></div>
+    <div class="card rv"><div class="ico">🚐</div><h3 data-en="Airport pickup" data-ru="Встреча в аэропорту">Airport pickup</h3><p data-en="Our team meets you and takes you to your accommodation." data-ru="Наша команда встретит вас и отвезёт к месту проживания.">Our team meets you and takes you to your accommodation.</p></div>
+    <div class="card g rv"><div class="ico">🏠</div><h3 data-en="Accommodation and meals" data-ru="Жильё и питание">Accommodation and meals</h3><p data-en="Free in most jobs, provided by the employer." data-ru="Бесплатно на большинстве вакансий, предоставляет работодатель.">Free in most jobs, provided by the employer.</p></div>
+    <div class="card rv"><div class="ico">🧾</div><h3 data-en="Arrival support" data-ru="Помощь по прибытии">Arrival support</h3><p data-en="Help with registration, a local SIM card and orientation." data-ru="Помощь с регистрацией, местной SIM-картой и адаптацией.">Help with registration, a local SIM card and orientation.</p></div>
+    <div class="card g rv"><div class="ico">🧭</div><h3 data-en="Ongoing support" data-ru="Постоянная поддержка">Ongoing support</h3><p data-en="We stay in contact before, during and after your arrival." data-ru="Мы на связи до, во время и после вашего приезда.">We stay in contact before, during and after your arrival.</p></div>
   </div>
-</section>
+  <p class="note center" data-en="Exact conditions depend on the job and are written in your job offer." data-ru="Точные условия зависят от вакансии и указаны в предложении о работе.">Exact conditions depend on the job and are written in your job offer.</p>
+</div></section>
 
-<!-- ================= FEES & DOCUMENTS ================= -->
-<section class="pad alt">
-  <div class="wrap split">
-    <div class="fees">
-      <h2 data-ru="Сборы и оплата">Fees and payments</h2>
-      <ul>
-        <li data-ru="Кандидат оплачивает сбор за приглашение и оформление рабочей визы.">Candidates pay a fee for the invitation letter and work visa process.</li>
-        <li data-ru="Сбор оплачивается после принятия предложения о работе, на этапе приглашения.">The fee is paid after you accept a job offer, at the invitation step.</li>
-        <li data-ru="Сумма зависит от страны и вакансии. Свяжитесь с нами для деталей.">The amount depends on your country and job. Contact us for details.</li>
-        <li data-ru="На большинстве вакансий работодатель бесплатно предоставляет жильё и питание. Это подтверждается в предложении о работе.">In most jobs, the employer provides accommodation and meals for free. Your job offer will confirm this.</li>
-        <li data-ru="Платите только через официальные каналы KYRGYZ WORK и всегда требуйте квитанцию.">Pay only through official KYRGYZ WORK channels and always ask for a receipt.</li>
-      </ul>
-      <a class="btn btn-gold" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-ru="Свяжитесь с нами для деталей">Contact us for details</a>
-    </div>
-
-    <div class="docs">
-      <h2 data-ru="Обычно нужные документы">Documents you usually need</h2>
-      <ul>
-        <li data-ru="Действующий паспорт">Valid passport</li>
-        <li data-ru="Фото паспортного формата">Passport-size photos</li>
-        <li data-ru="Резюме с опытом работы">CV with work experience</li>
-        <li data-ru="Дипломы или сертификаты (при наличии)">Education or skill certificates (if any)</li>
-        <li data-ru="Медицинская справка (при необходимости)">Medical certificate (if required)</li>
-      </ul>
-      <p class="note" data-ru="Точный список зависит от вакансии и действующих требований Кыргызстана.">The exact list depends on the job and current Kyrgyz requirements.</p>
-    </div>
+<!-- PROCESS -->
+<section class="pad alt" id="process"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow" data-en="How it works" data-ru="Как это работает">How it works</span>
+    <h2 data-en="Five steps to your job in Kyrgyzstan" data-ru="Пять шагов до работы в Кыргызстане">Five steps to your job in Kyrgyzstan</h2>
   </div>
-</section>
-
-<!-- ================= INDUSTRIES ================= -->
-<section class="pad" id="industries">
-  <div class="wrap">
-    <div class="center head">
-      <span class="eyebrow" data-ru="Отрасли">Industries</span>
-      <h2 data-ru="Отрасли, в которых мы нанимаем">Industries we hire for</h2>
-    </div>
-    <div class="grid">
-      <div class="card g"><div class="ico" aria-hidden="true">🏗️</div><h3 data-ru="Строительство">Construction</h3>
-        <p data-ru="Помощники, каменщики, маляры, арматурщики, электрики.">Helpers, masons, painters, steel fixers, electricians.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🧵</div><h3 data-ru="Текстиль и швейное производство">Textile and garment</h3>
-        <p data-ru="Швеи, портные, работники отделки и упаковки.">Sewing operators, tailors, finishing and packing staff.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">🏭</div><h3 data-ru="Производство">Manufacturing</h3>
-        <p data-ru="Операторы станков, сборщики, заводские рабочие.">Machine operators, assemblers, factory workers.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🌾</div><h3 data-ru="Сельское хозяйство">Agriculture</h3>
-        <p data-ru="Работники ферм и теплиц, уборка урожая, уход за скотом.">Farm workers, greenhouse and harvest staff, livestock care.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">🍞</div><h3 data-ru="Пищевая промышленность">Food processing</h3>
-        <p data-ru="Упаковка, переработка, хлебопекарни, мясопереработка.">Packing, processing, bakery and meat workers.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🚚</div><h3 data-ru="Транспорт и логистика">Transport and logistics</h3>
-        <p data-ru="Водители, складские работники, грузчики, водители погрузчиков.">Drivers, warehouse staff, loaders, forklift operators.</p></div>
-    </div>
+  <div class="steps">
+    <div class="step rv"><div class="n">1</div><h3 data-en="Contact us" data-ru="Свяжитесь с нами">Contact us</h3><p data-en="Send your CV, passport copy and desired job on WhatsApp." data-ru="Отправьте в WhatsApp резюме, копию паспорта и желаемую работу.">Send your CV, passport copy and desired job on WhatsApp.</p></div>
+    <div class="step rv"><div class="n">2</div><h3 data-en="Job matching" data-ru="Подбор работы">Job matching</h3><p data-en="We match you with an employer and arrange an interview if needed." data-ru="Подбираем работодателя и при необходимости организуем собеседование.">We match you with an employer and arrange an interview if needed.</p></div>
+    <div class="step rv"><div class="n">3</div><h3 data-en="Documents and visa" data-ru="Документы и виза">Documents and visa</h3><p data-en="We prepare your invitation and work visa documents." data-ru="Готовим приглашение и документы для рабочей визы.">We prepare your invitation and work visa documents.</p></div>
+    <div class="step rv"><div class="n">4</div><h3 data-en="Travel and arrival" data-ru="Перелёт и прибытие">Travel and arrival</h3><p data-en="We arrange your flight and meet you at the airport." data-ru="Организуем перелёт и встречаем вас в аэропорту.">We arrange your flight and meet you at the airport.</p></div>
+    <div class="step rv"><div class="n">5</div><h3 data-en="Start work" data-ru="Начало работы">Start work</h3><p data-en="You start your job, and we stay in touch for support." data-ru="Вы начинаете работать, а мы остаёмся на связи.">You start your job, and we stay in touch for support.</p></div>
   </div>
-</section>
+  <div class="center" style="margin-top:40px"><a class="btn btn-teal" href="#contact" data-en="Start step 1 now" data-ru="Начать с шага 1">Start step 1 now</a></div>
+</div></section>
 
-<!-- ================= EMPLOYERS ================= -->
+<!-- INDUSTRIES -->
+<section class="pad" id="industries"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow t" data-en="Industries" data-ru="Отрасли">Industries</span>
+    <h2 data-en="Industries we hire for" data-ru="Отрасли, в которых мы нанимаем">Industries we hire for</h2>
+  </div>
+  <div class="grid">
+    <div class="card g rv"><div class="ico">🏗️</div><h3 data-en="Construction" data-ru="Строительство">Construction</h3><p data-en="Masons, carpenters, steel fixers, welders and helpers." data-ru="Каменщики, плотники, арматурщики, сварщики и подсобники.">Masons, carpenters, steel fixers, welders and helpers.</p></div>
+    <div class="card g rv"><div class="ico">🧵</div><h3 data-en="Textile and garment" data-ru="Текстиль и швейное дело">Textile and garment</h3><p data-en="Sewing machine operators, cutters, ironers and packers." data-ru="Швеи-мотористы, раскройщики, утюжильщики и упаковщики.">Sewing machine operators, cutters, ironers and packers.</p></div>
+    <div class="card g rv"><div class="ico">🏭</div><h3 data-en="Manufacturing" data-ru="Производство">Manufacturing</h3><p data-en="Factory workers, machine operators and assembly staff." data-ru="Рабочие заводов, операторы станков и сборщики.">Factory workers, machine operators and assembly staff.</p></div>
+    <div class="card g rv"><div class="ico">🌾</div><h3 data-en="Agriculture" data-ru="Сельское хозяйство">Agriculture</h3><p data-en="Farm workers, greenhouse staff and livestock care." data-ru="Работники ферм, теплиц и уход за скотом.">Farm workers, greenhouse staff and livestock care.</p></div>
+    <div class="card g rv"><div class="ico">🍞</div><h3 data-en="Food processing" data-ru="Пищевая промышленность">Food processing</h3><p data-en="Packing, processing, bakery and meat workers." data-ru="Упаковка, переработка, хлебопекарни, мясопереработка.">Packing, processing, bakery and meat workers.</p></div>
+    <div class="card g rv"><div class="ico">🚚</div><h3 data-en="Transport and logistics" data-ru="Транспорт и логистика">Transport and logistics</h3><p data-en="Drivers, warehouse staff, loaders, forklift operators." data-ru="Водители, складские работники, грузчики, водители погрузчиков.">Drivers, warehouse staff, loaders, forklift operators.</p></div>
+  </div>
+</div></section>
+
+<!-- EMPLOYERS -->
 <section class="band" id="employers">
-  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,45 C960,0 1200,70 1440,30 L1440,90 L0,90 Z" fill="#fff"/></svg>
-  <div class="wrap hero-grid">
+  <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0,60 C240,10 480,90 720,45 C960,0 1200,70 1440,30 L1440,90 L0,90 Z" fill="#F3F6FB"/></svg>
+  <div class="wrap grid2">
     <div>
-      <span class="badge" data-ru="Работодателям">For employers</span>
-      <h2 data-ru="Где работодатели находят таланты.">Where Employers Meet Talent.</h2>
-      <p class="lead" data-ru="Мы предоставляем квалифицированных и надёжных работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и помогаем компании во всём — от подбора до первого рабочего дня.">We supply skilled, reliable workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and help your company with everything, from recruitment to the worker's first day.</p>
+      <span class="badge" data-en="For employers" data-ru="Работодателям">For employers</span>
+      <h2 data-en="Where Employers Meet Talent." data-ru="Где работодатели находят таланты.">Where Employers Meet Talent.</h2>
+      <p class="lead" data-en="We supply skilled, reliable workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and help your company with everything, from recruitment to the worker's first day." data-ru="Мы предоставляем квалифицированных и надёжных работников из Пакистана, Индии, Бангладеш, Шри-Ланки и Непала и помогаем компании во всём — от подбора до первого рабочего дня.">We supply skilled, reliable workers from Pakistan, India, Bangladesh, Sri Lanka and Nepal, and help your company with everything, from recruitment to the worker's first day.</p>
       <div class="btn-row">
-        <a class="btn btn-gold" href="#request" data-ru="Запросить работников">Request workers</a>
+        <a class="btn btn-gold" href="#request" data-en="Request workers" data-ru="Запросить работников">Request workers</a>
         <a class="btn btn-ghost" href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
-    <div class="vis"><ul>
-      <li data-ru="Изучаем вакансии, навыки и зарплаты">Understand your positions, skills and salary</li>
-      <li data-ru="Ищем и проверяем кандидатов на родине">Source and screen candidates at home</li>
-      <li data-ru="Документы, приглашения и визы — на нас">Documents, invitations and visas handled</li>
-      <li data-ru="Перелёт, встреча и адаптация">Flights, airport pickup and onboarding</li>
+    <div class="vis rv"><ul>
+      <li data-en="We learn your positions, skills and salary" data-ru="Изучаем вакансии, навыки и зарплату">We learn your positions, skills and salary</li>
+      <li data-en="We source and screen candidates in their home countries" data-ru="Ищем и проверяем кандидатов на родине">We source and screen candidates in their home countries</li>
+      <li data-en="Video interviews and skill tests on request" data-ru="Видеособеседования и проверка навыков по запросу">Video interviews and skill tests on request</li>
+      <li data-en="Documents, invitations and visas handled" data-ru="Документы, приглашения и визы — на нас">Documents, invitations and visas handled</li>
+      <li data-en="Flights, airport pickup and onboarding" data-ru="Перелёт, встреча и адаптация">Flights, airport pickup and onboarding</li>
+      <li data-en="Ongoing support and replacement help (as agreed in the contract)" data-ru="Поддержка и помощь с заменой (по договору)">Ongoing support and replacement help (as agreed in the contract)</li>
     </ul></div>
   </div>
 </section>
 
-<section class="pad">
-  <div class="wrap">
-    <div class="center head"><h2 data-ru="Почему с нами удобно">Why work with us</h2></div>
-    <div class="grid">
-      <div class="card g"><div class="ico" aria-hidden="true">🌏</div><h3 data-ru="Большой выбор кандидатов">Large talent pool</h3>
-        <p data-ru="Работники из пяти стран Южной Азии.">Workers from five South Asian countries.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🔍</div><h3 data-ru="Проверенные кандидаты">Screened candidates</h3>
-        <p data-ru="Проверяем навыки и документы до знакомства с вами.">We check skills and documents before you meet them.</p></div>
-      <div class="card g"><div class="ico" aria-hidden="true">📑</div><h3 data-ru="Документы — на нас">Paperwork handled</h3>
-        <p data-ru="Готовим и подаём приглашения, разрешения и визы.">Invitations, permits and visas prepared and submitted.</p></div>
-      <div class="card"><div class="ico" aria-hidden="true">🛠️</div><h3 data-ru="Сопровождение от начала до конца">Start-to-finish support</h3>
-        <p data-ru="От подбора до первого рабочего дня.">From recruitment to the worker's first day.</p></div>
-    </div>
+<section class="pad alt"><div class="wrap">
+  <div class="center head"><h2 data-en="Why work with us" data-ru="Почему с нами удобно">Why work with us</h2></div>
+  <div class="grid">
+    <div class="card g rv"><div class="ico">🌏</div><h3 data-en="Large talent pool" data-ru="Большой выбор кандидатов">Large talent pool</h3><p data-en="Workers from five South Asian countries." data-ru="Работники из пяти стран Южной Азии.">Workers from five South Asian countries.</p></div>
+    <div class="card g rv"><div class="ico">🔍</div><h3 data-en="Screened candidates" data-ru="Проверенные кандидаты">Screened candidates</h3><p data-en="We check experience, skills and documents." data-ru="Проверяем опыт, навыки и документы.">We check experience, skills and documents.</p></div>
+    <div class="card g rv"><div class="ico">📑</div><h3 data-en="All paperwork handled" data-ru="Все документы — на нас">All paperwork handled</h3><p data-en="Invitations, permits, visas and registration." data-ru="Приглашения, разрешения, визы и регистрация.">Invitations, permits, visas and registration.</p></div>
+    <div class="card g rv"><div class="ico">👤</div><h3 data-en="One point of contact" data-ru="Один контакт">One point of contact</h3><p data-en="A dedicated manager, in English or Russian." data-ru="Персональный менеджер на английском или русском.">A dedicated manager, in English or Russian.</p></div>
   </div>
-</section>
+</div></section>
 
-<section class="pad alt">
-  <div class="wrap">
-    <div class="center head"><h2 data-ru="Что мы делаем для работодателей">What we do for employers</h2></div>
-    <ul class="checks">
-      <li data-ru="Определяем потребности: должности, навыки, количество, зарплата, дата начала">Understand your needs: positions, skills, numbers, salary, start date</li>
-      <li data-ru="Ищем и проверяем кандидатов в их странах">Source and screen candidates in their home countries</li>
-      <li data-ru="Видеособеседования и проверка навыков по запросу">Video interviews and skill tests on request</li>
-      <li data-ru="Документы на разрешение, приглашения и помощь с визами">Work permit paperwork, invitations and visa support</li>
-      <li data-ru="Перелёт и встреча работников">Flights and airport pickup for workers</li>
-      <li data-ru="Помощь с жильём и питанием">Help arranging accommodation and meals</li>
-      <li data-ru="Помощь по прибытии, регистрации и адаптации">Arrival, registration and onboarding support</li>
-      <li data-ru="Постоянная поддержка и помощь с заменой (по договору)">Ongoing support and replacement help (as agreed in the contract)</li>
+<!-- EMPLOYER REQUEST -->
+<section class="pad" id="request"><div class="wrap fg">
+  <div>
+    <span class="eyebrow" data-en="Employer request" data-ru="Запрос работников">Employer request</span>
+    <h2 data-en="Request workers" data-ru="Запросить работников">Request workers</h2>
+    <p class="lead" data-en="Tell us what you need. We will reply on WhatsApp with candidate options and terms." data-ru="Расскажите, кто вам нужен. Мы ответим в WhatsApp с вариантами и условиями.">Tell us what you need. We will reply on WhatsApp with candidate options and terms.</p>
+    <ul class="checks" style="margin-top:24px;grid-template-columns:1fr">
+      <li data-en="A quick reply on WhatsApp" data-ru="Быстрый ответ в WhatsApp">A quick reply on WhatsApp</li>
+      <li data-en="Candidate options matched to your job" data-ru="Кандидаты под вашу вакансию">Candidate options matched to your job</li>
+      <li data-en="Clear terms before you commit" data-ru="Понятные условия до начала работы">Clear terms before you commit</li>
     </ul>
   </div>
-</section>
-
-<!-- ================= EMPLOYER REQUEST FORM ================= -->
-<section class="pad" id="request">
-  <div class="wrap split">
-    <div>
-      <span class="eyebrow" data-ru="Запрос работников">Employer request</span>
-      <h2 data-ru="Запросить работников">Request workers</h2>
-      <p class="lead" data-ru="Расскажите, кто вам нужен. Мы ответим в WhatsApp с вариантами и условиями.">Tell us what you need. We will reply on WhatsApp with candidate options and terms.</p>
+  <form id="empForm" class="box rv">
+    <div class="row2">
+      <div><label for="e_company" data-en="Company name" data-ru="Название компании">Company name</label><input id="e_company" required autocomplete="organization"></div>
+      <div><label for="e_person" data-en="Contact person" data-ru="Контактное лицо">Contact person</label><input id="e_person" required autocomplete="name"></div>
     </div>
-
-    <form id="empForm" class="card-form" novalidate>
-      <div><label for="e_company" data-ru="Название компании">Company name</label><input id="e_company" name="company" autocomplete="organization" required></div>
-      <div><label for="e_person" data-ru="Контактное лицо">Contact person</label><input id="e_person" name="person" autocomplete="name" required></div>
-      <div><label for="e_phone" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="e_phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
-      <div><label for="e_ind" data-ru="Отрасль">Industry</label>
+    <div class="row2">
+      <div><label for="e_phone" data-en="Phone / WhatsApp" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="e_phone" type="tel" required autocomplete="tel"></div>
+      <div><label for="e_count" data-en="Number of workers" data-ru="Количество работников">Number of workers</label><input id="e_count" type="number" min="1" required></div>
+    </div>
+    <div class="row2">
+      <div><label for="e_ind" data-en="Industry" data-ru="Отрасль">Industry</label>
         <select id="e_ind">
-          <option value="Construction" data-ru="Строительство">Construction</option>
-          <option value="Textile and garment" data-ru="Текстиль и швейное производство">Textile and garment</option>
-          <option value="Manufacturing" data-ru="Производство">Manufacturing</option>
-          <option value="Agriculture" data-ru="Сельское хозяйство">Agriculture</option>
-          <option value="Food processing" data-ru="Пищевая промышленность">Food processing</option>
-          <option value="Transport and logistics" data-ru="Транспорт и логистика">Transport and logistics</option>
-          <option value="Other" data-ru="Другое">Other</option>
+          <option value="Construction" data-en="Construction" data-ru="Строительство">Construction</option>
+          <option value="Textile and garment" data-en="Textile and garment" data-ru="Текстиль и швейное дело">Textile and garment</option>
+          <option value="Manufacturing" data-en="Manufacturing" data-ru="Производство">Manufacturing</option>
+          <option value="Agriculture" data-en="Agriculture" data-ru="Сельское хозяйство">Agriculture</option>
+          <option value="Food processing" data-en="Food processing" data-ru="Пищевая промышленность">Food processing</option>
+          <option value="Transport and logistics" data-en="Transport and logistics" data-ru="Транспорт и логистика">Transport and logistics</option>
+          <option value="Other" data-en="Other" data-ru="Другое">Other</option>
         </select></div>
-      <div><label for="e_count" data-ru="Количество работников">Number of workers</label><input id="e_count" name="count" type="number" min="1" inputmode="numeric" required></div>
-      <div><label for="e_nat" data-ru="Предпочитаемая страна">Preferred country</label>
+      <div><label for="e_nat" data-en="Preferred country" data-ru="Предпочитаемая страна">Preferred country</label>
         <select id="e_nat">
-          <option value="Any" data-ru="Любая">Any</option>
-          <option value="Pakistan" data-ru="Пакистан">Pakistan</option>
-          <option value="India" data-ru="Индия">India</option>
-          <option value="Bangladesh" data-ru="Бангладеш">Bangladesh</option>
-          <option value="Sri Lanka" data-ru="Шри-Ланка">Sri Lanka</option>
-          <option value="Nepal" data-ru="Непал">Nepal</option>
+          <option value="Any" data-en="Any" data-ru="Любая">Any</option>
+          <option value="Pakistan" data-en="Pakistan" data-ru="Пакистан">Pakistan</option>
+          <option value="India" data-en="India" data-ru="Индия">India</option>
+          <option value="Bangladesh" data-en="Bangladesh" data-ru="Бангладеш">Bangladesh</option>
+          <option value="Sri Lanka" data-en="Sri Lanka" data-ru="Шри-Ланка">Sri Lanka</option>
+          <option value="Nepal" data-en="Nepal" data-ru="Непал">Nepal</option>
         </select></div>
-      <div><label for="e_msg" data-ru="Детали (должности, зарплата, жильё)">Job details (positions, salary, accommodation)</label><textarea id="e_msg"></textarea></div>
-      <button class="btn btn-teal" type="submit" data-ru="Отправить в WhatsApp">Send request via WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<!-- ================= FAQ ================= -->
-<section class="pad alt" id="faq">
-  <div class="wrap">
-    <div class="center head"><h2 data-ru="Частые вопросы">Frequently asked questions</h2></div>
-    <div class="faq">
-      <details><summary data-ru="За что платит кандидат?">What do candidates pay for?</summary>
-        <p data-ru="Сбор за приглашение и оформление рабочей визы. Точную сумму уточняйте у нас.">A fee for the invitation letter and work visa process. Contact us for the exact amount.</p></details>
-      <details><summary data-ru="Жильё и питание бесплатные?">Are accommodation and meals free?</summary>
-        <p data-ru="На большинстве вакансий — да. Их предоставляет работодатель, это указано в предложении о работе.">In most jobs, yes. The employer provides them, and your job offer confirms it.</p></details>
-      <details><summary data-ru="Из каких стран вы принимаете кандидатов?">Which countries do you accept candidates from?</summary>
-        <p data-ru="Пакистан, Индия, Бангладеш, Шри-Ланка и Непал.">Pakistan, India, Bangladesh, Sri Lanka and Nepal.</p></details>
-      <details><summary data-ru="Вы гарантируете визу?">Do you guarantee a visa?</summary>
-        <p data-ru="Никто не может. Мы правильно готовим и подаём документы, решение принимают власти Кыргызстана.">No one can. We prepare and submit documents correctly; the Kyrgyz authorities decide.</p></details>
-      <details><summary data-ru="Как избежать мошенников?">How can I avoid fraud?</summary>
-        <p data-ru="Связывайтесь только через WhatsApp +996 555 746 401 и всегда требуйте квитанцию.">Contact us only via WhatsApp +996 555 746 401 and always ask for a receipt.</p></details>
     </div>
+    <div><label for="e_msg" data-en="Job details (positions, salary, accommodation)" data-ru="Детали (должности, зарплата, жильё)">Job details (positions, salary, accommodation)</label><textarea id="e_msg"></textarea></div>
+    <button class="btn btn-teal" type="submit" data-en="Send request via WhatsApp" data-ru="Отправить в WhatsApp">Send request via WhatsApp</button>
+    <p class="form-note" data-en="Your details open in WhatsApp. Nothing is stored on this website." data-ru="Данные откроются в WhatsApp. На сайте ничего не сохраняется.">Your details open in WhatsApp. Nothing is stored on this website.</p>
+  </form>
+</div></section>
+
+<!-- FEES + DOCS -->
+<section class="pad alt"><div class="wrap fg">
+  <div class="fees rv">
+    <span class="eyebrow" style="color:var(--gold-l);background:rgba(232,163,23,.18)" data-en="Transparent pricing" data-ru="Прозрачные условия">Transparent pricing</span>
+    <h2 data-en="Fees and payments" data-ru="Сборы и оплата">Fees and payments</h2>
+    <ul>
+      <li data-en="Candidates pay a fee for the invitation letter and work visa process." data-ru="Кандидат оплачивает сбор за приглашение и оформление рабочей визы.">Candidates pay a fee for the invitation letter and work visa process.</li>
+      <li data-en="The amount depends on your country and job. Contact us for details." data-ru="Сумма зависит от страны и вакансии. Свяжитесь с нами для деталей.">The amount depends on your country and job. Contact us for details.</li>
+      <li data-en="In most jobs, the employer provides accommodation and meals for free. Your job offer will confirm this." data-ru="На большинстве вакансий работодатель бесплатно предоставляет жильё и питание. Это подтверждается в предложении о работе.">In most jobs, the employer provides accommodation and meals for free. Your job offer will confirm this.</li>
+      <li data-en="Pay only through official KYRGYZ WORK channels and always ask for a receipt." data-ru="Платите только через официальные каналы KYRGYZ WORK и всегда требуйте квитанцию.">Pay only through official KYRGYZ WORK channels and always ask for a receipt.</li>
+    </ul>
+    <a class="btn btn-gold" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Ask about fees" data-ru="Узнать о сборах">Ask about fees</a>
   </div>
-</section>
-
-<!-- ================= OVERSTAY CALCULATOR ================= -->
-<section class="pad calc" id="calculator">
-  <div class="wrap">
-    <div class="center head">
-      <span class="eyebrow" data-ru="Инструмент">Tool</span>
-      <h2 data-ru="Калькулятор расходов при просрочке пребывания">Overstay Cost Calculator</h2>
-      <p class="lead" data-ru="Рассчитайте предполагаемый штраф и стоимость выездной визы.">Calculate your estimated protocol fine and exit visa fee.</p>
-    </div>
-
-    <div class="calc-panel">
-      <label for="kw-expiry" data-ru="Дата окончания законного срока пребывания">Date your legal stay expired</label>
-      <input type="date" id="kw-expiry">
-      <button type="button" class="btn btn-gold" id="kw-calculate" data-ru="Рассчитать обе суммы">Calculate both fees</button>
-      <div id="kw-error" class="calc-error" role="alert"></div>
-
-      <div class="calc-results" id="kw-results" aria-live="polite">
-        <h3 data-ru="Предварительный расчёт">Your estimated results</h3>
-        <div class="row"><span data-ru="Продолжительность просрочки">Overstay duration</span><strong class="amt" id="kw-duration"></strong></div>
-        <div class="row"><span data-ru="Штраф по протоколу">Protocol fine</span><strong class="amt" id="kw-protocol"></strong></div>
-        <div class="row"><span data-ru="Государственный сбор за выездную визу">Exit visa government fee</span><strong class="amt" id="kw-exit"></strong></div>
-        <div class="row total"><strong data-ru="Предполагаемая общая сумма государственных сборов">Estimated combined government charges</strong><strong class="amt" id="kw-total"></strong></div>
-        <p class="small" data-ru="Это отдельные платежи. Штраф назначается уполномоченным органом. Сбор за выездную визу оплачивается отдельно.">These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is separate.</p>
-      </div>
-    </div>
-
-    <p class="warn" data-ru="Важно: это предварительный расчёт, а не официальное решение. Тарифы на выездную визу по постановлению № 312 действуют временно до 31 декабря 2026 года. Перед оплатой уточните сумму в уполномоченных органах.">Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment.</p>
+  <div class="docs rv">
+    <h2 data-en="Documents you usually need" data-ru="Обычно нужные документы">Documents you usually need</h2>
+    <ul>
+      <li data-en="Valid passport" data-ru="Действующий паспорт">Valid passport</li>
+      <li data-en="Passport-size photos" data-ru="Фото паспортного формата">Passport-size photos</li>
+      <li data-en="CV with work experience" data-ru="Резюме с опытом работы">CV with work experience</li>
+      <li data-en="Education or skill certificates (if any)" data-ru="Дипломы или сертификаты (при наличии)">Education or skill certificates (if any)</li>
+      <li data-en="Medical certificate (if required)" data-ru="Медицинская справка (при необходимости)">Medical certificate (if required)</li>
+    </ul>
+    <p class="note" data-en="The exact list depends on the job and current Kyrgyz requirements." data-ru="Точный список зависит от вакансии и действующих требований Кыргызстана.">The exact list depends on the job and current Kyrgyz requirements.</p>
   </div>
-</section>
+</div></section>
 
-<!-- ================= CONTACT ================= -->
-<section class="pad" id="contact">
-  <div class="wrap split">
+<!-- SAFETY -->
+<section class="pad" id="safety"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow t" data-en="Worker safety" data-ru="Безопасность работников">Worker safety</span>
+    <h2 data-en="Protect yourself from job scams" data-ru="Защитите себя от мошенников">Protect yourself from job scams</h2>
+    <p class="lead" data-en="Fake agents target people who want to work abroad. Check these four things before you pay anyone." data-ru="Фальшивые агенты охотятся на тех, кто хочет работать за рубежом. Проверьте эти четыре вещи, прежде чем платить.">Fake agents target people who want to work abroad. Check these four things before you pay anyone.</p>
+  </div>
+  <div class="safe-grid">
+    <div class="safe rv"><div class="si">📞</div><h3 data-en="Check the number" data-ru="Проверьте номер">Check the number</h3><p data-en="Our only WhatsApp is +996 555 746 401. Other numbers are not us." data-ru="Наш единственный WhatsApp: +996 555 746 401. Другие номера — не мы.">Our only WhatsApp is +996 555 746 401. Other numbers are not us.</p></div>
+    <div class="safe rv"><div class="si">🧾</div><h3 data-en="Always get a receipt" data-ru="Всегда берите квитанцию">Always get a receipt</h3><p data-en="Never pay without a written receipt for every payment." data-ru="Никогда не платите без письменной квитанции.">Never pay without a written receipt for every payment.</p></div>
+    <div class="safe rv"><div class="si">📄</div><h3 data-en="See the job offer" data-ru="Требуйте предложение">See the job offer</h3><p data-en="A real job has a written offer with salary and conditions." data-ru="У реальной работы есть письменное предложение с зарплатой и условиями.">A real job has a written offer with salary and conditions.</p></div>
+    <div class="safe rv"><div class="si">⚠️</div><h3 data-en="No visa guarantees" data-ru="Гарантий визы не бывает">No visa guarantees</h3><p data-en="Anyone who guarantees a visa is not telling the truth." data-ru="Тот, кто гарантирует визу, говорит неправду.">Anyone who guarantees a visa is not telling the truth.</p></div>
+  </div>
+  <div class="alert rv">
+    <span style="font-size:1.6rem" aria-hidden="true">🛡️</span>
+    <div><b data-en="Not sure if a message is really from us?" data-ru="Не уверены, что сообщение от нас?">Not sure if a message is really from us?**
+<span data-en="Send it to our official WhatsApp and we will check it for free." data-ru="Перешлите его в наш официальный WhatsApp, и мы бесплатно проверим.">Send it to our official WhatsApp and we will check it for free.</span></div>
+    <a class="btn btn-wa" href="https://wa.me/996555746401?text=Hello%20KYRGYZ%20WORK%2C%20please%20check%20if%20this%20message%20is%20from%20you%3A" target="_blank" rel="noopener" data-en="Verify with us" data-ru="Проверить у нас">Verify with us</a>
+  </div>
+</div></section>
+
+<!-- ABOUT -->
+<section class="pad alt" id="about"><div class="wrap">
+  <div class="fg" style="align-items:center">
     <div>
-      <span class="eyebrow" data-ru="Контакты">Contact</span>
-      <h2 data-ru="Свяжитесь с нами для деталей">Contact us for details</h2>
-      <p class="lead" style="margin-bottom:22px" data-ru="Быстрее всего — через WhatsApp.">The fastest way to reach us is WhatsApp.</p>
-      <div class="ci"><b>WhatsApp</b><a href="https://wa.me/996555746401" target="_blank" rel="noopener">+996 555 746 401</a></div>
-      <div class="ci"><b data-ru="Сайт">Website</b><span>kyrghyz.work</span></div>
-      <div class="ci"><b>Email</b><span data-ru="Скоро">Coming soon</span></div>
-      <div class="ci"><b data-ru="Офис">Office</b><span data-ru="Скоро">Coming soon</span></div>
+      <span class="eyebrow" data-en="About us" data-ru="О нас">About us</span>
+      <h2 data-en="About KYRGYZ WORK" data-ru="О компании KYRGYZ WORK">About KYRGYZ WORK</h2>
+      <p class="lead" data-en="KYRGYZ WORK is a recruitment company in Kyrgyzstan. We work with employers who need reliable workers, and with job seekers from South Asia who want a safe, legal job abroad. We handle the full journey, from the first message to the first day at work." data-ru="KYRGYZ WORK — рекрутинговая компания в Кыргызстане. Мы работаем с работодателями, которым нужны надёжные работники, и с соискателями из Южной Азии, которые хотят безопасную и легальную работу за рубежом. Мы сопровождаем весь путь — от первого сообщения до первого рабочего дня.">KYRGYZ WORK is a recruitment company in Kyrgyzstan. We work with employers who need reliable workers, and with job seekers from South Asia who want a safe, legal job abroad. We handle the full journey, from the first message to the first day at work.</p>
     </div>
+    <div class="logo-box rv"><img src="header-logo.jpg" alt="KYRGYZ WORK"></div>
+  </div>
+  <div class="grid" style="margin-top:34px">
+    <div class="card rv"><div class="ico">🤝</div><h3 data-en="Honesty" data-ru="Честность">Honesty</h3><p data-en="Clear information about jobs, fees and conditions." data-ru="Понятная информация о вакансиях, сборах и условиях.">Clear information about jobs, fees and conditions.</p></div>
+    <div class="card rv"><div class="ico">📜</div><h3 data-en="Legal process" data-ru="Законность">Legal process</h3><p data-en="Every worker travels with proper documents." data-ru="Каждый работник приезжает с правильными документами.">Every worker travels with proper documents.</p></div>
+    <div class="card rv"><div class="ico">🧭</div><h3 data-en="Support" data-ru="Поддержка">Support</h3><p data-en="We stay in contact before, during and after arrival." data-ru="Мы на связи до, во время и после прибытия.">We stay in contact before, during and after arrival.</p></div>
+    <div class="card rv"><div class="ico">⭐</div><h3 data-en="Respect" data-ru="Уважение">Respect</h3><p data-en="Fair treatment of workers and employers." data-ru="Справедливое отношение к работникам и работодателям.">Fair treatment of workers and employers.</p></div>
+  </div>
+  <h3 style="margin-top:44px" data-en="Countries we recruit from" data-ru="Страны набора">Countries we recruit from</h3>
+  <div class="chips">
+    <span data-en="🇵🇰 Pakistan" data-ru="🇵🇰 Пакистан">🇵🇰 Pakistan</span>
+    <span data-en="🇮🇳 India" data-ru="🇮🇳 Индия">🇮🇳 India</span>
+    <span data-en="🇧🇩 Bangladesh" data-ru="🇧🇩 Бангладеш">🇧🇩 Bangladesh</span>
+    <span data-en="🇱🇰 Sri Lanka" data-ru="🇱🇰 Шри-Ланка">🇱🇰 Sri Lanka</span>
+    <span data-en="🇳🇵 Nepal" data-ru="🇳🇵 Непал">🇳🇵 Nepal</span>
+  </div>
+  <div class="legal" data-en="We prepare and submit applications. Final visa and work permit decisions are made by the authorities of the Kyrgyz Republic." data-ru="Мы готовим и подаём заявления. Окончательные решения по визам и разрешениям на работу принимают органы власти Кыргызской Республики.">We prepare and submit applications. Final visa and work permit decisions are made by the authorities of the Kyrgyz Republic.</div>
+</div></section>
 
-    <form id="jobForm" class="card-form" novalidate>
-      <h3 data-ru="Заявка на работу">Job application</h3>
-      <div><label for="name" data-ru="Ваше имя">Your name</label><input id="name" name="name" autocomplete="name" required></div>
-      <div><label for="phone" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required></div>
-      <div><label for="country" data-ru="Ваша страна">Your country</label>
+<!-- FAQ -->
+<section class="pad" id="faq"><div class="wrap">
+  <div class="center head">
+    <span class="eyebrow t" data-en="FAQ" data-ru="Вопросы">FAQ</span>
+    <h2 data-en="Frequently asked questions" data-ru="Частые вопросы">Frequently asked questions</h2>
+  </div>
+  <div class="faq">
+    <details><summary data-en="What do candidates pay for?" data-ru="За что платит кандидат?">What do candidates pay for?</summary><p data-en="A fee for the invitation letter and work visa process. Contact us for the exact amount." data-ru="Сбор за приглашение и оформление рабочей визы. Точную сумму уточните у нас.">A fee for the invitation letter and work visa process. Contact us for the exact amount.</p></details>
+    <details><summary data-en="Are accommodation and meals free?" data-ru="Жильё и питание бесплатные?">Are accommodation and meals free?</summary><p data-en="In most jobs, yes. The employer provides them, and your job offer confirms it." data-ru="На большинстве вакансий — да. Их предоставляет работодатель, что указано в предложении о работе.">In most jobs, yes. The employer provides them, and your job offer confirms it.</p></details>
+    <details><summary data-en="Which countries do you accept candidates from?" data-ru="Из каких стран вы принимаете кандидатов?">Which countries do you accept candidates from?</summary><p data-en="Pakistan, India, Bangladesh, Sri Lanka and Nepal." data-ru="Пакистан, Индия, Бангладеш, Шри-Ланка и Непал.">Pakistan, India, Bangladesh, Sri Lanka and Nepal.</p></details>
+    <details><summary data-en="Do you guarantee a visa?" data-ru="Вы гарантируете визу?">Do you guarantee a visa?</summary><p data-en="No one can. We prepare and submit documents correctly; the Kyrgyz authorities decide." data-ru="Никто не может. Мы правильно готовим и подаём документы, решение принимают власти Кыргызстана.">No one can. We prepare and submit documents correctly; the Kyrgyz authorities decide.</p></details>
+    <details><summary data-en="My visa expired. What should I do?" data-ru="Моя виза истекла. Что делать?">My visa expired. What should I do?</summary><p data-en="Use our free calculator above to estimate your protocol fine, then message us on WhatsApp. The longer you wait, the higher the fine can become." data-ru="Рассчитайте штраф в нашем бесплатном калькуляторе выше и напишите нам в WhatsApp. Чем дольше ждать, тем выше может стать штраф.">Use our free calculator above to estimate your protocol fine, then message us on WhatsApp. The longer you wait, the higher the fine can become.</p></details>
+    <details><summary data-en="Is the calculator result official?" data-ru="Результат калькулятора официальный?">Is the calculator result official?</summary><p data-en="No. It is an estimate. The final amount is set by the competent authority." data-ru="Нет. Это предварительный расчёт. Окончательную сумму определяет уполномоченный орган.">No. It is an estimate. The final amount is set by the competent authority.</p></details>
+    <details><summary data-en="How can I avoid fraud?" data-ru="Как избежать мошенников?">How can I avoid fraud?</summary><p data-en="Contact us only via WhatsApp +996 555 746 401 and always ask for a receipt." data-ru="Связывайтесь только через WhatsApp +996 555 746 401 и всегда требуйте квитанцию.">Contact us only via WhatsApp +996 555 746 401 and always ask for a receipt.</p></details>
+  </div>
+</div></section>
+
+<!-- CONTACT -->
+<section class="pad alt" id="contact"><div class="wrap fg">
+  <div>
+    <span class="eyebrow" data-en="Contact" data-ru="Контакты">Contact</span>
+    <h2 data-en="Contact us for details" data-ru="Свяжитесь с нами для деталей">Contact us for details</h2>
+    <p class="lead" style="margin-bottom:22px" data-en="The fastest way to reach us is WhatsApp." data-ru="Быстрее всего — через WhatsApp.">The fastest way to reach us is WhatsApp.</p>
+    <div class="ci"><span class="cii">💬</span><div>**WhatsApp**<a href="https://wa.me/996555746401" target="_blank" rel="noopener">+996 555 746 401</a></div></div>
+    <div class="ci"><span class="cii">🌐</span><div><b data-en="Website" data-ru="Сайт">Website**<span>kyrghyz.work</span></div></div>
+    <div class="ci"><span class="cii">✉️</span><div>**Email**<span data-en="Coming soon" data-ru="Скоро">Coming soon</span></div></div>
+    <div class="ci"><span class="cii">📍</span><div><b data-en="Office" data-ru="Офис">Office**<span data-en="Coming soon" data-ru="Скоро">Coming soon</span></div></div>
+  </div>
+  <form id="jobForm" class="box rv">
+    <h3 data-en="Job application" data-ru="Заявка на работу">Job application</h3>
+    <div class="row2">
+      <div><label for="name" data-en="Your name" data-ru="Ваше имя">Your name</label><input id="name" required autocomplete="name"></div>
+      <div><label for="phone" data-en="Phone / WhatsApp" data-ru="Телефон / WhatsApp">Phone / WhatsApp</label><input id="phone" type="tel" required autocomplete="tel"></div>
+    </div>
+    <div class="row2">
+      <div><label for="country" data-en="Your country" data-ru="Ваша страна">Your country</label>
         <select id="country">
-          <option value="Pakistan" data-ru="Пакистан">Pakistan</option>
-          <option value="India" data-ru="Индия">India</option>
-          <option value="Bangladesh" data-ru="Бангладеш">Bangladesh</option>
-          <option value="Sri Lanka" data-ru="Шри-Ланка">Sri Lanka</option>
-          <option value="Nepal" data-ru="Непал">Nepal</option>
-        </select></div>
-      <div><label for="job" data-ru="Тип работы">Job type</label>
-        <select id="job">
-          <option value="Construction" data-ru="Строительство">Construction</option>
-          <option value="Textile and garment" data-ru="Текстиль и швейное производство">Textile and garment</option>
-          <option value="Manufacturing" data-ru="Производство">Manufacturing</option>
-          <option value="Agriculture" data-ru="Сельское хозяйство">Agriculture</option>
-          <option value="Food processing" data-ru="Пищевая промышленность">Food processing</option>
-          <option value="Transport and logistics" data-ru="Транспорт и логистика">Transport and logistics</option>
-        </select></div>
-      <div><label for="msg" data-ru="Сообщение (возраст, опыт, навыки)">Message (age, experience, skills)</label><textarea id="msg"></textarea></div>
-      <button class="btn btn-teal" type="submit" data-ru="Отправить заявку в WhatsApp">Send application via WhatsApp</button>
-    </form>
-  </div>
-</section>
-
-<!-- ================= FINAL CTA ================= -->
-<div class="cta">
-  <h2 data-ru="Готовы начать?">Ready to start?</h2>
-  <p data-ru="Напишите нам в WhatsApp, чтобы узнать подробности для вашей страны и вакансии.">Message us on WhatsApp for details about your country and job.</p>
-  <a class="btn btn-gold" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-ru="Написать в WhatsApp">Contact us on WhatsApp</a>
-</div>
-
-</main>
-
-<!-- ================= FOOTER ================= -->
-<footer>
-  <div class="wrap foot">
-    <div>
-      <div class="wm">KYRGYZ<b>WORK</b></div>
-      <p data-ru="Соединяем мировые таланты с Кыргызстаном.">Connecting Global Talent with Kyrgyzstan.</p>
-    </div>
-    <div>
-      <h4 data-ru="Ссылки">Quick links</h4>
-      <a href="#about" data-ru="О нас">About</a>
-      <a href="#services" data-ru="Услуги">Services</a>
-      <a href="#employers" data-ru="Работодателям">For Employers</a>
-      <a href="#calculator" data-ru="Калькулятор просрочки">Overstay calculator</a>
-      <a href="#contact" data-ru="Контакты">Contact</a>
-    </div>
-    <div>
-      <h4 data-ru="Контакты">Contact</h4>
-      <a href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp: +996 555 746 401</a>
-      <a href="#top">kyrghyz.work</a>
-    </div>
-  </div>
-  <div class="wrap copy">© <span id="yr"></span> KYRGYZ WORK. <span data-ru="Все права защищены.">All rights reserved.</span></div>
-</footer>
-
-<a class="wa" href="https://wa.me/996555746401" target="_blank" rel="noopener" aria-label="WhatsApp">💬 WhatsApp</a>
-
-<!-- ================= SCRIPT (single, ordered) ================= -->
-<script>
-(function () {
-  "use strict";
-
-  const WA = "996555746401";
-  const $  = (id) => document.getElementById(id);
-
-  /* ---------- Language ---------- */
-  // English text lives in the markup; Russian in data-ru. Remember the English once.
-  document.querySelectorAll("[data-ru]").forEach((el) => {
-    el.dataset.en = el.textContent.replace(/\s+/g, " ").trim();
-  });
-
-  let lang = "en";
-  const UI = {
-    en: {
-      days: "days", pick: "Please select the expiry date.",
-      future: "The expiry date cannot be in the future.",
-      none: "No overstay has started yet.", kgs: "KGS"
-    },
-    ru: {
-      days: "дн.", pick: "Пожалуйста, выберите дату.",
-      future: "Дата не может быть в будущем.",
-      none: "Просрочка ещё не началась.", kgs: "сом"
-    }
-  };
-
-  function setLang(l) {
-    lang = l === "ru" ? "ru" : "en";
-    try { localStorage.setItem("kw_lang", lang); } catch (e) {}
-    document.documentElement.lang = lang;
-    document.querySelectorAll("[data-ru]").forEach((el) => {
-      el.textContent = el.dataset[lang] || el.dataset.en;
-    });
-    document.querySelectorAll(".lang button").forEach((b) => {
-      const on = b.dataset.l === lang;
-      b.classList.toggle("on", on);
-      b.setAttribute("aria-pressed", String(on));
-    });
-    renderCalc(); // keep calculator output in the chosen language
-  }
-
-  document.querySelectorAll(".lang button").forEach((b) =>
-    b.addEventListener("click", () => setLang(b.dataset.l))
-  );
-
-  /* ---------- Mobile menu ---------- */
-  const links = $("links"), burger = $("burger");
-  const closeMenu = () => { links.classList.remove("open"); burger.setAttribute("aria-expanded", "false"); };
-  burger.addEventListener("click", () => {
-    const open = links.classList.toggle("open");
-    burger.setAttribute("aria-expanded", String(open));
-  });
-  links.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
-  document.addEventListener("click", (e) => {
-    if (!links.contains(e.target) && !burger.contains(e.target)) closeMenu();
-  });
-
-  /* ---------- WhatsApp forms ---------- */
-  const val = (id) => $(id).value.trim();
-  const send = (text) =>
-    window.open("https://wa.me/" + WA + "?text=" + encodeURIComponent(text), "_blank", "noopener");
-
-  function handleForm(formId, build) {
-    const form = $(formId);
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      send(build());
-    });
-  }
-
-  handleForm("jobForm", () =>
-    "Hello KYRGYZ WORK, I want a job in Kyrgyzstan.\n" +
-    "Name: " + val("name") + "\nPhone: " + val("phone") +
-    "\nCountry: " + val("country") + "\nJob type: " + val("job") +
-    "\nMessage: " + val("msg"));
-
-  handleForm("empForm", () =>
-    "Hello KYRGYZ WORK, we need workers.\n" +
-    "Company: " + val("e_company") + "\nContact: " + val("e_person") +
-    "\nPhone: " + val("e_phone") + "\nIndustry: " + val("e_ind") +
-    "\nWorkers: " + val("e_count") + "\nPreferred country: " + val("e_nat") +
-    "\nDetails: " + val("e_msg"));
-
-  /* ---------- Overstay calculator ---------- */
-  // Amounts are kept exactly as in your original code. Verify them against current law.
-  const PROTOCOL = [          // [max months since overstay start, fine in KGS]
-    [1, 5500], [3, 10000], [6, 15000], [12, 17500]
-  ];
-  const PROTOCOL_MAX = 20000;
-  const EXIT_USD_RATE = 17500 / 200;  // KGS per USD used by the original (87.5)
-
-  const input = $("kw-expiry"), results = $("kw-results"), errBox = $("kw-error");
-  let calcState = null;   // { error: key } or { days, protocol, exitUSD, exitKGS }
-
-  const today = () => { const d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); };
-  const toInputDate = (d) =>
-    d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
-  const money = (n) => n.toLocaleString("en-US");
-
-  function addMonths(date, months) {
-    const first = new Date(date.getFullYear(), date.getMonth() + months, 1);
-    const last = new Date(first.getFullYear(), first.getMonth() + 1, 0).getDate();
-    return new Date(first.getFullYear(), first.getMonth(), Math.min(date.getDate(), last));
-  }
-  // Whole days between two local dates, immune to daylight-saving shifts.
-  const dayDiff = (a, b) =>
-    Math.round((Date.UTC(b.getFullYear(), b.getMonth(), b.getDate()) -
-                Date.UTC(a.getFullYear(), a.getMonth(), a.getDate())) / 86400000);
-
-  input.max = toInputDate(today());
-
-  function calculate() {
-    if (!input.value) { calcState = { error: "pick" }; return renderCalc(); }
-
-    const [y, m, d] = input.value.split("-").map(Number);
-    const expiry = new Date(y, m - 1, d);
-    const now = today();
-
-    if (expiry > now) { calcState = { error: "future" }; return renderCalc(); }
-
-    const start = new Date(y, m - 1, d + 1);        // overstay starts the day after
-    if (start > now) { calcState = { error: "none" }; return renderCalc(); }
-
-    // Protocol fine
-    let protocol = PROTOCOL_MAX;
-    for (const [months, fine] of PROTOCOL) {
-      if (now <= addMonths(start, months)) { protocol = fine; break; }
-    }
-
-    // Exit visa fee
-    let exitUSD;
-    if (now <= addMonths(start, 3))       exitUSD = 200;
-    else if (now <= addMonths(start, 12)) exitUSD = 1100;
-    else if (now <= addMonths(start, 24)) exitUSD = 2200;
-    else {
-      let extra = 0;
-      while (now > addMonths(start, 24 + extra * 12) && extra < 100) extra++;
-      exitUSD = 2200 + extra * 1100;
-    }
-    const exitKGS = Math.round(exitUSD * EXIT_USD_RATE);
-
-    calcState = { days: dayDiff(start, now) + 1, protocol, exitUSD, exitKGS };
-    renderCalc();
-  }
-
-  function renderCalc() {
-    const t = UI[lang];
-    errBox.textContent = "";
-    results.classList.remove("show");
-    if (!calcState) return;
-
-    if (calcState.error) { errBox.textContent = t[calcState.error]; return; }
-
-    const s = calcState;
-    $("kw-duration").textContent = s.days + " " + t.days;
-    $("kw-protocol").textContent = money(s.protocol) + " " + t.kgs;
-    $("kw-exit").textContent = "$" + money(s.exitUSD) + " ≈ " + money(s.exitKGS) + " " + t.kgs;
-    // Single KGS total: the exit fee is NOT added a second time in USD.
-    $("kw-total").textContent = money(s.protocol + s.exitKGS) + " " + t.kgs;
-    results.classList.add("show");
-  }
-
-  $("kw-calculate").addEventListener("click", calculate);
-
-  /* ---------- Init ---------- */
-  $("yr").textContent = new Date().getFullYear();
-  let saved = null;
-  try { saved = localStorage.getItem("kw_lang"); } catch (e) {}
-  const browserRu = (navigator.language || "").toLowerCase().startsWith("ru");
-  setLang(saved || (browserRu ? "ru" : "en"));
-})();
-</script>
-</body>
-</html>
+          <option value="Pakistan" data-en="Pakistan" data-ru="Пакистан">Pakistan</option>
+          <option value="India" data-en="India" data-ru="Индия">India</option>
+          <option value="Bangladesh" data-en="Bangladesh" data-ru="Бангладеш">Bangladesh</option>
