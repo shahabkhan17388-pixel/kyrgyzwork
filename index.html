@@ -190,9 +190,16 @@ footer a:hover{color:var(--gold-l)}
 .rv-pre{opacity:0;transform:translateY(22px)}
 .rv-in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 
-/* ===== CALCULATOR ===== */
+/* ===== CALCULATOR (flip card) ===== */
 #calculator{padding:70px 0 90px}
-.kw-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:26px}
+.kw-flip{max-width:680px;margin:0 auto;perspective:1800px;-webkit-perspective:1800px}
+.kw-inner{position:relative;display:grid;grid-template-columns:minmax(0,1fr);transform-style:preserve-3d;-webkit-transform-style:preserve-3d;transition:transform .85s cubic-bezier(.4,.2,.2,1),height .5s ease}
+.kw-flip.flipped .kw-inner{transform:rotateY(180deg)}
+.kw-face{grid-area:1/1;align-self:start;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.kw-back{transform:rotateY(180deg)}
+.kw-flip.flipped .kw-front{pointer-events:none}
+.kw-flip:not(.flipped) .kw-back{pointer-events:none}
+
 .kw-card{background:#fff;border-radius:22px;padding:28px;box-shadow:0 12px 36px rgba(11,42,91,.10);border-top:5px solid var(--gold)}
 .kw-sub{color:var(--muted);font-size:.95rem;margin-bottom:18px}
 #kw-expiry{min-height:54px;font-size:1rem}
@@ -210,11 +217,12 @@ footer a:hover{color:var(--gold-l)}
 .kw-ts{display:block;color:var(--muted);font-size:.82rem;line-height:1.4;margin-top:2px}
 .kw-go{width:100%;margin-top:20px}
 .kw-error{color:#C0392B;font-size:.9rem;margin-top:10px;min-height:1.2em;font-weight:600}
-.kw-dark{background:radial-gradient(circle at 90% 0%,rgba(232,163,23,.22),transparent 40%),linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-top-color:var(--teal);display:flex;flex-direction:column}
+
+.kw-dark{background:radial-gradient(circle at 90% 0%,rgba(232,163,23,.22),transparent 40%),linear-gradient(135deg,var(--navy-d),var(--navy));color:#fff;border-top-color:var(--teal)}
 .kw-label{color:var(--gold-l);font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.76rem;margin-bottom:14px}
-.kw-empty,.kw-valid{text-align:center;padding:14px 6px;color:#D6DEEA}
+.kw-valid{text-align:center;padding:14px 6px;color:#D6DEEA}
 .kw-bigico{width:64px;height:64px;margin:0 auto 12px;border-radius:18px;display:grid;place-items:center;font-size:1.9rem;background:rgba(255,255,255,.09)}
-.kw-empty h3,.kw-valid h3{color:#fff}
+.kw-valid h3{color:#fff}
 .kw-top{padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.14)}
 .kw-days{font-size:clamp(2rem,5vw,2.7rem);font-weight:900;line-height:1.05}
 .kw-since{color:#C9D3E0;font-size:.88rem;margin-top:4px}
@@ -223,7 +231,7 @@ footer a:hover{color:var(--gold-l)}
 .kw-hl .kw-val{font-size:1.7rem;color:#fff}
 .kw-total{background:rgba(232,163,23,.16);border:1px solid rgba(232,163,23,.5);border-radius:12px;padding:14px 16px;margin-top:12px;color:#fff}
 .kw-total .kw-val{font-size:1.3rem}
-.kw-steps-wrap{margin-top:auto;padding-top:22px}
+.kw-steps-wrap{padding-top:22px}
 .kw-steps-t{font-size:.8rem;color:#C9D3E0;font-weight:700;margin-bottom:10px}
 .kw-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
 .kw-step{text-align:center;padding:10px 3px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);font-size:.68rem;color:#C9D3E0;line-height:1.25;transition:.3s}
@@ -234,7 +242,8 @@ footer a:hover{color:var(--gold-l)}
 .kw-next{margin-top:16px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.08);border-left:4px solid var(--gold);color:#FFE7B0;font-size:.9rem}
 .kw-small{color:#C9D3E0;font-size:.82rem;line-height:1.55;margin-top:12px}
 .kw-wa{width:100%;margin-top:18px}
-.kw-disclaimer{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin-top:24px;color:#5A4A1E;font-size:.9rem}
+.kw-again{width:100%;margin-top:12px}
+.kw-disclaimer{border-left:5px solid var(--gold);background:#FFF8E8;padding:16px 20px;border-radius:10px;margin:24px auto 0;max-width:680px;color:#5A4A1E;font-size:.9rem}
 
 /* responsive */
 @media(max-width:1080px){.nav-cta{display:none}}
@@ -243,7 +252,7 @@ footer a:hover{color:var(--gold-l)}
   .links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:stretch;padding:12px 20px 20px;box-shadow:0 16px 28px rgba(0,0,0,.12)}
   .links.open{display:flex}
   .links a{padding:12px 14px}
-  .grid2,.fg,.kw-grid{grid-template-columns:1fr}
+  .grid2,.fg{grid-template-columns:1fr}
   .pillars{grid-template-columns:repeat(2,1fr)}
   .steps,.safe-grid{grid-template-columns:repeat(2,1fr)}
   .foot{grid-template-columns:1fr 1fr}
@@ -336,59 +345,67 @@ footer a:hover{color:var(--gold-l)}
     <h2 data-en="Overstay Cost Calculator" data-ru="Калькулятор просрочки пребывания">Overstay Cost Calculator</h2>
     <p class="lead" data-en="Enter your visa expiry date to estimate your protocol fine. Add the exit visa cost only if you need it." data-ru="Введите дату окончания визы, чтобы рассчитать штраф. Стоимость выездной визы добавляйте только при необходимости.">Enter your visa expiry date to estimate your protocol fine. Add the exit visa cost only if you need it.</p>
   </div>
-  <div class="kw-grid">
-    <div class="kw-card">
-      <h3 data-en="Your details" data-ru="Ваши данные">Your details</h3>
-      <p class="kw-sub" data-en="It takes about 10 seconds." data-ru="Это займёт около 10 секунд.">It takes about 10 seconds.</p>
-      <label for="kw-expiry" data-en="Visa expiry date" data-ru="Дата окончания визы">Visa expiry date</label>
-      <input type="date" id="kw-expiry">
-      <div class="kw-quick">
-        <span class="kw-quick-t" data-en="Quick pick (expired about):" data-ru="Быстрый выбор (истекла примерно):">Quick pick (expired about):</span>
-        <button type="button" class="kw-chip" data-k="d" data-v="7" data-en="1 week ago" data-ru="неделю назад">1 week ago</button>
-        <button type="button" class="kw-chip" data-k="m" data-v="1" data-en="1 month ago" data-ru="1 мес. назад">1 month ago</button>
-        <button type="button" class="kw-chip" data-k="m" data-v="3" data-en="3 months ago" data-ru="3 мес. назад">3 months ago</button>
-        <button type="button" class="kw-chip" data-k="m" data-v="6" data-en="6 months ago" data-ru="6 мес. назад">6 months ago</button>
-        <button type="button" class="kw-chip" data-k="m" data-v="12" data-en="1 year ago" data-ru="год назад">1 year ago</button>
-      </div>
-      <label class="kw-toggle" for="kw-include-exit">
-        <input type="checkbox" id="kw-include-exit" class="kw-sr">
-        <span class="kw-switch"></span>
-        <span>
-          <span class="kw-tt" data-en="Also calculate exit visa cost" data-ru="Также рассчитать стоимость выездной визы">Also calculate exit visa cost</span>
-          <span class="kw-ts" data-en="Off by default. Only the protocol fine is calculated." data-ru="По умолчанию выключено. Рассчитывается только штраф.">Off by default. Only the protocol fine is calculated.</span>
-        </span>
-      </label>
-      <button type="button" class="btn btn-gold kw-go" id="kw-calculate" data-en="Calculate" data-ru="Рассчитать">Calculate</button>
-      <div id="kw-error" class="kw-error" role="alert"></div>
-    </div>
 
-    <div class="kw-card kw-dark" aria-live="polite">
-      <div class="kw-label" data-en="Your estimate" data-ru="Ваш расчёт">Your estimate</div>
-      <div class="kw-empty" id="kw-empty">
-        <div class="kw-bigico">🧮</div>
-        <h3 data-en="Your result will appear here" data-ru="Здесь появится результат">Your result will appear here</h3>
-        <p data-en="Choose your visa expiry date. The fine depends on how long you have overstayed." data-ru="Выберите дату окончания визы. Штраф зависит от срока просрочки.">Choose your visa expiry date. The fine depends on how long you have overstayed.</p>
+  <div class="kw-flip" id="kw-flip">
+    <div class="kw-inner" id="kw-inner">
+
+      <!-- FRONT: input -->
+      <div class="kw-face kw-front kw-card" id="kw-front">
+        <h3 data-en="Your details" data-ru="Ваши данные">Your details</h3>
+        <p class="kw-sub" data-en="It takes about 10 seconds. Press Calculate to see your result." data-ru="Это займёт около 10 секунд. Нажмите «Рассчитать», чтобы увидеть результат.">It takes about 10 seconds. Press Calculate to see your result.</p>
+        <label for="kw-expiry" data-en="Visa expiry date" data-ru="Дата окончания визы">Visa expiry date</label>
+        <input type="date" id="kw-expiry">
+        <div class="kw-quick">
+          <span class="kw-quick-t" data-en="Quick pick (expired about):" data-ru="Быстрый выбор (истекла примерно):">Quick pick (expired about):</span>
+          <button type="button" class="kw-chip" data-k="d" data-v="7" data-en="1 week ago" data-ru="неделю назад">1 week ago</button>
+          <button type="button" class="kw-chip" data-k="m" data-v="1" data-en="1 month ago" data-ru="1 мес. назад">1 month ago</button>
+          <button type="button" class="kw-chip" data-k="m" data-v="3" data-en="3 months ago" data-ru="3 мес. назад">3 months ago</button>
+          <button type="button" class="kw-chip" data-k="m" data-v="6" data-en="6 months ago" data-ru="6 мес. назад">6 months ago</button>
+          <button type="button" class="kw-chip" data-k="m" data-v="12" data-en="1 year ago" data-ru="год назад">1 year ago</button>
+        </div>
+        <label class="kw-toggle" for="kw-include-exit">
+          <input type="checkbox" id="kw-include-exit" class="kw-sr">
+          <span class="kw-switch"></span>
+          <span>
+            <span class="kw-tt" data-en="Also calculate exit visa cost" data-ru="Также рассчитать стоимость выездной визы">Also calculate exit visa cost</span>
+            <span class="kw-ts" data-en="Off by default. Only the protocol fine is calculated." data-ru="По умолчанию выключено. Рассчитывается только штраф.">Off by default. Only the protocol fine is calculated.</span>
+          </span>
+        </label>
+        <button type="button" class="btn btn-gold kw-go" id="kw-calculate" data-en="Calculate" data-ru="Рассчитать">Calculate</button>
+        <div id="kw-error" class="kw-error" role="alert"></div>
       </div>
-      <div class="kw-valid" id="kw-valid" hidden>
-        <div class="kw-bigico">✅</div>
-        <h3 data-en="Your visa is still valid" data-ru="Ваша виза ещё действует">Your visa is still valid</h3>
-        <p id="kw-valid-sub"></p>
-      </div>
-      <div id="kw-main" hidden>
-        <div class="kw-top"><div class="kw-days" id="kw-days"></div><div class="kw-since" id="kw-since"></div></div>
-        <div class="kw-line kw-hl"><span data-en="Protocol fine" data-ru="Штраф по протоколу">Protocol fine</span><span class="kw-val" id="kw-protocol"></span></div>
-        <div class="kw-line" id="kw-exit-row" hidden><span data-en="Exit visa government fee" data-ru="Госсбор за выездную визу">Exit visa government fee</span><span class="kw-val" id="kw-exit"></span></div>
-        <div class="kw-line kw-total" id="kw-total-row" hidden><span data-en="Estimated combined charges" data-ru="Предполагаемая общая сумма">Estimated combined charges</span><span class="kw-val" id="kw-total"></span></div>
-        <p class="kw-small" id="kw-sep" hidden data-en="These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately." data-ru="Это отдельные платежи. Штраф назначается уполномоченным органом. Сбор за выездную визу оплачивается отдельно.">These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately.</p>
-        <div class="kw-next" id="kw-next" hidden></div>
+
+      <!-- BACK: blue result card -->
+      <div class="kw-face kw-back kw-card kw-dark" id="kw-back" aria-live="polite">
+        <div class="kw-label" data-en="Your estimate" data-ru="Ваш расчёт">Your estimate</div>
+
+        <div class="kw-valid" id="kw-valid" hidden>
+          <div class="kw-bigico">✅</div>
+          <h3 data-en="Your visa is still valid" data-ru="Ваша виза ещё действует">Your visa is still valid</h3>
+          <p id="kw-valid-sub"></p>
+        </div>
+
+        <div id="kw-main" hidden>
+          <div class="kw-top"><div class="kw-days" id="kw-days"></div><div class="kw-since" id="kw-since"></div></div>
+          <div class="kw-line kw-hl"><span data-en="Protocol fine" data-ru="Штраф по протоколу">Protocol fine</span><span class="kw-val" id="kw-protocol"></span></div>
+          <div class="kw-line" id="kw-exit-row" hidden><span data-en="Exit visa government fee" data-ru="Госсбор за выездную визу">Exit visa government fee</span><span class="kw-val" id="kw-exit"></span></div>
+          <div class="kw-line kw-total" id="kw-total-row" hidden><span data-en="Estimated combined charges" data-ru="Предполагаемая общая сумма">Estimated combined charges</span><span class="kw-val" id="kw-total"></span></div>
+          <p class="kw-small" id="kw-sep" hidden data-en="These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately." data-ru="Это отдельные платежи. Штраф назначается уполномоченным органом. Сбор за выездную визу оплачивается отдельно.">These are separate charges. The protocol fine is assessed by the competent authority. The exit visa fee is paid separately.</p>
+          <div class="kw-next" id="kw-next" hidden></div>
+        </div>
+
+        <div class="kw-steps-wrap">
+          <div class="kw-steps-t" data-en="Protocol fine by length of overstay (KGS)" data-ru="Штраф в зависимости от срока просрочки (KGS)">Protocol fine by length of overstay (KGS)</div>
+          <div class="kw-steps" id="kw-steps"></div>
+        </div>
+
         <a class="btn btn-wa kw-wa" id="kw-wa" href="https://wa.me/996555746401" target="_blank" rel="noopener" data-en="Ask us about this on WhatsApp" data-ru="Спросить нас в WhatsApp">Ask us about this on WhatsApp</a>
+        <button type="button" class="btn btn-ghost kw-again" id="kw-again" data-en="↺ Calculate again" data-ru="↺ Рассчитать снова">↺ Calculate again</button>
       </div>
-      <div class="kw-steps-wrap">
-        <div class="kw-steps-t" data-en="Protocol fine by length of overstay (KGS)" data-ru="Штраф в зависимости от срока просрочки (KGS)">Protocol fine by length of overstay (KGS)</div>
-        <div class="kw-steps" id="kw-steps"></div>
-      </div>
+
     </div>
   </div>
+
   <div class="kw-disclaimer" data-en="Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment." data-ru="Важно: это предварительный расчёт, а не официальное решение. Тарифы на выездную визу по постановлению № 312 действуют временно до 31 декабря 2026 года. Перед оплатой уточните сумму в уполномоченных органах.">Important: This is an estimate, not an official assessment. Exit visa rates under Resolution No. 312 are temporary through 31 December 2026. Confirm the applicable amount with the authorities before payment.</div>
 </div></section>
 
@@ -747,29 +764,35 @@ footer a:hover{color:var(--gold-l)}
   });
   $("yr").textContent = new Date().getFullYear();
 
+  
   /* ---------- reveal animation (safe: only hides when observer exists) ---------- */
   if ("IntersectionObserver" in window) {
     var items = document.querySelectorAll(".rv");
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("rv-in"); en.target.classList.remove("rv-pre"); io.unobserve(en.target); }
+        if (en.isIntersecting) {
+          en.target.classList.remove("rv-pre");
+          en.target.classList.add("rv-in");
+          io.unobserve(en.target);
+        }
       });
-    }, { threshold: 0.1 });
-    items.forEach(function (el) {
-      if (el.getBoundingClientRect().top > window.innerHeight) { el.classList.add("rv-pre"); io.observe(el); }
-    });
-    setTimeout(function () { items.forEach(function (el) { el.classList.remove("rv-pre"); }); }, 4000);
+    }, { threshold: 0.12 });
+    items.forEach(function (n) { n.classList.add("rv-pre"); io.observe(n); });
   }
 
-  /* ---------- calculator ---------- */
+  /* ---------- calculator (flip card) ---------- */
   var el = {
-    date: $("kw-expiry"), exit: $("kw-include-exit"), btn: $("kw-calculate"), err: $("kw-error"),
-    empty: $("kw-empty"), valid: $("kw-valid"), validSub: $("kw-valid-sub"), main: $("kw-main"),
-    days: $("kw-days"), since: $("kw-since"), protocol: $("kw-protocol"), exitRow: $("kw-exit-row"),
-    exitVal: $("kw-exit"), totalRow: $("kw-total-row"), total: $("kw-total"), sep: $("kw-sep"),
+    flip: $("kw-flip"), date: $("kw-expiry"), exit: $("kw-include-exit"),
+    btn: $("kw-calculate"), again: $("kw-again"), err: $("kw-error"),
+    valid: $("kw-valid"), validSub: $("kw-valid-sub"), main: $("kw-main"),
+    days: $("kw-days"), since: $("kw-since"), protocol: $("kw-protocol"),
+    exitRow: $("kw-exit-row"), exitVal: $("kw-exit"),
+    totalRow: $("kw-total-row"), total: $("kw-total"), sep: $("kw-sep"),
     next: $("kw-next"), wa: $("kw-wa"), steps: $("kw-steps")
   };
   var DAY = 86400000;
+  var hasRun = false;
+
   var money = function (n) { return n.toLocaleString("en-US"); };
   var lang = function () { return document.documentElement.lang === "ru" ? "ru" : "en"; };
   var today0 = function () { var d = new Date(); return new Date(d.getFullYear(), d.getMonth(), d.getDate()); };
@@ -816,8 +839,6 @@ footer a:hover{color:var(--gold-l)}
           wa: "Здравствуйте, KYRGYZ WORK! Я воспользовался калькулятором просрочки.\nДата окончания визы: " }
   };
 
-  var hasRun = false;
-
   function drawSteps(idx) {
     var t = T[lang()];
     el.steps.innerHTML = "";
@@ -829,17 +850,20 @@ footer a:hover{color:var(--gold-l)}
     });
   }
 
-  function calc(silent) {
+  /* fills the blue card; returns false if no date was chosen */
+  function calc(userClick) {
     var t = T[lang()], ru = lang() === "ru";
     el.err.textContent = "";
-    if (!el.date.value) { if (!silent) el.err.textContent = t.pick; return; }
+    if (!el.date.value) {
+      if (userClick) el.err.textContent = t.pick;
+      return false;
+    }
 
     var p = el.date.value.split("-");
     var expiry = new Date(+p[0], +p[1] - 1, +p[2]);
     var today = today0();
     var start = addDays(expiry, 1);
     hasRun = true;
-    el.empty.hidden = true;
 
     if (start > today) {
       el.main.hidden = true;
@@ -847,7 +871,8 @@ footer a:hover{color:var(--gold-l)}
       var left = Math.round((expiry - today) / DAY);
       el.validSub.textContent = left === 0 ? t.today : t.left(left);
       drawSteps(-1);
-      return;
+      el.wa.href = "https://wa.me/" + WA;
+      return true;
     }
 
     el.valid.hidden = true;
@@ -888,21 +913,46 @@ footer a:hover{color:var(--gold-l)}
 
     el.wa.href = "https://wa.me/" + WA + "?text=" + encodeURIComponent(waMsg);
     drawSteps(idx);
+    return true;
   }
 
+  function scrollToCalc() {
+    var r = el.flip.getBoundingClientRect();
+    if (r.top < 70 || r.bottom > window.innerHeight) {
+      window.scrollTo({ top: window.scrollY + r.top - 100, behavior: "smooth" });
+    }
+  }
+
+  /* quick picks only fill the date, they do not calculate */
   document.querySelectorAll(".kw-chip").forEach(function (c) {
     c.addEventListener("click", function () {
       var n = +c.dataset.v, t0 = today0();
       var d = c.dataset.k === "d" ? addDays(t0, -n) : addMonths(t0, -n);
       el.date.value = iso(d);
-      calc();
+      el.err.textContent = "";
     });
   });
-  el.btn.addEventListener("click", function () { calc(); });
-  el.date.addEventListener("change", function () { calc(true); });
-  el.exit.addEventListener("change", function () { if (hasRun) calc(true); });
 
-  kwRender = function () { if (hasRun) calc(true); else drawSteps(-1); };
+  el.date.addEventListener("change", function () { el.err.textContent = ""; });
+
+  /* Calculate: fill the blue card, then flip */
+  el.btn.addEventListener("click", function () {
+    if (calc(true)) {
+      el.flip.classList.add("flipped");
+      scrollToCalc();
+    }
+  });
+
+  /* Calculate again: flip back to the form */
+  el.again.addEventListener("click", function () {
+    el.flip.classList.remove("flipped");
+    scrollToCalc();
+  });
+
+  /* keep the result in the right language when EN/RU is switched */
+  kwRender = function () {
+    if (hasRun) calc(false); else drawSteps(-1);
+  };
 
   /* ---------- start ---------- */
   var saved = "en";
