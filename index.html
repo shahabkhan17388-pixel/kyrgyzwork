@@ -256,7 +256,7 @@ footer a:hover{color:var(--gold-l)}
       <a href="#employers"><span class="en">Employers</span><span class="ru">Работодателям</span></a>
       <a href="#industries"><span class="en">Industries</span><span class="ru">Отрасли</span></a>
       <a href="#process"><span class="en">Process</span><span class="ru">Процесс</span></a>
-      <a href="#visa"><span class="en">Visa & Costs</span><span class="ru">Визы и расходы</span></a>
+      <a href="#visa"><span class="en">Visa Information</span><span class="ru">Информация о визах</span></a>
       <a href="#calculator"><span class="en">Calculator</span><span class="ru">Калькулятор</span></a>
       <a href="#faq"><span class="en">FAQ</span><span class="ru">Вопросы</span></a>
       <a href="#contact"><span class="en">Contact</span><span class="ru">Контакты</span></a>
@@ -375,13 +375,13 @@ footer a:hover{color:var(--gold-l)}
 <section class="sec alt" id="calculator"><div class="wrap">
   <div class="sec-h rv">
     <span class="eyebrow"><span class="en">Free tool</span><span class="ru">Бесплатный инструмент</span></span>
-    <h2><span class="en">Overstay and exit visa estimate</span><span class="ru">Расчёт просрочки и выездной визы</span></h2>
-    <p class="lead"><span class="en">Enter the date your visa expired. We estimate the overstay fine on the protocol tiers below.</span><span class="ru">Введите дату окончания визы. Мы оценим штраф за просрочку по приведённым ниже ставкам.</span></p>
+    <h2><span class="en">Overstay protocol and exit visa calculator</span><span class="ru">Калькулятор штрафа за просрочку и выездной визы</span></h2>
+    <p class="lead"><span class="en">Enter your visa expiry date. The calculator estimates the protocol fine and exit visa fee using the current published tiers.</span><span class="ru">Введите дату окончания визы. Калькулятор рассчитает примерный штраф и сбор за выездную визу по опубликованным тарифам.</span></p>
   </div>
   <div class="calc-wrap">
     <div class="calc-card rv">
       <label for="expiry"><span class="en">Visa expiry date</span><span class="ru">Дата окончания визы</span></label>
-      <input type="date" id="expiry">
+      <input type="date" id="expiry" required>
       <div class="chips">
         <button type="button" class="chip" data-days="7"><span class="en">1 week ago</span><span class="ru">неделю назад</span></button>
         <button type="button" class="chip" data-months="1"><span class="en">1 month ago</span><span class="ru">месяц назад</span></button>
@@ -389,28 +389,31 @@ footer a:hover{color:var(--gold-l)}
         <button type="button" class="chip" data-months="6"><span class="en">6 months ago</span><span class="ru">6 месяцев назад</span></button>
         <button type="button" class="chip" data-months="12"><span class="en">1 year ago</span><span class="ru">год назад</span></button>
       </div>
-      <label style="display:flex;gap:10px;align-items:center;margin-top:14px;font-weight:600;cursor:pointer">
-        <input type="checkbox" id="withExit" style="width:auto"> <span class="en">Also estimate the exit visa cost</span><span class="ru">Также оценить стоимость выездной визы</span>
-      </label>
-      <button type="button" class="btn btn-gold" id="calcBtn" style="width:100%;margin-top:18px"><span class="en">Calculate</span><span class="ru">Рассчитать</span></button>
+      <button type="button" class="btn btn-gold" id="calcBtn" style="width:100%;margin-top:18px"><span class="en">Calculate total</span><span class="ru">Рассчитать сумму</span></button>
       <div class="err" id="calcErr" role="alert"></div>
     </div>
     <div class="calc-res rv" id="calcRes" aria-live="polite">
-      <h3><span class="en">Your estimate</span><span class="ru">Ваш расчёт</span></h3>
+      <h3><span class="en">Your estimated costs</span><span class="ru">Предварительный расчёт</span></h3>
       <p id="calcMsg" style="color:#D6DEEA;margin-top:10px">
-        <span class="en">Choose a date to see your estimate.</span><span class="ru">Выберите дату, чтобы увидеть расчёт.</span>
+        <span class="en">Choose your visa expiry date to calculate the protocol and exit visa fee.</span><span class="ru">Выберите дату окончания визы, чтобы рассчитать штраф и сбор за выездную визу.</span>
       </p>
       <div id="calcOut" hidden>
+        <div class="line"><span><span class="en">Overstay duration</span><span class="ru">Срок просрочки</span></span><b id="oDuration"></b></div>
         <div class="line"><span><span class="en">Days overstayed</span><span class="ru">Дней просрочки</span></span><b id="oDays"></b></div>
-        <div class="line"><span><span class="en">Overstay fine (estimate)</span><span class="ru">Штраф за просрочку (оценка)</span></span><b id="oFine"></b></div>
-        <div class="line" id="oExitRow" hidden><span><span class="en">Exit visa (estimate)</span><span class="ru">Выездная виза (оценка)</span></span><b id="oExit"></b></div>
+        <div class="line"><span><span class="en">Protocol fine</span><span class="ru">Штраф (протокол)</span></span><b id="oFine"></b></div>
+        <div class="line"><span><span class="en">Exit visa fee</span><span class="ru">Сбор за выездную визу</span></span><b id="oExit"></b></div>
+        <div class="line"><span><span class="en">Estimated total</span><span class="ru">Итого (оценка)</span></span><b id="oTotal"></b></div>
+        <p class="hint" id="calcRateNote" style="color:#D6DEEA;margin-top:14px"></p>
       </div>
     </div>
   </div>
-  <div class="btns" style="margin-top:22px"><button type="button" class="btn btn-wa" data-wa="migration"><span class="en">Ask About My Migration Situation</span><span class="ru">Спросить о моей миграционной ситуации</span></button><button type="button" class="btn btn-wa" data-wa="exit"><span class="en">Ask About Exit Visa Assistance</span><span class="ru">Спросить о помощи с выездной визой</span></button></div>
+  <div class="btns" style="margin-top:22px">
+    <button type="button" class="btn btn-wa" data-wa="migration"><span class="en">Send my calculation on WhatsApp</span><span class="ru">Отправить расчёт в WhatsApp</span></button>
+    <button type="button" class="btn btn-wa" data-wa="exit"><span class="en">Ask for exit visa assistance</span><span class="ru">Спросить о помощи с выездной визой</span></button>
+  </div>
   <div class="disclaimer rv">
-    <span class="en"><b>Important:</b> this is a date-based estimate only, not an official decision about your status or any penalty. Official penalties, government fees and private service charges are different things, and we cannot promise to remove fines or cancel protocols. The final amount is set by the competent Kyrgyz authority. Confirm the exact amount before you pay anything.</span>
-    <span class="ru"><b>Важно:</b> это только предварительная оценка, а не официальное решение. Окончательную сумму определяет компетентный орган Кыргызстана. Уточняйте точную сумму до оплаты.</span>
+    <span class="en"><b>Important:</b> This is an estimate, not an official assessment or payment demand. The protocol amount is based on the overstay period under Article 431. Exit visa fees are shown in USD and KGS using the published fee schedule; the displayed KGS equivalent is the published tariff amount, not a live currency conversion. The applicable procedure and fees may change, and the competent authority determines the final amount and whether an exit visa is required. Confirm the amount with the relevant authority before paying. The published exit-visa schedule referenced here is temporary through 31 December 2026.</span>
+    <span class="ru"><b>Важно:</b> Это предварительный расчёт, а не официальное решение или требование об оплате. Штраф рассчитывается по сроку просрочки согласно статье 431. Сбор за выездную визу указан в долларах США и сомах по опубликованному тарифу; сумма в сомах не является текущей конвертацией валюты. Порядок и сборы могут измениться. Окончательную сумму и необходимость выездной визы определяет компетентный орган. Перед оплатой уточните сумму в соответствующем органе. Указанный тариф выездной визы действует в рамках временного порядка до 31 декабря 2026 года.</span>
   </div>
 </div></section>
 
@@ -438,7 +441,7 @@ footer a:hover{color:var(--gold-l)}
     <div class="row2">
       <div><label for="eInd"><span class="en">Industry</span><span class="ru">Отрасль</span></label>
         <select id="eInd">
-          <option><span class="en">Construction</span>Construction</option>
+          <option>Construction</option>
           <option>Textile and garments</option>
           <option>Manufacturing</option>
           <option>Agriculture</option>
@@ -476,10 +479,6 @@ footer a:hover{color:var(--gold-l)}
    <div class="card g rv"><h3><span class="en">Our role</span><span class="ru">Наша роль</span></h3><p><span class="en">Sourcing, initial screening, document coordination, communication and agreed arrival support. We are not a government body and issue no visas.</span><span class="ru">Поиск, первичный отбор, координация документов, связь и согласованная помощь по прибытии. Мы не госорган и не выдаём визы.</span></p></div>
   </div>
   <div class="legal rv"><span class="en"><b>Notice:</b> Immigration requirements and government fees may change. Always verify current requirements with the competent Kyrgyz authorities before making payments or travel arrangements.</span><span class="ru"><b>Внимание:</b> миграционные требования и государственные сборы могут меняться. Перед оплатой или поездкой всегда проверяйте актуальные требования в компетентных органах Кыргызстана.</span></div>
-  <h3 style="margin-top:44px"><span class="en">Cost breakdown (kept in separate groups, never added together)</span><span class="ru">Разбивка расходов (по отдельным группам, без суммирования)</span></h3>
-  <div style="overflow-x:auto"><table class="ct"><thead><tr><th><span class="en">Cost</span><span class="ru">Расход</span></th><th><span class="en">Group</span><span class="ru">Группа</span></th><th><span class="en">Who pays</span><span class="ru">Кто платит</span></th><th><span class="en">Mandatory?</span><span class="ru">Обязательно?</span></th><th><span class="en">Amount</span><span class="ru">Сумма</span></th><th><span class="en">Source / last verified</span><span class="ru">Источник / проверено</span></th></tr></thead><tbody><tr><td><span class="en">Visa application / issuance fee</span><span class="ru">Сбор за подачу или выдачу визы</span></td><td><span class="en">Government fee</span><span class="ru">Государственный сбор</span></td><td><span class="en">As set by law</span><span class="ru">Как установлено законом</span></td><td><span class="en">Mandatory where applicable</span><span class="ru">Обязателен, где применимо</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Work-permit / authorisation fee</span><span class="ru">Сбор за разрешение на работу</span></td><td><span class="en">Government fee</span><span class="ru">Государственный сбор</span></td><td><span class="en">As set by law</span><span class="ru">Как установлено законом</span></td><td><span class="en">Mandatory where applicable</span><span class="ru">Обязателен, где применимо</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Visa extension fee</span><span class="ru">Сбор за продление визы</span></td><td><span class="en">Government fee</span><span class="ru">Государственный сбор</span></td><td><span class="en">As set by law</span><span class="ru">Как установлено законом</span></td><td><span class="en">Where applicable</span><span class="ru">Где применимо</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Employer documents and contract preparation</span><span class="ru">Документы работодателя и подготовка договора</span></td><td><span class="en">Employer expense</span><span class="ru">Расходы работодателя</span></td><td><span class="en">Employer</span><span class="ru">Работодатель</span></td><td><span class="en">Where applicable</span><span class="ru">Где применимо</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Passport, medical, police clearance, translation, notarisation, ticket</span><span class="ru">Паспорт, медосмотр, справка о несудимости, перевод, нотариус, билет</span></td><td><span class="en">Worker expense</span><span class="ru">Расходы работника</span></td><td><span class="en">Worker, if legally payable</span><span class="ru">Работник, если это допускает закон</span></td><td><span class="en">Where required</span><span class="ru">Где требуется</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Sourcing, placement and agreed service fees</span><span class="ru">Подбор, размещение и согласованные услуги</span></td><td><span class="en">KYRGYZ WORK service</span><span class="ru">Услуги KYRGYZ WORK</span></td><td><span class="en">Employer</span><span class="ru">Работодатель</span></td><td><span class="en">Agreed in writing</span><span class="ru">Согласуется письменно</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr><tr><td><span class="en">Document coordination, translation help, arrival support</span><span class="ru">Координация документов, помощь с переводом и прибытием</span></td><td><span class="en">Optional service</span><span class="ru">Дополнительная услуга</span></td><td><span class="en">As agreed in writing</span><span class="ru">Как согласовано письменно</span></td><td><span class="en">Optional</span><span class="ru">Необязательно</span></td><td><span class="en">Contact us for the current verified fee.</span><span class="ru">Свяжитесь с нами для актуального проверенного сбора.</span></td><td><span class="en">Not yet verified</span><span class="ru">Пока не проверено</span></td></tr></tbody></table></div>
-  <p class="note"><span class="en">Amounts are shown only after we verify them from an official source. Final amounts depend on the applicant’s circumstances and current regulations.</span><span class="ru">Суммы показываются только после проверки по официальному источнику. Итоговые суммы зависят от обстоятельств заявителя и действующих норм.</span></p>
-  <div class="btns" style="margin-top:18px"><button type="button" class="btn btn-wa" data-wa="visa"><span class="en">Get Current Visa Cost</span><span class="ru">Узнать текущую стоимость визы</span></button><button type="button" class="btn btn-wa" data-wa="work"><span class="en">Ask About Work Permits</span><span class="ru">Спросить о разрешении на работу</span></button><button type="button" class="btn btn-wa" data-wa="breakdown"><span class="en">Request a Cost Breakdown</span><span class="ru">Запросить расчёт расходов</span></button></div>
 </div></section>
 
 <section class="sec" id="trust"><div class="wrap">
@@ -488,7 +487,7 @@ footer a:hover{color:var(--gold-l)}
    <li><span class="en">Employers pay recruitment, sourcing, placement and agreed service fees.</span><span class="ru">Работодатели оплачивают подбор, поиск, размещение и согласованные услуги.</span></li>
    <li><span class="en">Workers do not pay KYRGYZ WORK recruitment or placement fees. Any separate government, travel, medical, documentation or other costs must be explained before a worker agrees to proceed, with the responsible party named for each cost.</span><span class="ru">Работники не платят KYRGYZ WORK за подбор и трудоустройство. Любые отдельные государственные, транспортные, медицинские, документальные и другие расходы должны быть объяснены до согласия работника, с указанием ответственной стороны для каждого расхода.</span></li>
    <li><span class="en">Applying does not guarantee a job, a visa or a work permit. We never promise immigration outcomes.</span><span class="ru">Подача заявки не гарантирует работу, визу или разрешение на работу. Мы не обещаем миграционных результатов.</span></li>
-   <li><span class="en">Your details are shared with prospective employers only with your consent, for recruitment. To correct or delete your data, message us on WhatsApp. This site sets no cookies and has no tracking.</span><span class="ru">Ваши данные передаются потенциальным работодателям только с вашего согласия и для подбора. Чтобы исправить или удалить данные, напишите нам в WhatsApp. На сайте нет cookie и отслеживания.</span></li>
+   <li><span class="en">Your details are shared with prospective employers only with your consent, for recruitment. To correct or delete your data, message us on WhatsApp. This site does not use advertising or analytics tracking. It stores your language preference in your browser.</span><span class="ru">Ваши данные передаются потенциальным работодателям только с вашего согласия и для подбора. Чтобы исправить или удалить данные, напишите нам в WhatsApp. Сайт не использует рекламное или аналитическое отслеживание. Язык интерфейса сохраняется в браузере.</span></li>
    <li><span class="en">To check a payment request, message us on WhatsApp first. We will tell you who the payee is and what the payment covers.</span><span class="ru">Чтобы проверить запрос на оплату, сначала напишите нам в WhatsApp. Мы скажем, кто получатель и за что платёж.</span></li>
   </ul></div></section>
 
@@ -500,10 +499,6 @@ footer a:hover{color:var(--gold-l)}
   </div>
   <div class="faq rv">
     <input id="faqSearch" type="search" placeholder="Search / Поиск" aria-label="Search FAQ / Поиск по вопросам">
-    <details><summary><span class="en">Who pays the government visa and work-permit fees?</span><span class="ru">Кто платит государственные сборы за визу и разрешение?</span></summary>
-      <p><span class="en">This depends on the case and the law. It must be agreed in writing before you proceed, and each cost must name who pays. Contact us for the current verified fee.</span><span class="ru">Это зависит от случая и закона. Это нужно согласовать письменно до начала, с указанием плательщика по каждому расходу. Свяжитесь с нами для актуального проверенного сбора.</span></p></details>
-    <details><summary><span class="en">How much does a Kyrgyzstan work visa cost?</span><span class="ru">Сколько стоит рабочая виза в Кыргызстан?</span></summary>
-      <p><span class="en">Fees can change and may differ by nationality and category. We have not published an official figure because it is not yet verified. Contact us for the current verified fee and check with the Kyrgyz authorities.</span><span class="ru">Сборы могут меняться и зависеть от гражданства и категории. Мы не публикуем официальную сумму, пока она не проверена. Свяжитесь с нами и уточните в органах Кыргызстана.</span></p></details>
     <details><summary><span class="en">What is the difference between a work visa and a work permit?</span><span class="ru">В чём разница между рабочей визой и разрешением на работу?</span></summary>
       <p><span class="en">A visa relates to entry and stay. A work permit or authorisation relates to the right to work. Requirements depend on your situation and must be confirmed individually.</span><span class="ru">Виза связана с въездом и пребыванием. Разрешение на работу даёт право работать. Требования зависят от вашей ситуации и подтверждаются индивидуально.</span></p></details>
     <details><summary><span class="en">Does applying or being selected guarantee a visa?</span><span class="ru">Гарантирует ли заявка или выбор работодателя визу?</span></summary>
@@ -688,39 +683,96 @@ footer a:hover{color:var(--gold-l)}
     return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
   }
 
-  /* ---------- calculator (estimate only) ---------- */
-  // Protocol fine tiers (KGS) as used on the previous version of this site. Verify before publishing.
-  var TIERS = [
-    { upTo: 1, kgs: 5500 }, { upTo: 3, kgs: 10000 }, { upTo: 6, kgs: 15000 },
-    { upTo: 12, kgs: 17500 }, { upTo: Infinity, kgs: 20000 }
+  /* ---------- overstay calculator: protocol + exit visa estimate ---------- */
+  // Protocol tiers: Article 431, expressed in KGS.
+  var PROTOCOL_TIERS = [
+    { months: 1, kgs: 5500 },
+    { months: 3, kgs: 10000 },
+    { months: 6, kgs: 15000 },
+    { months: 12, kgs: 17500 },
+    { months: Infinity, kgs: 20000 }
   ];
-  var SHOW_AMOUNTS = false; // set true ONLY after fines/fees are verified from an official source and TIERS below are updated
+
+  // Published exit-visa tariffs under the temporary procedure through 31 December 2026.
+  // The KGS amounts are the published tariff equivalents, not live FX conversions.
+  var EXIT_TIERS = [
+    { months: 3, usd: 200, kgs: 17500 },
+    { months: 12, usd: 1100, kgs: 96250 },
+    { months: 24, usd: 2200, kgs: 192500 }
+  ];
   var lastCalc = null;
 
-  function fineFor(start, end) {
-    for (var i = 0; i < TIERS.length; i++) {
-      if (TIERS[i].upTo === Infinity || end <= addMonths(start, TIERS[i].upTo)) return TIERS[i].kgs;
+  function monthsBetween(start, end) {
+    var months = (end.getFullYear() - start.getFullYear()) * 12 + (end.getMonth() - start.getMonth());
+    if (end.getDate() < start.getDate()) months--;
+    return Math.max(0, months);
+  }
+
+  function overstayDuration(start, end) {
+    var months = monthsBetween(start, end);
+    var anchor = addMonths(start, months);
+    var days = Math.max(0, Math.round((end - anchor) / 86400000));
+    var years = Math.floor(months / 12);
+    var remMonths = months % 12;
+    if (isRu()) {
+      var parts = [];
+      if (years) parts.push(years + " " + plural(years, "год", "года", "лет"));
+      if (remMonths) parts.push(remMonths + " " + plural(remMonths, "месяц", "месяца", "месяцев"));
+      if (days) parts.push(days + " " + plural(days, "день", "дня", "дней"));
+      return parts.length ? parts.join(" ") : "менее месяца";
     }
-    return TIERS[TIERS.length - 1].kgs;
+    var enParts = [];
+    if (years) enParts.push(years + (years === 1 ? " year" : " years"));
+    if (remMonths) enParts.push(remMonths + (remMonths === 1 ? " month" : " months"));
+    if (days) enParts.push(days + (days === 1 ? " day" : " days"));
+    return enParts.length ? enParts.join(", ") : "Less than one month";
+  }
+
+  function protocolFor(start, end) {
+    for (var i = 0; i < PROTOCOL_TIERS.length; i++) {
+      var tier = PROTOCOL_TIERS[i];
+      if (tier.months === Infinity || end <= addMonths(start, tier.months)) return tier.kgs;
+    }
+    return 20000;
+  }
+
+  function exitFeeFor(start, end) {
+    for (var i = 0; i < EXIT_TIERS.length; i++) {
+      var tier = EXIT_TIERS[i];
+      if (end <= addMonths(start, tier.months)) return { usd: tier.usd, kgs: tier.kgs };
+    }
+    // More than two years: USD 2,200 + USD 1,100 for each additional year.
+    // Published KGS tariff equivalent: 192,500 + 96,250 for each additional year.
+    var extraMonths = monthsBetween(addMonths(start, 24), end);
+    var extraYears = Math.max(1, Math.ceil(extraMonths / 12));
+    return {
+      usd: 2200 + (1100 * extraYears),
+      kgs: 192500 + (96250 * extraYears)
+    };
   }
 
   function renderCalc() {
     if (!lastCalc) return;
     var r = lastCalc, ru = isRu();
-    $("calcMsg").textContent = "";
+    $("calcOut").hidden = true;
     if (r.valid) {
-      $("calcOut").hidden = true;
       $("calcMsg").textContent = ru
-        ? (r.left === 0 ? "Срок визы истекает сегодня. Просрочки пока нет." : "Виза действует. До окончания осталось " + unitDays(r.left) + ".")
-        : (r.left === 0 ? "The visa expires today. There is no overstay yet." : "Your visa is still valid. " + unitDays(r.left) + " left.");
+        ? (r.left === 0 ? "Срок визы истекает сегодня. Просрочки пока нет." : "Виза ещё действует. До окончания осталось " + unitDays(r.left) + ".")
+        : (r.left === 0 ? "Your visa expires today. There is no overstay yet." : "Your visa is still valid. " + unitDays(r.left) + " remaining.");
       return;
     }
-    $("calcMsg").textContent = "";
+    $("calcMsg").textContent = ru
+      ? "Ниже приведены предварительные суммы по сроку просрочки."
+      : "The following amounts are estimates based on the overstay period.";
     $("calcOut").hidden = false;
+    $("oDuration").textContent = r.duration;
     $("oDays").textContent = unitDays(r.days);
-    $("oFine").textContent = SHOW_AMOUNTS ? money(r.fine) + " KGS" : (ru ? "Свяжитесь с нами для актуальной проверенной суммы" : "Contact us for the current verified amount");
-    $("oExitRow").hidden = !r.exit;
-    if (r.exit) $("oExit").textContent = SHOW_AMOUNTS ? "$" + money(r.exitUsd) + " / " + money(r.exitKgs) + " KGS" : (ru ? "Свяжитесь с нами для актуальной проверенной суммы" : "Contact us for the current verified amount");
+    $("oFine").textContent = money(r.protocol) + " KGS";
+    $("oExit").textContent = "$" + money(r.exit.usd) + " / " + money(r.exit.kgs) + " KGS";
+    $("oTotal").textContent = money(r.totalKgs) + " KGS";
+    $("calcRateNote").textContent = ru
+      ? "Сбор за выездную визу указан по опубликованному тарифу; окончательную сумму подтвердите в уполномоченном органе."
+      : "Exit visa fee uses the published tariff; confirm the final amount with the competent authority.";
   }
 
   function calculate() {
@@ -733,26 +785,42 @@ footer a:hover{color:var(--gold-l)}
     var p = v.split("-");
     var expiry = new Date(+p[0], +p[1] - 1, +p[2]);
     var today = today0();
-    var start = new Date(expiry.getFullYear(), expiry.getMonth(), expiry.getDate() + 1);
-    if (start > today) {
-      lastCalc = { valid: true, left: Math.round((expiry - today) / 86400000) };
-    } else {
-      var days = Math.round((today - start) / 86400000) + 1;
-      var fine = fineFor(start, today);
-      var exit = $("withExit").checked;
-      var ex = { usd: 0, kgs: 0 };
-      if (exit) {
-        // Exit visa tiers used on the previous version. Verify before publishing.
-        if (today <= addMonths(start, 3)) ex = { usd: 200, kgs: 17500 };
-        else if (today <= addMonths(start, 12)) ex = { usd: 1100, kgs: 96250 };
-        else ex = { usd: 2200, kgs: 192500 };
+    if (isNaN(expiry.getTime()) || expiry > today) {
+      if (!isNaN(expiry.getTime()) && expiry.getTime() === today.getTime()) {
+        lastCalc = { valid: true, left: 0 };
+        renderCalc();
+        return;
       }
-      lastCalc = { valid: false, days: days, fine: fine, exit: exit, exitUsd: ex.usd, exitKgs: ex.kgs };
+      if (!isNaN(expiry.getTime()) && expiry > today) {
+        lastCalc = { valid: true, left: Math.round((expiry - today) / 86400000) };
+        renderCalc();
+        return;
+      }
+      $("calcErr").textContent = isRu() ? "Введите корректную дату." : "Please enter a valid date.";
+      return;
     }
+
+    var start = new Date(expiry.getFullYear(), expiry.getMonth(), expiry.getDate() + 1);
+    var days = Math.round((today - start) / 86400000) + 1;
+    var protocol = protocolFor(start, today);
+    var exit = exitFeeFor(start, today);
+    lastCalc = {
+      valid: false,
+      days: days,
+      duration: overstayDuration(start, today),
+      protocol: protocol,
+      exit: exit,
+      totalKgs: protocol + exit.kgs
+    };
     renderCalc();
   }
 
   $("calcBtn").addEventListener("click", calculate);
+  $("expiry").addEventListener("change", function () {
+    if (this.value) calculate();
+  });
+  $("expiry").max = iso(today0());
+
   document.querySelectorAll(".chip").forEach(function (c) {
     c.addEventListener("click", function () {
       var t = today0();
@@ -805,19 +873,30 @@ footer a:hover{color:var(--gold-l)}
   });
 
   var MSG = {
-    visa: ["Hello KYRGYZ WORK, I would like to know the current visa cost.", "Здравствуйте, KYRGYZ WORK! Хочу узнать текущую стоимость визы."],
-    work: ["Hello KYRGYZ WORK, I would like to ask about work permits.", "Здравствуйте, KYRGYZ WORK! Хочу спросить о разрешении на работу."],
-    breakdown: ["Hello KYRGYZ WORK, please send me a written cost breakdown.", "Здравствуйте, KYRGYZ WORK! Пришлите, пожалуйста, письменный расчёт расходов."],
-    migration: ["Hello KYRGYZ WORK, I would like to ask about my migration situation.", "Здравствуйте, KYRGYZ WORK! Хочу спросить о моей миграционной ситуации."],
-    exit: ["Hello KYRGYZ WORK, I would like to ask about exit visa assistance.", "Здравствуйте, KYRGYZ WORK! Хочу спросить о помощи с выездной визой."]
+    migration: ["Hello KYRGYZ WORK, please review my overstay calculation.", "Здравствуйте, KYRGYZ WORK! Пожалуйста, проверьте мой расчёт просрочки."],
+    exit: ["Hello KYRGYZ WORK, I would like assistance with an exit visa. Please review my calculation.", "Здравствуйте, KYRGYZ WORK! Мне нужна помощь с выездной визой. Пожалуйста, проверьте мой расчёт."]
   };
   document.addEventListener("click", function (e) {
-    var b = e.target.closest("[data-wa]"); if (!b) return;
-    var k = b.getAttribute("data-wa"), m = MSG[k][isRu() ? 1 : 0];
-    if (k === "migration" || k === "exit") {
-      var ex = $("expiry").value || "-";
-      m += "\n" + (isRu() ? "Дата окончания визы: " : "Visa expiry date: ") + ex + "\n" + (isRu() ? "Сегодня: " : "Today: ") + iso(today0());
-      if (lastCalc) m += "\n" + (lastCalc.valid ? (isRu() ? "Дней до окончания: " : "Days remaining: ") + lastCalc.left : (isRu() ? "Дней после окончания: " : "Days since expiry: ") + lastCalc.days);
+    var b = e.target.closest("[data-wa]");
+    if (!b) return;
+    var k = b.getAttribute("data-wa");
+    if (!MSG[k]) return;
+    var m = MSG[k][isRu() ? 1 : 0];
+    var ex = $("expiry").value || "-";
+    m += "\n" + (isRu() ? "Дата окончания визы: " : "Visa expiry date: ") + ex;
+    m += "\n" + (isRu() ? "Дата расчёта: " : "Calculation date: ") + iso(today0());
+    if (lastCalc) {
+      if (lastCalc.valid) {
+        m += "\n" + (isRu() ? "Дней до окончания: " : "Days remaining: ") + lastCalc.left;
+      } else {
+        m += "\n" + (isRu() ? "Срок просрочки: " : "Overstay duration: ") + lastCalc.duration;
+        m += "\n" + (isRu() ? "Дней просрочки: " : "Days overstayed: ") + lastCalc.days;
+        m += "\n" + (isRu() ? "Штраф (протокол): " : "Protocol fine: ") + money(lastCalc.protocol) + " KGS";
+        m += "\n" + (isRu() ? "Выездная виза: " : "Exit visa fee: ") + "$" + money(lastCalc.exit.usd) + " / " + money(lastCalc.exit.kgs) + " KGS";
+        m += "\n" + (isRu() ? "Итого: " : "Estimated total: ") + money(lastCalc.totalKgs) + " KGS";
+      }
+    } else {
+      m += "\n" + (isRu() ? "Расчёт ещё не выполнен." : "Calculation has not been run yet.");
     }
     sendWA(m);
   });
