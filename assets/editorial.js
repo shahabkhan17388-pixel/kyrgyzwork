@@ -5,7 +5,7 @@ function setLang(lang){if(!['en','ur','ru'].includes(lang))lang='en';try{localSt
 document.documentElement.lang=lang==='ru'?'ru':'en';
 qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang))});
 qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});
-qsa('.en').forEach(el=>{el.hidden=lang==='ru'});qsa('.ru').forEach(el=>{el.hidden=lang!=='ru'});
+
 }
 let saved='en';try{saved=localStorage.getItem('kw_lang')||'en'}catch(e){}setLang(saved);
 qsa('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
