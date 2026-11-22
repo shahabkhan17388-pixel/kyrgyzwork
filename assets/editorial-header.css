@@ -1,0 +1,20 @@
+/* Shared KYRGYZ WORK header — matches the homepage header */
+.topline{height:5px;background:linear-gradient(90deg,#168b79,#d9ad59)}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(16px);border-bottom:1px solid #e4e9ef}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;min-width:165px}
+.brand img{width:148px;height:60px;object-fit:contain;display:block}
+.brand-fallback{font-weight:900;color:#0b1e38;font-size:20px;letter-spacing:-.06em}
+.brand-fallback span{color:#c38e2f}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:14px;font-weight:700;color:#3d4d62}
+.navlinks a{color:inherit;text-decoration:none}
+.navlinks a:hover{color:#b17d27}
+.navright{display:flex;align-items:center;gap:10px}
+.lang{display:flex;border:1px solid #e4e9ef;border-radius:12px;padding:3px;background:#f7f9fb}
+.lang button{border:0;background:transparent;border-radius:9px;padding:8px 10px;font-size:12px;font-weight:800;color:#5c6c7e;cursor:pointer}
+.lang button.active{background:#0b1e38;color:#fff}
+.menu{display:none;background:#0b1e38;color:#fff;border:0;border-radius:12px;padding:11px 14px;font-size:18px;cursor:pointer}
+[data-locale][hidden]{display:none!important}
+@media(max-width:900px){.navlinks{display:none;position:absolute;top:87px;left:0;right:0;background:#fff;padding:18px 22px 24px;border-bottom:1px solid #e4e9ef;box-shadow:0 16px 28px rgba(0,0,0,.08);flex-direction:column;align-items:stretch;gap:0}.navlinks.open{display:flex}.navlinks a{padding:12px 0;border-bottom:1px solid #eef1f4}.menu{display:block}}
+@media(max-width:600px){.container{width:min(100% - 30px,1160px)}.nav{height:72px}.brand img{width:126px;height:54px}.navlinks{top:77px}.navright{gap:6px}.lang button{padding:7px 8px}}
