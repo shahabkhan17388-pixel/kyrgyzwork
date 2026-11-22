@@ -24,8 +24,8 @@ body>header .brand,body> .site-header .brand{
   font-weight:inherit!important;letter-spacing:normal!important;background:transparent!important;
 }
 body>header .brand img,body> .site-header .brand img{
-  display:block!important;width:148px!important;height:60px!important;max-width:none!important;
-  max-height:60px!important;object-fit:contain!important;margin:0!important;padding:0!important;
+  display:block!important;width:180px!important;height:76px!important;max-width:none!important;
+  max-height:76px!important;object-fit:contain!important;margin:0!important;padding:0!important;
   border:0!important;border-radius:0!important;box-shadow:none!important;
 }
 body>header .brand-fallback,body> .site-header .brand-fallback{
@@ -37,7 +37,7 @@ body>header .brand-fallback span,body> .site-header .brand-fallback span{
 }
 body>header .navlinks,body> .site-header .navlinks{
   display:flex!important;position:static!important;align-items:center!important;justify-content:flex-start!important;
-  flex:0 1 auto!important;gap:24px!important;margin:0!important;padding:0!important;
+  flex:0 1 auto!important;gap:clamp(12px,1.35vw,19px)!important;margin:0!important;padding:0!important;
   background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important;
   list-style:none!important;font-size:14px!important;font-weight:700!important;line-height:1.4!important;
   color:#3d4d62!important;white-space:normal!important;
@@ -92,7 +92,7 @@ body>footer.footer .footer-grid{
 body>footer.footer .footer-grid>div{min-width:0!important;margin:0!important;padding:0!important}
 body>footer.footer .footer-grid .brand{display:flex!important;min-width:0!important;margin:0 0 12px!important}
 body>footer.footer .footer-grid .brand img{
-  display:block!important;width:148px!important;height:60px!important;max-height:60px!important;
+  display:block!important;width:180px!important;height:76px!important;max-height:76px!important;
   object-fit:contain!important;
 }
 body>footer.footer .footer-grid p,body>footer.footer .footer-grid a{
@@ -137,7 +137,7 @@ body>footer.footer .footer-bottom{
   }
   body>header .nav,body> .site-header .nav{height:72px!important;min-height:72px!important;gap:8px!important}
   body>header .brand,body> .site-header .brand{min-width:0!important}
-  body>header .brand img,body> .site-header .brand img{width:126px!important;height:54px!important;max-height:54px!important}
+  body>header .brand img,body> .site-header .brand img{width:144px!important;height:66px!important;max-height:66px!important}
   body>header .navlinks,body> .site-header .navlinks{top:77px!important}
   body>header .navright,body> .site-header .navright{gap:6px!important}
   body>header .lang button,body> .site-header .lang button{padding:7px 8px!important}
