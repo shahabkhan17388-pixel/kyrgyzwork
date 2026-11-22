@@ -558,6 +558,64 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
   .calc-flipper{transition:none}
   .hdr .brand img{mix-blend-mode:normal}
 }
+
+/* V3 iPhone/Safari fix: let the flip stage grow to the full height of either face.
+   The old fixed-height/absolute layout clipped long exit-visa results and hid Back. */
+#calculator .calc-flip-stage{
+  min-height:0 !important;
+  height:auto !important;
+  overflow:visible !important;
+}
+#calculator .calc-flipper{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:auto;
+  min-height:0 !important;
+  height:auto !important;
+  transform-style:preserve-3d;
+  overflow:visible !important;
+}
+#calculator .calc-face{
+  position:relative !important;
+  inset:auto !important;
+  grid-column:1;
+  grid-row:1;
+  width:100%;
+  height:auto !important;
+  min-height:0 !important;
+  align-self:stretch;
+  overflow:visible !important;
+}
+#calculator .calc-front{transform:rotateY(0deg);}
+#calculator .calc-back{
+  transform:rotateY(180deg);
+  overflow:visible !important;
+  -webkit-overflow-scrolling:auto;
+}
+#calculator .calc-result-card{
+  min-height:0 !important;
+  height:auto !important;
+  padding-bottom:28px;
+  overflow:visible !important;
+}
+#calculator .calc-back-btn{
+  flex:0 0 auto;
+  min-height:54px;
+  margin-bottom:2px;
+  white-space:normal;
+  line-height:1.35;
+}
+#calculator .calc-result-links{margin-bottom:2px;}
+@media(max-width:600px){
+  #calculator .calc-input-card,#calculator .calc-result-card{padding:23px 20px 26px;}
+  #calculator .calc-flip-stage,#calculator .calc-flipper,#calculator .calc-face{min-height:0 !important;}
+  #calculator .calc-metrics{grid-template-columns:repeat(2,minmax(0,1fr));}
+  #calculator .calc-back-btn{margin-top:18px;}
+}
+@media(max-width:360px){
+  #calculator .calc-metrics{grid-template-columns:1fr;}
+}
+
 </style>
 
 </head>
