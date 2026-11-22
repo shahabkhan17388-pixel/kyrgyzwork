@@ -103,7 +103,7 @@ p+p{margin-top:12px}
 .hdr{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:box-shadow .3s}
 .hdr.scrolled{box-shadow:0 6px 24px rgba(11,42,91,.12)}
 .nav{display:flex;align-items:center;justify-content:space-between;gap:14px;height:76px}
-.brand img{height:52px;width:auto}
+.brand{display:flex;align-items:center;flex:0 0 auto;min-width:0;line-height:0}.brand img{height:52px;width:auto;max-width:190px;object-fit:contain;mix-blend-mode:multiply;background:transparent}
 .menu{display:flex;gap:2px;align-items:center}
 .menu a{color:var(--navy);font-weight:600;font-size:.92rem;padding:8px 11px;border-radius:9px;transition:background .2s}
 .menu a:hover{background:rgba(232,163,23,.16)}
@@ -497,6 +497,69 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
  ]
 }
 </script>
+
+<style id="kw-mobile-logo-and-calculator-v2">
+/* Header logo: visually merge the image into the navigation bar, with no white tile. */
+.hdr .nav{min-height:78px;height:auto;gap:clamp(8px,2vw,18px)}
+.hdr .brand{display:flex;align-items:center;align-self:stretch;flex:0 1 210px;min-width:0;padding:7px 0}
+.hdr .brand img{display:block;height:48px;width:auto;max-width:100%;object-fit:contain;object-position:left center;background:transparent;mix-blend-mode:multiply;border:0;border-radius:0;box-shadow:none}
+.hdr .nav-r{flex:0 0 auto;margin-left:auto}
+.hdr .menu{min-width:0}
+@media(max-width:980px){
+  .hdr .nav{height:76px;min-height:76px}
+  .hdr .brand{flex:0 1 155px;padding:6px 0}
+  .hdr .brand img{height:45px;max-width:155px}
+  .hdr .nav-r{gap:8px}
+  .hdr .lang button{padding:8px 11px;font-size:.82rem}
+  .hdr .burger{display:block;width:44px;height:44px;flex:0 0 44px}
+}
+@media(max-width:420px){
+  .hdr .nav{gap:7px}
+  .hdr .brand{flex-basis:126px}
+  .hdr .brand img{height:40px;max-width:126px}
+  .hdr .nav-r{gap:6px}
+  .hdr .lang button{padding:7px 8px}
+}
+/* Single-panel calculator: the input face flips into a dedicated result face. */
+.calc-shell{display:block;max-width:760px;perspective:1400px;margin:0 auto}
+.calc-flip-stage{width:100%;min-height:510px;perspective:1400px}
+.calc-flipper{position:relative;width:100%;min-height:510px;transform-style:preserve-3d;transition:transform .78s cubic-bezier(.2,.72,.18,1)}
+.calc-flip-stage.show-result .calc-flipper{transform:rotateY(180deg)}
+.calc-face{position:absolute;inset:0;width:100%;min-height:510px;margin:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.calc-front{z-index:2;transform:rotateY(0deg)}
+.calc-back{transform:rotateY(180deg);overflow-y:auto}
+.calc-input-card{display:flex;flex-direction:column;justify-content:center}
+.calc-result-card{display:flex;flex-direction:column}
+.calc-result-card #calcOut{position:relative;z-index:2}
+.calc-back-btn{position:relative;z-index:3;display:inline-flex;align-items:center;justify-content:center;gap:9px;margin-top:22px;width:100%;min-height:50px;padding:12px 16px;border:1px solid rgba(255,255,255,.28);border-radius:10px;background:rgba(255,255,255,.08);color:#fff;font-weight:800;cursor:pointer;transition:background .2s,transform .2s}
+.calc-back-btn:hover{background:rgba(255,255,255,.16);transform:translateY(-2px)}
+.calc-secondary-amount{margin-top:12px;background:rgba(241,209,138,.12);border-color:rgba(241,209,138,.35)}
+.calc-secondary-amount strong{font-size:clamp(1.35rem,3vw,2rem)}.calc-total-amount{background:rgba(117,213,181,.12);border-color:rgba(117,213,181,.35)}.calc-total-amount span{color:#a8e6d2}
+.calc-result-links{margin-top:18px}
+.calc-basis{margin-bottom:4px}
+@media(max-width:900px){.calc-shell{grid-template-columns:1fr}.calc-flip-stage,.calc-flipper{min-height:540px}.calc-face{min-height:540px}.calc-result-card{min-height:540px}}
+@media(max-width:600px){
+  .calc-shell{max-width:100%}
+  .calc-flip-stage,.calc-flipper{min-height:590px}
+  .calc-face{min-height:590px}
+  .calc-input-card,.calc-result-card{padding:23px 20px}
+  .calc-result-card{min-height:590px}
+  .calc-input-card h3{margin-bottom:18px}
+  .calc-metrics{grid-template-columns:1fr 1fr}
+  .calc-primary-amount{padding:17px 14px}
+  .calc-primary-amount strong{font-size:1.55rem}
+  .calc-back-btn{margin-top:17px}
+}
+@media(max-width:380px){
+  .calc-flip-stage,.calc-flipper,.calc-face,.calc-result-card{min-height:640px}
+  .calc-metrics{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  .calc-flipper{transition:none}
+  .hdr .brand img{mix-blend-mode:normal}
+}
+</style>
+
 </head>
 <body>
 
@@ -694,12 +757,14 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
 <section class="sec alt calc-section" id="calculator"><div class="wrap">
   <div class="sec-h rv">
     <span class="eyebrow"><span class="en">Free immigration planning tool</span><span class="ru">Бесплатный инструмент</span></span>
-    <h2><span class="en">Check an overstay estimate—one calculation at a time</span><span class="ru">Проверьте просрочку — каждый расчёт отдельно</span></h2>
+    <h2><span class="en">Calculate your protocol or exit-visa costs</span><span class="ru">Рассчитайте штраф или стоимость выездной визы</span></h2>
     <p class="lead"><span class="en">Enter the last valid day printed on the visa. Choose what you want to calculate. Nothing is calculated until you press the relevant button.</span><span class="ru">Введите последний день действия визы и выберите нужный расчёт. Ничего не рассчитывается, пока вы не нажмёте соответствующую кнопку.</span></p>
   </div>
-  <div class="calc-intro"><span class="calc-info-icon">i</span><div><b><span class="en">Protocol and exit-visa fees are different things.</span><span class="ru">Штраф по протоколу и сбор за выездную визу — разные платежи.</span></b><div><span class="en">Calculate the Article 431 protocol fine first. If you also need an exit-visa estimate, press its separate button. The results are never automatically combined.</span><span class="ru">Сначала рассчитайте штраф по статье 431. Если нужна оценка сбора за выездную визу, нажмите отдельную кнопку. Результаты автоматически не суммируются.</span></div></div></div>
+  <div class="calc-intro"><span class="calc-info-icon">i</span><div><b><span class="en">Protocol and exit-visa fees are different things.</span><span class="ru">Штраф по протоколу и сбор за выездную визу — разные платежи.</span></b><div><span class="en">Protocol calculates the fine only. Exit visa calculates both the protocol fine and the exit-visa fee, because the protocol is part of the exit process. Results open in a full calculator panel with a clear way back.</span><span class="ru">Расчёт протокола показывает только штраф. Расчёт выездной визы показывает и штраф по протоколу, и сбор за выездную визу, поскольку протокол является частью процедуры выезда. Результат открывается в отдельной панели с кнопкой возврата.</span></div></div></div>
   <div class="calc-shell">
-    <div class="calc-card calc-input-card rv">
+    <div class="calc-flip-stage" id="calcFlipStage">
+      <div class="calc-flipper" id="calcFlipper">
+    <div class="calc-card calc-input-card calc-face calc-front">
       <div class="calc-card-kicker"><span class="en">STEP 01 · YOUR DATE</span><span class="ru">ШАГ 01 · ВАША ДАТА</span></div>
       <h3><span class="en">When did your visa expire?</span><span class="ru">Когда закончилась ваша виза?</span></h3>
       <label for="expiry"><span class="en">Visa expiry date</span><span class="ru">Дата окончания визы</span></label>
@@ -717,9 +782,9 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
         <button type="button" class="btn btn-outline-dark" id="exitBtn"><span class="en">Calculate Exit Visa Fee</span><span class="ru">Рассчитать сбор за выездную визу</span><span aria-hidden="true">↗</span></button>
       </div>
       <div class="err" id="calcErr" role="alert" aria-live="polite"></div>
-      <p class="calc-micro"><span class="en">Choose one calculation. You can run the other separately using the same date.</span><span class="ru">Выберите один расчёт. Второй можно выполнить отдельно с той же датой.</span></p>
+      <p class="calc-micro"><span class="en">Protocol shows the fine only. Exit visa shows both the protocol fine and exit-visa fee.</span><span class="ru">Штраф показывает только протокол. Выездная виза показывает штраф и сбор за выезд.</span></p>
     </div>
-    <div class="calc-result-card rv" id="calcResultCard" aria-live="polite" aria-atomic="true">
+    <div class="calc-result-card calc-face calc-back" id="calcResultCard" aria-live="polite" aria-atomic="true">
       <div class="calc-result-top"><span class="calc-card-kicker"><span class="en">STEP 02 · YOUR RESULT</span><span class="ru">ШАГ 02 · РЕЗУЛЬТАТ</span></span><span class="calc-status-dot"></span></div>
       <div id="calcPlaceholder" class="calc-placeholder">
         <div class="calc-placeholder-icon">⌁</div>
@@ -734,9 +799,20 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
           <div class="calc-metric"><span><span class="en">Overstay period</span><span class="ru">Период просрочки</span></span><b id="oDuration">—</b></div>
           <div class="calc-metric"><span><span class="en">Days overdue</span><span class="ru">Дней просрочки</span></span><b id="oDays">—</b></div>
         </div>
-        <div class="calc-primary-amount"><span id="oAmountLabel"></span><strong id="oAmount"></strong></div>
+        <div class="calc-primary-amount" id="protocolAmountBox"><span id="oAmountLabel"></span><strong id="oAmount"></strong></div>
+        <div class="calc-primary-amount calc-secondary-amount" id="exitProtocolBox" hidden>
+          <span><span class="en">Protocol fine (Article 431)</span><span class="ru">Штраф по протоколу (статья 431)</span></span>
+          <strong id="exitProtocolAmount"></strong>
+        </div>
+        <div class="calc-primary-amount calc-total-amount" id="exitTotalBox" hidden>
+          <span><span class="en">Estimated combined total (KGS tariff equivalent)</span><span class="ru">Ориентировочная общая сумма (эквивалент в сомах)</span></span>
+          <strong id="exitTotalAmount"></strong>
+        </div>
         <p class="calc-basis" id="calcRateNote"></p>
         <div class="calc-result-links"><a href="https://wa.me/996555746401" target="_blank" rel="noopener" class="calc-help-link"><span class="en">Need help understanding this result?</span><span class="ru">Нужна помощь с результатом?</span><span>→</span></a></div>
+        <button type="button" class="calc-back-btn" id="calcBackBtn"><span aria-hidden="true">←</span> <span class="en">Back · change date or calculate again</span><span class="ru">Назад · изменить дату или пересчитать</span></button>
+      </div>
+    </div>
       </div>
     </div>
   </div>
@@ -1119,13 +1195,20 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
     $("calcErr").textContent="";
     $("calcPlaceholder").hidden=false;
     $("calcOut").hidden=true;
-    $("calcResultCard").classList.remove("flip-in");
+    $("calcFlipStage").classList.remove("show-result");
+    $("exitProtocolBox").hidden=true;
+    $("exitTotalBox").hidden=true;
+    $("protocolAmountBox").hidden=false;
   }
   function animateCalcResult() {
-    var card=$("calcResultCard");
-    card.classList.remove("flip-in");
-    void card.offsetWidth;
-    card.classList.add("flip-in");
+    $("calcFlipStage").classList.add("show-result");
+    window.setTimeout(function(){
+      var stage=$("calcFlipStage");
+      if(stage) {
+        var top=stage.getBoundingClientRect().top + window.pageYOffset - 92;
+        window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+      }
+    },220);
   }
   function renderCalc() {
     if(!lastCalc) return;
@@ -1148,18 +1231,26 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
       $("calcModeLabel").textContent=ru?"ШТРАФ ПО СТАТЬЕ 431":"ARTICLE 431 PROTOCOL";
       $("calcResultTitle").textContent=ru?"Предварительный штраф":"Estimated protocol fine";
       $("calcMsg").textContent=ru?"Оценка по периоду после окончания визы. Указана ставка для физического лица.":"Estimate based on the period after visa expiry. Individual fine tier shown.";
+      $("protocolAmountBox").hidden=false;
+      $("exitProtocolBox").hidden=true;
       $("oAmountLabel").textContent=ru?"Предварительный штраф":"Estimated protocol fine";
       $("oAmount").textContent=money(r.protocol)+" KGS";
       $("calcRateNote").textContent=ru?"Ставка основана на статье 431 Кодекса Кыргызской Республики о правонарушениях. Это не официальный протокол и не платёжное требование.":"Based on Article 431 of the Kyrgyz Code of Offences. This is not an official protocol or payment demand.";
     } else {
       $("calcModeLabel").textContent=ru?"СБОР ЗА ВЫЕЗДНУЮ ВИЗУ":"EXIT VISA FEE";
       $("calcResultTitle").textContent=ru?"Предварительная стоимость":"Estimated exit-visa fee";
-      $("calcMsg").textContent=ru?"Отдельная оценка опубликованного сбора за выездную визу. Она не включает штраф по протоколу.":"Separate estimate of the published exit-visa tariff. It does not include any protocol fine.";
-      $("oAmountLabel").textContent=ru?"Опубликованный тариф":"Published tariff";
+      $("calcMsg").textContent=ru?"Для планирования выезда показаны обе суммы: предварительный штраф по протоколу и опубликованный сбор за выездную визу.":"For exit planning, both amounts are shown: the estimated protocol fine and the published exit-visa fee.";
+      $("oAmountLabel").textContent=ru?"Сбор за выездную визу":"Exit-visa fee";
+      $("protocolAmountBox").hidden=false;
+      $("exitProtocolBox").hidden=false;
+      $("exitProtocolAmount").textContent=money(r.protocol)+" KGS";
       if(r.exitTariffActive){
         $("oAmount").textContent="$"+money(r.exit.usd)+"  ·  "+money(r.exit.kgs)+" KGS";
+        $("exitTotalBox").hidden=false;
+        $("exitTotalAmount").textContent=money(r.protocol+r.exit.kgs)+" KGS";
         $("calcRateNote").textContent=ru?"Временный опубликованный тариф действует до 31.12.2026. Сумма в сомах — тарифный эквивалент, а не текущая конвертация. Проверьте необходимость и окончательную сумму в компетентном органе.":"The published temporary tariff runs through 31 Dec 2026. KGS is the tariff equivalent, not a live currency conversion. Confirm whether an exit visa is required and the final amount with the competent authority.";
       } else {
+        $("exitTotalBox").hidden=true;
         $("oAmount").textContent=ru?"Уточните действующий тариф":"Confirm current official tariff";
         $("calcRateNote").textContent=ru?"Срок опубликованного временного тарифа истёк. Старые суммы не переносятся на новый период.":"The published temporary tariff has expired. We do not carry old amounts forward.";
       }
@@ -1190,6 +1281,18 @@ html{scroll-padding-top:94px}body{font-family:Inter,system-ui,-apple-system,"Seg
   }
   $("calcBtn").addEventListener("click",function(){calculate("protocol");});
   $("exitBtn").addEventListener("click",function(){calculate("exit");});
+  $("calcBackBtn").addEventListener("click",function(){
+    $("calcFlipStage").classList.remove("show-result");
+    $("calcErr").textContent="";
+    window.setTimeout(function(){
+      var stage=$("calcFlipStage");
+      if(stage){
+        var top=stage.getBoundingClientRect().top + window.pageYOffset - 92;
+        window.scrollTo({top:Math.max(0,top),behavior:"smooth"});
+      }
+      $("expiry").focus({preventScroll:true});
+    },260);
+  });
   $("expiry").addEventListener("change",clearCalc);
   document.querySelectorAll(".chip").forEach(function(c){
     c.addEventListener("click",function(){
