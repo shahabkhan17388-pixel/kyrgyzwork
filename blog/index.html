@@ -13,8 +13,32 @@
  .cta a{margin-top:14px}
  .search{width:100%}
 }
+
+/* Match the main KYRGYZ WORK site header and logo */
+.topline{height:5px;background:linear-gradient(90deg,#168b79,#d9ad59)}
+.site-container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1px solid #e4e9ef}
+.site-nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-brand{display:flex;align-items:center;flex:0 0 165px;min-width:165px}
+.site-brand img{width:148px;height:60px;object-fit:contain;display:block}
+.brand-fallback{font-weight:900;color:#0b1e38;font-size:20px;letter-spacing:-.06em}.brand-fallback span{color:#c38e2f}
+.site-links{display:flex;align-items:center;justify-content:center;gap:clamp(9px,1.5vw,22px);font-size:13px;font-weight:750;color:#3d4d62;min-width:0}
+.site-links a{white-space:nowrap}.site-links a:hover,.site-links .active{color:#b17d27}
+.site-right{display:flex;align-items:center;gap:9px;flex:0 0 auto}
+.site-lang{display:flex;border:1px solid #e4e9ef;border-radius:10px;padding:3px;background:#f7f9fb}
+.site-lang button{border:0;background:transparent;border-radius:8px;padding:7px 8px;font-size:11px;font-weight:800;color:#5c6c7e}
+.site-lang button.active{background:#0b1e38;color:#fff}
+.site-menu{display:none;background:#0b1e38;color:#fff;border:0;border-radius:10px;padding:9px 12px;font-size:18px}
+@media(max-width:1000px){.site-nav{flex-wrap:wrap;padding:10px 0}.site-links{order:3;flex:0 0 100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px 12px;padding:8px 0}.site-links a{white-space:normal}.site-brand{flex:1}.site-menu{display:block}}
+@media(max-width:560px){.site-container{width:calc(100% - 28px)}.site-nav{min-height:0;gap:8px}.site-brand{min-width:0}.site-brand img{width:148px;height:58px}.site-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;font-size:13px}.site-links a{padding:4px 0}.site-right{margin-left:auto}}
 </style></head><body>
-<header><div class="wrap nav"><a class="brand" href="/">KYRGYZ<span>WORK</span></a><nav class="links"><a href="/">Home</a><a href="/jobs/">Find Jobs</a><a href="/employers/">For Employers</a><a href="/services/">Services</a><a class="active" href="/blog/">Blog &amp; Guides</a><a href="/contact/">Contact</a></nav></div></header>
+<div class="topline"></div>
+<header><div class="site-container site-nav">
+<a class="site-brand" href="/" aria-label="KYRGYZ WORK home"><img src="/header-logo.jpg" alt="KYRGYZ WORK" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="brand-fallback" style="display:none">KYRGYZ<span>WORK</span></span></a>
+<nav class="site-links" aria-label="Main navigation">
+<a href="/">Home</a><a href="/jobs/">Find Jobs</a><a href="/employers/">For Employers</a><a href="/services/">Services</a><a href="/how-it-works/">How It Works</a><a class="active" href="/blog/">Blog &amp; Guides</a><a href="/about/">About Us</a><a href="/contact/">Contact</a>
+</nav><div class="site-right"><div class="site-lang"><button type="button" data-lang="en" class="active">EN</button><button type="button" data-lang="ru">RU</button></div><button class="site-menu" id="siteMenu" type="button" aria-label="Toggle menu" aria-expanded="false">☰</button></div>
+</div></header>
 <section class="hero"><div class="wrap"><span class="tag">KYRGYZ WORK KNOWLEDGE CENTRE</span><h1>Practical knowledge for work and business in Kyrgyzstan.</h1><p>Explore clear guides for job seekers and employers — from finding work and recruiting staff to permits, registration and workplace conditions.</p></div></section>
 <main class="wrap main"><div class="tools"><div><h2>Explore all articles</h2><p>Search by topic or choose a category.</p></div><input class="search" id="search" type="search" placeholder="Search jobs, permits, salary, visa…" aria-label="Search articles"></div>
 <div class="filters"><button class="filter active" data-filter="all">All articles (9)</button><button class="filter" data-filter="workers">For workers</button><button class="filter" data-filter="employers">For employers</button><button class="filter" data-filter="immigration">Immigration</button><button class="filter" data-filter="safety">Safety</button></div>
@@ -30,4 +54,11 @@
 <div class="notice"><strong>Important:</strong> Immigration, permit and employment rules can change. These articles are general information, not legal advice or a government decision. Verify current requirements with the competent authority before paying, travelling or signing a contract.</div></main>
 <section class="cta"><div class="wrap cta-in"><div><h2>Have a recruitment question?</h2><p>Contact KYRGYZ WORK in Bishkek.</p></div><a href="https://wa.me/996555746401" target="_blank" rel="noopener">WhatsApp +996 555 746 401</a></div></section>
 <footer class="foot"><div class="wrap footin"><span>© 2026 KYRGYZ WORK · <a href="/" style="color:#f1d18a">Home</a></span><span>General information only · No job or visa guarantees</span></div></footer>
-<script>(function(){const buttons=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('.card')],search=document.getElementById('search'),empty=document.getElementById('empty');let active='all';function apply(){const term=search.value.trim().toLowerCase();let count=0;cards.forEach(card=>{const ok=(active==='all'||card.dataset.category===active)&&(!term||(card.textContent+' '+card.dataset.search).toLowerCase().includes(term));card.hidden=!ok;if(ok)count++});empty.style.display=count?'none':'block'}buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.classList.toggle('active',x===b));apply()}));search.addEventListener('input',apply)})();</script></body></html>
+<script>(function(){const buttons=[...document.querySelectorAll('[data-filter]')],cards=[...document.querySelectorAll('.card')],search=document.getElementById('search'),empty=document.getElementById('empty');let active='all';function apply(){const term=search.value.trim().toLowerCase();let count=0;cards.forEach(card=>{const ok=(active==='all'||card.dataset.category===active)&&(!term||(card.textContent+' '+card.dataset.search).toLowerCase().includes(term));card.hidden=!ok;if(ok)count++});empty.style.display=count?'none':'block'}buttons.forEach(b=>b.addEventListener('click',()=>{active=b.dataset.filter;buttons.forEach(x=>x.classList.toggle('active',x===b));apply()}));search.addEventListener('input',apply)})();</script><script>
+(function(){
+ const menu=document.getElementById('siteMenu'),nav=document.querySelector('.site-links');
+ if(menu&&nav){menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));nav.classList.toggle('menu-collapsed',open);});}
+ document.querySelectorAll('[data-lang]').forEach(b=>b.addEventListener('click',()=>{document.documentElement.lang=b.dataset.lang;document.querySelectorAll('[data-lang]').forEach(x=>x.classList.toggle('active',x===b));try{localStorage.setItem('kw_lang',b.dataset.lang)}catch(e){}}));
+ let lang='en';try{lang=localStorage.getItem('kw_lang')||'en'}catch(e){};document.documentElement.lang=lang==='ru'?'ru':'en';document.querySelectorAll('[data-lang]').forEach(x=>x.classList.toggle('active',x.dataset.lang===document.documentElement.lang));
+})();
+</script></body></html>
