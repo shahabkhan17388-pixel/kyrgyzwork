@@ -1,13 +1,13 @@
 (()=>{'use strict';
 const qs=(s,r=document)=>r.querySelector(s),qsa=(s,r=document)=>Array.from(r.querySelectorAll(s));
 const params=new URLSearchParams(location.search);
-function setLang(lang){if(!['en','ur','ru'].includes(lang))lang='en';try{localStorage.setItem('kw_lang',lang)}catch(e){}
-document.documentElement.lang=lang==='ru'?'ru':'en';
+function setLang(lang){if(!['en','ur','ru'].includes(lang))lang='en';try{localStorage.setItem('kw-language',lang)}catch(e){}
+document.documentElement.lang=lang;document.documentElement.dir=lang==='ur'?'rtl':'ltr';document.body.dir=lang==='ur'?'rtl':'ltr';
 qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang))});
 qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});
 
 }
-let saved='en';try{saved=localStorage.getItem('kw_lang')||'en'}catch(e){}setLang(saved);
+let saved='ur';try{saved=localStorage.getItem('kw-language')||'ur'}catch(e){}setLang(saved);
 qsa('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 const menu=qs('.menu'),nav=qs('.navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});qsa('.navlinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}))}
 const search=qs('#kwBlogSearch'),grid=qs('#kwBlogGrid'),empty=qs('#kwBlogEmpty'),suggest=qs('#kwBlogSuggestions'),cards=grid?qsa('.kw-guide-card',grid):[],filters=qsa('[data-filter]');let active='all';
