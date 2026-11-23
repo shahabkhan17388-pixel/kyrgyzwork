@@ -267,3 +267,16 @@ body>header .navlinks a:focus-visible,body>header .navright button:focus-visible
   }
   body[dir="rtl"] .hero .eyebrow{font-size:11px;letter-spacing:0!important}
 }
+
+
+/* Phase 1: trust, proof and placeholder components */
+.kw-trust-section{background:#f7f9fb}
+.kw-scam-warning{display:grid;gap:7px;margin:22px 0;padding:18px 20px;border:1px solid #e7c77e;border-inline-start:5px solid #c58e31;border-radius:14px;background:#fff8e9;color:#493719;line-height:1.65}
+.kw-scam-warning strong{font-size:16px;color:#7b4f12}
+.kw-proof-grid{margin-top:18px}
+.kw-founder-placeholder{display:grid;place-items:center;min-height:150px;margin:12px 0;border:1px dashed #aebdca;border-radius:14px;background:linear-gradient(135deg,#f1f4f7,#fff);color:#68798b;font-weight:800;text-align:center}
+.kw-proof-grid .card p{overflow-wrap:anywhere}
+@media(max-width:600px){
+ .kw-scam-warning{padding:15px;font-size:14px}
+ .kw-proof-grid{gap:14px}
+}
