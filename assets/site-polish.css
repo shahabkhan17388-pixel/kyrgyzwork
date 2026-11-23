@@ -207,3 +207,21 @@ main.wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin-inl
  body>header .calc-quick{min-width:40px!important}
 }
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
+
+/* High-visibility calculator entry points */
+.hero-calculator-link{display:inline-flex;align-items:center;gap:8px;margin-top:12px;color:#f4dfb2!important;font-size:14px;font-weight:850;text-decoration:underline;text-underline-offset:4px}
+.hero-calculator-link:hover{color:#fff!important}
+.kw-inline-tool{display:flex;align-items:center;gap:14px;margin:18px 0 20px;padding:16px 18px;border:1px solid #e8d7b7;border-radius:16px;background:linear-gradient(110deg,#fffaf0,#fff);color:#20364e!important;text-decoration:none!important;box-shadow:0 8px 24px rgba(8,27,49,.055)}
+.kw-inline-tool-icon{display:grid;place-items:center;flex:0 0 42px;width:42px;height:42px;border-radius:12px;background:#f4e5c5;color:#815d20;font-size:22px;font-weight:900}
+.kw-inline-tool>span:nth-child(2){display:flex;flex-direction:column;gap:3px;min-width:0}
+.kw-inline-tool strong{font-size:15px;line-height:1.35;color:#132c49}
+.kw-inline-tool small{font-size:12px;line-height:1.45;color:#627286}
+.kw-inline-tool>b{margin-inline-start:auto;color:#9c712d;font-size:22px}
+@media(max-width:600px){
+ .hero-calculator-link{font-size:13px;margin-top:10px}
+ .kw-inline-tool{gap:10px;padding:13px;border-radius:13px}
+ .kw-inline-tool-icon{flex-basis:38px;width:38px;height:38px}
+ .kw-inline-tool strong{font-size:14px}
+ .kw-inline-tool small{font-size:11px}
+}
