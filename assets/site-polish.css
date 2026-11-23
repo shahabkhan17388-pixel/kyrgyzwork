@@ -134,3 +134,32 @@ body>main,body>div{min-width:0}
  .layout>.article h2{font-size:21px;line-height:1.25;margin:28px 0 10px}
  .layout>.article .callout{font-size:14px;line-height:1.6;padding:14px 15px;margin:18px 0}
 }
+
+
+/* Final mobile spacing, logo sizing and visible calculator navigation */
+html{scroll-padding-top:82px}
+body{overflow-x:hidden}
+body>header .nav{min-height:76px}
+body>header .brand{width:142px!important;min-width:142px!important;height:70px!important;overflow:visible!important}
+body>header .brand img{width:142px!important;height:68px!important;max-width:142px!important;max-height:68px!important;object-fit:contain!important;object-position:left center!important}
+body>header .brand-fallback{font-size:17px!important}
+.layout.wrap{width:min(1120px,100%)!important;padding:42px 22px 64px!important;margin-inline:auto!important}
+.layout.wrap>.article{min-width:0!important;max-width:760px!important;overflow-wrap:anywhere}
+.layout.wrap>.article p,.layout.wrap>.article li{font-size:16px;line-height:1.7}
+.layout.wrap>.article h2{font-size:clamp(21px,2.5vw,26px);line-height:1.25}
+.hero .wrap{width:min(1120px,calc(100% - 44px));margin-inline:auto}
+@media(max-width:850px){
+ .layout.wrap{display:block!important;padding:30px 22px 48px!important}
+ .layout.wrap>.article{width:100%;max-width:none!important}
+ .layout.wrap>.side{display:none!important}
+}
+@media(max-width:600px){
+ body>header .brand{width:126px!important;min-width:126px!important;height:66px!important}
+ body>header .brand img{width:126px!important;height:64px!important;max-width:126px!important;max-height:64px!important}
+ body>header .nav{height:70px!important;min-height:70px!important}
+ .layout.wrap{padding:24px 18px 40px!important}
+ .layout.wrap>.article p,.layout.wrap>.article li{font-size:15px;line-height:1.68}
+ .layout.wrap>.article h2{font-size:21px;line-height:1.25;margin:28px 0 10px}
+ .hero .wrap h1{font-size:clamp(30px,8vw,36px);line-height:1.12}
+ .hero .wrap p{font-size:16px;line-height:1.6}
+}
