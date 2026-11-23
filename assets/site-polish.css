@@ -150,7 +150,7 @@ main.wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin-inl
  body>header .brand img{width:116px!important}
  body>header .navlinks{gap:9px!important;font-size:10.5px!important}
 }
-@media(max-width:900px){
+@media(max-width:1100px){
  body>header .nav{height:74px!important;min-height:74px!important}
  body>header .brand{flex-basis:116px!important;width:116px!important;min-width:116px!important;height:68px!important}
  body>header .brand img{width:116px!important;height:68px!important;max-width:116px!important;max-height:68px!important}
@@ -159,6 +159,7 @@ main.wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin-inl
  body>header .navlinks{
   display:none!important;position:absolute!important;top:74px!important;left:0!important;right:0!important;z-index:110!important;
   flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:10px 22px 18px!important;
+  max-height:calc(100vh - 74px)!important;overflow-y:auto!important;
   background:#fff!important;border:0!important;border-bottom:1px solid #e5eaf0!important;box-shadow:0 18px 30px rgba(7,26,48,.12)!important
  }
  body>header .navlinks.open{display:flex!important}
@@ -225,3 +226,21 @@ main.wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin-inl
  .kw-inline-tool strong{font-size:14px}
  .kw-inline-tool small{font-size:11px}
 }
+
+
+/* V3 quality pass: English-first layout, compact navigation and readable content gutters */
+@media(min-width:1101px){
+ body>header .navlinks{gap:clamp(9px,.9vw,15px)!important;font-size:clamp(11px,.88vw,13px)!important}
+}
+@media(max-width:1100px){
+ body>header .navlinks a{min-height:44px!important;display:flex!important;align-items:center!important}
+}
+@media(max-width:600px){
+ body>header .navlinks{max-height:calc(100vh - 68px)!important;padding:8px 18px 16px!important}
+ .layout.wrap{width:100%!important;margin-inline:auto!important;padding-inline:18px!important}
+ .layout.wrap>.article{width:100%!important;min-width:0!important}
+ .section-head{margin-bottom:26px}
+ .hero-actions .btn{width:100%;justify-content:center}
+}
+body>header .brand img{object-fit:contain!important}
+body>header .navlinks a:focus-visible,body>header .navright button:focus-visible{outline:3px solid rgba(215,173,99,.8)!important;outline-offset:3px!important}
