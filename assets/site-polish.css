@@ -244,3 +244,26 @@ main.wrap{width:min(1120px,100%)!important;max-width:1120px!important;margin-inl
 }
 body>header .brand img{object-fit:contain!important}
 body>header .navlinks a:focus-visible,body>header .navright button:focus-visible{outline:3px solid rgba(215,173,99,.8)!important;outline-offset:3px!important}
+
+
+/* Mobile screenshot QA: prevent calculator overflow and keep controls clear */
+@media(max-width:600px){
+  body>header>.container{padding-inline:5px!important}
+  body>header .brand{flex:0 0 116px!important;width:116px!important;min-width:116px!important;margin-inline:3px!important}
+  body>header .brand img{width:116px!important;max-width:116px!important;object-position:center center!important}
+  .kw-calc-shell,.kw-calculator,.kw-calc-panel,.kw-calc-fields,.kw-calc-field{min-width:0!important;max-width:100%!important}
+  .kw-calc-field input,.kw-calc-field select{
+    display:block!important;width:100%!important;min-width:0!important;max-width:100%!important;
+    box-sizing:border-box!important
+  }
+  input[type="date"]{-webkit-appearance:none;appearance:none}
+  /* The calculator already has contextual WhatsApp actions; avoid covering its buttons. */
+  body:has(.kw-calculator) .floatwa,
+  body:has(.kw-calculator) .whatsapp-float{display:none!important}
+  body[dir="rtl"] .hero h1{
+    max-width:100%;font-family:"Noto Naskh Arabic",serif!important;
+    font-size:clamp(34px,8.2vw,48px)!important;line-height:1.34!important;
+    letter-spacing:0!important;text-align:right
+  }
+  body[dir="rtl"] .hero .eyebrow{font-size:11px;letter-spacing:0!important}
+}
