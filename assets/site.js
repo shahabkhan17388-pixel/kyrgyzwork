@@ -7,10 +7,20 @@ const labels={
  ur:{duration:'مدتِ زائد قیام',days:'تاخیر کے دن',day:'دن',protocol:'تخمینی پروٹوکول جرمانہ',exit:'ایگزٹ ویزا کی تخمینی فیس',total:'کل تخمینی رقم',date:'براہِ کرم ویزا ختم ہونے کی تاریخ منتخب کریں۔',invalid:'ویزا ختم ہونے کی تاریخ آج سے پہلے ہونی چاہیے۔',apply:'ایگزٹ ویزا کے لیے واٹس ایپ پر درخواست دیں'},
  ru:{duration:'Период просрочки',days:'Дней просрочки',day:'дней',protocol:'Оценка штрафа',exit:'Оценка стоимости выездной визы',total:'Общая оценка',date:'Выберите дату окончания визы.',invalid:'Дата окончания визы должна быть раньше сегодняшнего дня.',apply:'Подать заявку через WhatsApp'}
 };
-function getLang(){try{return localStorage.getItem('kw-language')||'ur'}catch(e){return 'ur'}}
+function getLang(){try{return localStorage.getItem('kw-language')||'en'}catch(e){return 'en'}}
 function setLang(lang){if(!labels[lang])lang='ur';try{localStorage.setItem('kw-language',lang)}catch(e){}document.documentElement.lang=lang;document.documentElement.dir=lang==='ur'?'rtl':'ltr';document.body.dir=lang==='ur'?'rtl':'ltr';qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang))});qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});}
 qsa('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(getLang());
-const menu=qs('.menu');if(menu){menu.setAttribute('aria-expanded','false');menu.addEventListener('click',()=>{const nav=qs('.navlinks');if(!nav)return;const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});qsa('.navlinks a').forEach(a=>a.addEventListener('click',()=>{qs('.navlinks')?.classList.remove('open');menu.setAttribute('aria-expanded','false')}));}
+const menu=qs('.menu');if(menu){
+ const nav=qs('.navlinks');
+ if(nav&&!nav.id)nav.id='primary-navigation';
+ if(nav)menu.setAttribute('aria-controls',nav.id);
+ menu.setAttribute('aria-expanded','false');
+ const closeMenu=()=>{nav?.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu')};
+ menu.addEventListener('click',()=>{if(!nav)return;const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});
+ qsa('.navlinks a').forEach(a=>a.addEventListener('click',closeMenu));
+ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
+ document.addEventListener('click',e=>{if(nav?.classList.contains('open')&&!nav.contains(e.target)&&!menu.contains(e.target))closeMenu()});
+}
 qsa('[data-wa]').forEach(b=>b.addEventListener('click',()=>{location.href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(b.dataset.wa||'Hello KYRGYZ WORK')}));
 qsa('[data-whatsapp-form]').forEach(form=>form.addEventListener('submit',e=>{e.preventDefault();if(!form.reportValidity())return;const data=new FormData(form),lines=[form.dataset.title||'KYRGYZ WORK enquiry'];for(const [k,v] of data.entries()){const value=String(v).trim();if(value)lines.push(k+': '+value)}location.href='https://wa.me/'+PHONE+'?text='+encodeURIComponent(lines.join('\n'))}));
 const calc=qs('#visaCalc');

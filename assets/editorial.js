@@ -7,7 +7,7 @@ qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang
 qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});
 
 }
-let saved='ur';try{saved=localStorage.getItem('kw-language')||'ur'}catch(e){}setLang(saved);
+let saved='en';try{saved=localStorage.getItem('kw-language')||'en'}catch(e){}setLang(saved);
 qsa('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
 const menu=qs('.menu'),nav=qs('.navlinks');if(menu&&nav){menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.setAttribute('aria-label',open?'Close menu':'Open menu')});qsa('.navlinks a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}))}
 const search=qs('#kwBlogSearch'),grid=qs('#kwBlogGrid'),empty=qs('#kwBlogEmpty'),suggest=qs('#kwBlogSuggestions'),cards=grid?qsa('.kw-guide-card',grid):[],filters=qsa('[data-filter]');let active='all';
