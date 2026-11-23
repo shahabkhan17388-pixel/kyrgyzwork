@@ -8,7 +8,7 @@ const labels={
  ru:{duration:'Период просрочки',days:'Дней просрочки',day:'дней',protocol:'Оценка штрафа',exit:'Оценка стоимости выездной визы',total:'Общая оценка',date:'Выберите дату окончания визы.',invalid:'Дата окончания визы должна быть раньше сегодняшнего дня.',apply:'Подать заявку через WhatsApp'}
 };
 function getLang(){try{return localStorage.getItem('kw-language')||'en'}catch(e){return 'en'}}
-function setLang(lang){if(!labels[lang])lang='ur';try{localStorage.setItem('kw-language',lang)}catch(e){}document.documentElement.lang=lang;document.documentElement.dir=lang==='ur'?'rtl':'ltr';document.body.dir=lang==='ur'?'rtl':'ltr';qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang))});qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});}
+function setLang(lang){if(!labels[lang])lang='en';try{localStorage.setItem('kw-language',lang)}catch(e){}document.documentElement.lang=lang;document.documentElement.dir=lang==='ur'?'rtl':'ltr';document.body.dir=lang==='ur'?'rtl':'ltr';qsa('[data-lang]').forEach(b=>{b.classList.toggle('active',b.dataset.lang===lang);b.setAttribute('aria-pressed',String(b.dataset.lang===lang))});qsa('[data-locale]').forEach(el=>{el.hidden=el.dataset.locale!==lang});}
 qsa('[data-lang]').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));setLang(getLang());
 const menu=qs('.menu');if(menu){
  const nav=qs('.navlinks');
