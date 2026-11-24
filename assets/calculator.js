@@ -50,8 +50,40 @@ const calcProtocol=()=>{
  const link=$('[data-out="protocol-wa"]');if(link)link.href='https://wa.me/996555746401?text='+encodeURIComponent(message);
  result('protocol',true);
 };
-const expiry=name=>{const input=$('#'+(name==='protocol'?'protocolExpiry':'exitExpiry'));const a=parseDate(input?.value||''),b=today();if(!a){error(name,'Please select a valid visa expiry date.');input?.focus();return null}if(a>=b){error(name,'The expiry date must be earlier than today.');input?.focus();return null}error(name,'');return{a,b,days:Math.floor((b-a)/day)}};
-const calcExit=()=>{const x=expiry('exit');if(!x)return;const {a,b,days}=x;let fee,feeUsd,bracket;if(b<=addMonths(a,3)){fee=17500;feeUsd=200;bracket='Up to 3 months'}else if(b<=addMonths(a,12)){fee=96250;feeUsd=1100;bracket='3 months to 1 year'}else if(b<=addMonths(a,24)){fee=192500;feeUsd=2200;bracket='1 to 2 years'}else{let extra=0;while(b>addMonths(a,24+12*extra))extra++;fee=192500+96250*extra;feeUsd=2200+1100*extra;bracket='Over 2 years · '+(2+extra-1)+'+ years'}set('exit-duration',duration(a,b));set('exit-days',days.toLocaleString('en-US')+' days');set('exit-bracket',bracket);set('exit-usd',usd(feeUsd));set('exit-kgs',fmt(fee));result('exit',true)};
+const calcExit=()=>{
+ const lang=language(),input=$('#exitExpiry'),expiryDate=parseDate(input?.value||''),now=today();
+ const words={
+  en:{bad:'Please select a valid visa expiry date.',valid:'Your visa has not expired. No overstay protocol fine or exit-visa fee is estimated today.',expired:n=>'Visa expired '+n+' day(s) ago. Estimated overstay: '+duration(expiryDate,now)+'.',fine:'Article 431 protocol fine',exit:'Exit visa fee',total:'Estimated government total',none:'No exit visa fee is estimated while your visa remains valid.',band:'Exit visa fee band',up:'USD equivalent (not an extra charge)',wa:'Hello KYRGYZ WORK. My visa expiry date is '},
+  ur:{bad:'براہِ کرم ویزا ختم ہونے کی درست تاریخ منتخب کریں۔',valid:'آپ کا ویزا ختم نہیں ہوا۔ آج پروٹوکول جرمانہ یا ایگزٹ ویزا فیس کا تخمینہ نہیں ہے۔',expired:n=>'ویزا ختم ہوئے '+n+' دن ہو چکے ہیں۔ زائد قیام: '+duration(expiryDate,now)+'۔',fine:'آرٹیکل 431 پروٹوکول جرمانہ',exit:'ایگزٹ ویزا فیس',total:'کل تخمینی سرکاری رقم',none:'ویزا درست ہونے کی صورت میں ایگزٹ ویزا فیس نہیں بنتی۔',band:'ایگزٹ ویزا فیس کا درجہ',up:'امریکی ڈالر میں مساوی رقم (اضافی فیس نہیں)',wa:'السلام علیکم KYRGYZ WORK۔ میرے ویزا کی آخری تاریخ '},
+  ru:{bad:'Укажите корректную дату окончания визы.',valid:'Срок визы не истёк. На сегодня штраф и сбор за выездную визу не рассчитываются.',expired:n=>'Срок визы истёк '+n+' дн. назад. Просрочка: '+duration(expiryDate,now)+'.',fine:'Штраф по статье 431',exit:'Сбор за выездную визу',total:'Общая ориентировочная сумма',none:'Пока виза действует, сбор за выездную визу не рассчитывается.',band:'Категория сбора за выездную визу',up:'Эквивалент в долларах США (не дополнительный сбор)',wa:'Здравствуйте, KYRGYZ WORK. Срок моей визы истёк '}
+ };
+ const w=words[lang];
+ if(!expiryDate){error('exit',w.bad);result('exit',false);input?.focus();return}
+ error('exit','');
+ const overdue=Math.max(0,Math.floor((now-expiryDate)/day));
+ let protocol=0,exitFee=0,exitUsd=0,band='';
+ if(overdue>0){
+   if(now<=addMonths(expiryDate,1))protocol=5500;
+   else if(now<=addMonths(expiryDate,3))protocol=10000;
+   else if(now<=addMonths(expiryDate,6))protocol=15000;
+   else if(now<=addMonths(expiryDate,12))protocol=17500;
+   else protocol=20000;
+   if(now<=addMonths(expiryDate,3)){exitFee=17500;exitUsd=200;band='Up to 3 months'}
+   else if(now<=addMonths(expiryDate,12)){exitFee=96250;exitUsd=1100;band='3 months to 1 year'}
+   else if(now<=addMonths(expiryDate,24)){exitFee=192500;exitUsd=2200;band='1 to 2 years'}
+   else{let extra=0;while(now>addMonths(expiryDate,24+12*extra))extra++;exitFee=192500+96250*extra;exitUsd=2200+1100*extra;band='Over 2 years'}
+ }
+ const total=protocol+exitFee;
+ set('exit-status',overdue?w.expired(overdue):w.valid);
+ const statusEl=$('[data-out="exit-status"]');if(statusEl)statusEl.dataset.state=overdue?'over':'ok';
+ set('exit-protocol',fmt(protocol));
+ set('exit-visa',fmt(exitFee));
+ set('exit-total',fmt(total));
+ set('exit-usd-note',overdue?w.band+': '+band+' · '+w.up+': '+usd(exitUsd):w.none);
+ const message=w.wa+dateValue(expiryDate)+'. Overstay: '+overdue+' days. '+w.fine+': '+fmt(protocol)+'. '+w.exit+': '+fmt(exitFee)+' ('+usd(exitUsd)+'). '+w.total+': '+fmt(total)+'. Please confirm the official amount and explain how to apply through your service.';
+ const wa=$('[data-out="exit-wa"]');if(wa)wa.href='https://wa.me/996555746401?text='+encodeURIComponent(message);
+ result('exit',true);
+};
 const calcVisa=()=>{const amount=Number($('#visaUsd')?.value),rate=Number($('#visaRate')?.value),service=Number($('#visaService')?.value);if(!Number.isFinite(amount)||amount<0||!Number.isFinite(rate)||rate<=0||!Number.isFinite(service)||service<0){error('visa','Enter a valid government amount, positive exchange rate and non-negative additional charge.');return}error('visa','');const base=amount*rate;set('visa-type',$('#visaType').value);set('visa-gov',usd(amount)+' · '+fmt(base));set('visa-rate',rate.toLocaleString('en-US')+' KGS / USD');set('visa-service',fmt(service));set('visa-total',fmt(base+service));result('visa',true)};
 const calcTax=()=>{const gross=Number($('#grossSalary')?.value),pit=Number($('#pitRate')?.value),emp=Number($('#employeeRate')?.value),er=Number($('#employerRate')?.value);if(!Number.isFinite(gross)||gross<=0||[pit,emp,er].some(v=>!Number.isFinite(v)||v<0||v>100)){error('tax','Enter a salary greater than zero and valid rates from 0% to 100%.');return}error('tax','');const pitAmt=gross*pit/100,empAmt=gross*emp/100,erAmt=gross*er/100;set('tax-pit',fmt(pitAmt));set('tax-employee',fmt(empAmt));set('tax-net',fmt(gross-pitAmt-empAmt));set('tax-employer',fmt(erAmt));set('tax-cost',fmt(gross+erAmt));result('tax',true)};
 const runners={protocol:calcProtocol,exit:calcExit,visa:calcVisa,tax:calcTax};
@@ -59,6 +91,6 @@ const runners={protocol:calcProtocol,exit:calcExit,visa:calcVisa,tax:calcTax};
 $$('[data-calc-tab]').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.calcTab;$$('[data-calc-tab]').forEach(b=>{const active=b===btn;b.setAttribute('aria-selected',String(active));b.tabIndex=active?0:-1});$$('[data-calc-panel]').forEach(p=>p.hidden=p.dataset.calcPanel!==name);$$('[data-calc-error]').forEach(e=>e.textContent='')}));
 $$('[data-calc-run]').forEach(btn=>btn.addEventListener('click',()=>runners[btn.dataset.calcRun]?.()));
 $$('[data-calc-reset]').forEach(btn=>btn.addEventListener('click',()=>{const name=btn.dataset.calcReset,panel=$('[data-calc-panel="'+name+'"]');if(!panel)return;$$('input',panel).forEach(i=>{if(i.type==='date')i.value='';else if(i.id==='visaRate')i.value='';else if(i.id==='visaService')i.value='0';else if(i.id==='pitRate')i.value='10';else if(i.id==='employeeRate')i.value='10';else if(i.id==='employerRate')i.value='2.25';else i.value=''});const s=$('select',panel);if(s)s.selectedIndex=0;error(name,'');result(name,false)}));
-$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{if(!$('[data-calc-result="protocol"]')?.hidden)calcProtocol()}));
+$('[data-lang]').forEach(b=>b.addEventListener('click',()=>{if(!$('[data-calc-result="protocol"]')?.hidden)calcProtocol();if(!$('[data-calc-result="exit"]')?.hidden)calcExit()}));
 $('[data-calc-tab]').forEach((b,i)=>{b.tabIndex=i===0?0:-1;b.addEventListener('keydown',e=>{if(!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();const tabs=$$('[data-calc-tab]'),next=(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length;tabs[next].focus();tabs[next].click()})});
 })();
