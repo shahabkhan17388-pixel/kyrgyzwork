@@ -51,8 +51,14 @@ const calcProtocol=()=>{
  result('protocol',true);
 };
 const calcExit=()=>{
- const input=$('#exitExpiry'),expiryDate=parseDate(input?.value||''),now=today();
- if(!expiryDate){error('exit','Please select a valid visa expiry date.');input?.focus();return}
+ const lang=language(),input=$('#exitExpiry'),expiryDate=parseDate(input?.value||''),now=today();
+ const words={
+  en:{bad:'Please select a valid visa expiry date.',valid:'Your visa has not expired. No overstay protocol fine or exit-visa fee is estimated today.',expired:n=>'Visa expired '+n+' day(s) ago. Estimated overstay: '+duration(expiryDate,now)+'.',fine:'Article 431 protocol fine',exit:'Exit visa fee',total:'Estimated government total',none:'No exit visa fee is estimated while your visa remains valid.',band:'Exit visa fee band',up:'USD equivalent (not an extra charge)',wa:'Hello KYRGYZ WORK. My visa expiry date is '},
+  ur:{bad:'براہِ کرم ویزا ختم ہونے کی درست تاریخ منتخب کریں۔',valid:'آپ کا ویزا ختم نہیں ہوا۔ آج پروٹوکول جرمانہ یا ایگزٹ ویزا فیس کا تخمینہ نہیں ہے۔',expired:n=>'ویزا ختم ہوئے '+n+' دن ہو چکے ہیں۔ زائد قیام: '+duration(expiryDate,now)+'۔',fine:'آرٹیکل 431 پروٹوکول جرمانہ',exit:'ایگزٹ ویزا فیس',total:'کل تخمینی سرکاری رقم',none:'ویزا درست ہونے کی صورت میں ایگزٹ ویزا فیس نہیں بنتی۔',band:'ایگزٹ ویزا فیس کا درجہ',up:'امریکی ڈالر میں مساوی رقم (اضافی فیس نہیں)',wa:'السلام علیکم KYRGYZ WORK۔ میرے ویزا کی آخری تاریخ '},
+  ru:{bad:'Укажите корректную дату окончания визы.',valid:'Срок визы не истёк. На сегодня штраф и сбор за выездную визу не рассчитываются.',expired:n=>'Срок визы истёк '+n+' дн. назад. Просрочка: '+duration(expiryDate,now)+'.',fine:'Штраф по статье 431',exit:'Сбор за выездную визу',total:'Общая ориентировочная сумма',none:'Пока виза действует, сбор за выездную визу не рассчитывается.',band:'Категория сбора за выездную визу',up:'Эквивалент в долларах США (не дополнительный сбор)',wa:'Здравствуйте, KYRGYZ WORK. Срок моей визы истёк '}
+ };
+ const w=words[lang];
+ if(!expiryDate){error('exit',w.bad);result('exit',false);input?.focus();return}
  error('exit','');
  const overdue=Math.max(0,Math.floor((now-expiryDate)/day));
  let protocol=0,exitFee=0,exitUsd=0,band='';
@@ -65,20 +71,16 @@ const calcExit=()=>{
    if(now<=addMonths(expiryDate,3)){exitFee=17500;exitUsd=200;band='Up to 3 months'}
    else if(now<=addMonths(expiryDate,12)){exitFee=96250;exitUsd=1100;band='3 months to 1 year'}
    else if(now<=addMonths(expiryDate,24)){exitFee=192500;exitUsd=2200;band='1 to 2 years'}
-   else{
-     let extra=0;while(now>addMonths(expiryDate,24+12*extra))extra++;
-     exitFee=192500+96250*extra;exitUsd=2200+1100*extra;band='Over 2 years';
-   }
+   else{let extra=0;while(now>addMonths(expiryDate,24+12*extra))extra++;exitFee=192500+96250*extra;exitUsd=2200+1100*extra;band='Over 2 years'}
  }
  const total=protocol+exitFee;
- const status=overdue?('Visa expired '+overdue+' day(s) ago. Estimated overstay period: '+duration(expiryDate,now)+'.'):'Your visa has not expired. No overstay protocol fine or exit-visa fee is estimated today.';
- set('exit-status',status);
+ set('exit-status',overdue?w.expired(overdue):w.valid);
  const statusEl=$('[data-out="exit-status"]');if(statusEl)statusEl.dataset.state=overdue?'over':'ok';
  set('exit-protocol',fmt(protocol));
  set('exit-visa',fmt(exitFee));
  set('exit-total',fmt(total));
- set('exit-usd-note',overdue?'Exit visa fee band: '+band+' · USD equivalent: '+usd(exitUsd)+' (shown as an alternative equivalent, not an extra charge).':'No exit visa fee is estimated while your visa remains valid.');
- const message='Hello KYRGYZ WORK. My visa expiry date is '+dateValue(expiryDate)+'. Overstay: '+overdue+' days. Estimated Article 431 fine: '+fmt(protocol)+'. Estimated exit visa fee: '+fmt(exitFee)+' ('+usd(exitUsd)+'). Estimated government total: '+fmt(total)+'. Please confirm the official amount and explain how to apply through your service.';
+ set('exit-usd-note',overdue?w.band+': '+band+' · '+w.up+': '+usd(exitUsd):w.none);
+ const message=w.wa+dateValue(expiryDate)+'. Overstay: '+overdue+' days. '+w.fine+': '+fmt(protocol)+'. '+w.exit+': '+fmt(exitFee)+' ('+usd(exitUsd)+'). '+w.total+': '+fmt(total)+'. Please confirm the official amount and explain how to apply through your service.';
  const wa=$('[data-out="exit-wa"]');if(wa)wa.href='https://wa.me/996555746401?text='+encodeURIComponent(message);
  result('exit',true);
 };
