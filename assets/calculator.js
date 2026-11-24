@@ -27,8 +27,8 @@ const calcProtocol=()=>{
    const left=Math.max(0,Math.ceil((expiryDate-now)/day));
    set('protocol-status',c.valid+left);
    set('protocol-total',c.none);
-   nextText='';
-   nextMessage=c.none;
+   nextText=c.upcoming;
+   nextMessage=c.upcoming;
  }else{
    const bands=[
      {months:1,amount:5500},{months:3,amount:10000},{months:6,amount:15000},{months:12,amount:17500},{months:Infinity,amount:20000}
