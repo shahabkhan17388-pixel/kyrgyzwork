@@ -291,3 +291,12 @@ body>header .navlinks a:focus-visible,body>header .navright button:focus-visible
 .kw-calc-whatsapp:hover{background:#1fbd5b;color:#052b16}
 .kw-calc-disclaimer{line-height:1.7}
 @media(max-width:480px){.kw-calc-panel input[type="date"]{font-size:16px}.kw-calc-whatsapp{width:100%}}
+
+/* Simple visa-expiry calculator: one field, one clear result */
+.kw-protocol-simple .kw-protocol-fields{grid-template-columns:minmax(0,1fr);max-width:520px}
+.kw-protocol-simple .kw-calc-field label{font-size:15px}
+.kw-protocol-simple .kw-calc-field input{min-height:56px;font-size:17px}
+.kw-protocol-simple .kw-protocol-result{max-width:680px}
+.kw-protocol-simple .kw-calc-status{font-size:16px}
+.kw-protocol-simple .kw-protocol-next{margin-top:12px;padding:14px 16px;border:1px solid #ead7ad;border-radius:12px;background:#fff8e9;color:#664a1b;font-size:14px;font-weight:750;line-height:1.6}
+.kw-protocol-simple .kw-protocol-next:empty{display:none}
