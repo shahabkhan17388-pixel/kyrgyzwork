@@ -50,8 +50,38 @@ const calcProtocol=()=>{
  const link=$('[data-out="protocol-wa"]');if(link)link.href='https://wa.me/996555746401?text='+encodeURIComponent(message);
  result('protocol',true);
 };
-const expiry=name=>{const input=$('#'+(name==='protocol'?'protocolExpiry':'exitExpiry'));const a=parseDate(input?.value||''),b=today();if(!a){error(name,'Please select a valid visa expiry date.');input?.focus();return null}if(a>=b){error(name,'The expiry date must be earlier than today.');input?.focus();return null}error(name,'');return{a,b,days:Math.floor((b-a)/day)}};
-const calcExit=()=>{const x=expiry('exit');if(!x)return;const {a,b,days}=x;let fee,feeUsd,bracket;if(b<=addMonths(a,3)){fee=17500;feeUsd=200;bracket='Up to 3 months'}else if(b<=addMonths(a,12)){fee=96250;feeUsd=1100;bracket='3 months to 1 year'}else if(b<=addMonths(a,24)){fee=192500;feeUsd=2200;bracket='1 to 2 years'}else{let extra=0;while(b>addMonths(a,24+12*extra))extra++;fee=192500+96250*extra;feeUsd=2200+1100*extra;bracket='Over 2 years · '+(2+extra-1)+'+ years'}set('exit-duration',duration(a,b));set('exit-days',days.toLocaleString('en-US')+' days');set('exit-bracket',bracket);set('exit-usd',usd(feeUsd));set('exit-kgs',fmt(fee));result('exit',true)};
+const calcExit=()=>{
+ const input=$('#exitExpiry'),expiryDate=parseDate(input?.value||''),now=today();
+ if(!expiryDate){error('exit','Please select a valid visa expiry date.');input?.focus();return}
+ error('exit','');
+ const overdue=Math.max(0,Math.floor((now-expiryDate)/day));
+ let protocol=0,exitFee=0,exitUsd=0,band='';
+ if(overdue>0){
+   if(now<=addMonths(expiryDate,1))protocol=5500;
+   else if(now<=addMonths(expiryDate,3))protocol=10000;
+   else if(now<=addMonths(expiryDate,6))protocol=15000;
+   else if(now<=addMonths(expiryDate,12))protocol=17500;
+   else protocol=20000;
+   if(now<=addMonths(expiryDate,3)){exitFee=17500;exitUsd=200;band='Up to 3 months'}
+   else if(now<=addMonths(expiryDate,12)){exitFee=96250;exitUsd=1100;band='3 months to 1 year'}
+   else if(now<=addMonths(expiryDate,24)){exitFee=192500;exitUsd=2200;band='1 to 2 years'}
+   else{
+     let extra=0;while(now>addMonths(expiryDate,24+12*extra))extra++;
+     exitFee=192500+96250*extra;exitUsd=2200+1100*extra;band='Over 2 years';
+   }
+ }
+ const total=protocol+exitFee;
+ const status=overdue?('Visa expired '+overdue+' day(s) ago. Estimated overstay period: '+duration(expiryDate,now)+'.'):'Your visa has not expired. No overstay protocol fine or exit-visa fee is estimated today.';
+ set('exit-status',status);
+ const statusEl=$('[data-out="exit-status"]');if(statusEl)statusEl.dataset.state=overdue?'over':'ok';
+ set('exit-protocol',fmt(protocol));
+ set('exit-visa',fmt(exitFee));
+ set('exit-total',fmt(total));
+ set('exit-usd-note',overdue?'Exit visa fee band: '+band+' · USD equivalent: '+usd(exitUsd)+' (shown as an alternative equivalent, not an extra charge).':'No exit visa fee is estimated while your visa remains valid.');
+ const message='Hello KYRGYZ WORK. My visa expiry date is '+dateValue(expiryDate)+'. Overstay: '+overdue+' days. Estimated Article 431 fine: '+fmt(protocol)+'. Estimated exit visa fee: '+fmt(exitFee)+' ('+usd(exitUsd)+'). Estimated government total: '+fmt(total)+'. Please confirm the official amount and explain how to apply through your service.';
+ const wa=$('[data-out="exit-wa"]');if(wa)wa.href='https://wa.me/996555746401?text='+encodeURIComponent(message);
+ result('exit',true);
+};
 const calcVisa=()=>{const amount=Number($('#visaUsd')?.value),rate=Number($('#visaRate')?.value),service=Number($('#visaService')?.value);if(!Number.isFinite(amount)||amount<0||!Number.isFinite(rate)||rate<=0||!Number.isFinite(service)||service<0){error('visa','Enter a valid government amount, positive exchange rate and non-negative additional charge.');return}error('visa','');const base=amount*rate;set('visa-type',$('#visaType').value);set('visa-gov',usd(amount)+' · '+fmt(base));set('visa-rate',rate.toLocaleString('en-US')+' KGS / USD');set('visa-service',fmt(service));set('visa-total',fmt(base+service));result('visa',true)};
 const calcTax=()=>{const gross=Number($('#grossSalary')?.value),pit=Number($('#pitRate')?.value),emp=Number($('#employeeRate')?.value),er=Number($('#employerRate')?.value);if(!Number.isFinite(gross)||gross<=0||[pit,emp,er].some(v=>!Number.isFinite(v)||v<0||v>100)){error('tax','Enter a salary greater than zero and valid rates from 0% to 100%.');return}error('tax','');const pitAmt=gross*pit/100,empAmt=gross*emp/100,erAmt=gross*er/100;set('tax-pit',fmt(pitAmt));set('tax-employee',fmt(empAmt));set('tax-net',fmt(gross-pitAmt-empAmt));set('tax-employer',fmt(erAmt));set('tax-cost',fmt(gross+erAmt));result('tax',true)};
 const runners={protocol:calcProtocol,exit:calcExit,visa:calcVisa,tax:calcTax};
